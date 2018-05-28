@@ -1,1 +1,1 @@
-# pokedex
+# Pokedex project by Alain Cao Van Truong
