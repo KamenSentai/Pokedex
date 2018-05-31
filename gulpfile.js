@@ -55,7 +55,7 @@ const depth =
     assets   : 1,
     scripts  : 1,
     styles   : 1,
-    includes : 1
+    includes : 2
 }
 
 /**
@@ -66,7 +66,7 @@ const extension =
     assets   : '*',
     scripts  : 'js',
     styles   : 'styl',
-    includes : 'php'
+    includes : '+(php|twig)'
 }
 
 /**

@@ -1,8 +1,5 @@
 <?php
 
-use \Psr\Http\Message\ServerRequestInterface as Request;
-use \Psr\Http\Message\ResponseInterface as Response;
-
 require_once './vendor/autoload.php';
 
 $settings =
@@ -16,6 +13,6 @@ $container = $app->getContainer();
 
 $container['view'] = function()
 {
-    $view = new \Slim\Views\Twig('./views');
+    $view = new \Slim\Views\Twig('./includes/views');
     return $view;
 };
