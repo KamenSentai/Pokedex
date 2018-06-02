@@ -1,8 +1,6 @@
 <?php
 
 // Namespaces
-use \Pokedex\Settings    as PS;
-use \Pokedex\Routes      as PR;
 use \Pokedex\Models      as PM;
 use \Pokedex\Views       as PV;
 use \Pokedex\Controllers as PC;
@@ -41,4 +39,23 @@ $container['view'] = function()
 {
     $view = new \Slim\Views\Twig('./includes/views/');
     return $view;
+};
+
+// Home
+$container['home'] = function()
+{
+    $data =
+    [
+        'base' =>
+        [
+            'page'  => 'home',
+            'title' => 'Pikachu',
+            'url'   => URL,
+        ],
+        'contents' =>
+        [
+            'pokemon' => 'Pikachu',
+        ],
+    ];
+    return $data;
 };
