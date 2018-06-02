@@ -8,8 +8,5 @@ namespace Pokedex\Controllers;
  */
 class Pokemon
 {
-    public function sayHi()
-    {
-        echo 'Pika pika !';
-    }
+
 }

@@ -9,8 +9,19 @@ use \Pokedex\Models      as PM;
 use \Pokedex\Views       as PV;
 use \Pokedex\Controllers as PC;
 
+// Autoloaders
+require_once './vendor/autoload.php';
+require_once './includes/Autoloader.php';
+\Pokedex\Autoloader::register();
+
+// Framework
+$settings  = ['displayErrorDetails' => true];
+$app       = new \Slim\App(['settings' => $settings]);
+$container = $app->getContainer();
+
 // Settings
-require_once './includes/settings/framework.php';
+require_once './includes/settings/config.php';
+require_once './includes/settings/container.php';
 
 // Home route
 $app
@@ -20,20 +31,21 @@ $app
         {
             $dataView =
             [
-                'pokemon' => 'Pikachu',
+                'base' =>
+                [
+                    'page'  => 'home',
+                    'url'   => URL,
+                    'title' => 'Pikachu',
+                ],
+                'contents' =>
+                [
+                    'pokemon' => 'Pikachu',
+                ],
             ];
-            return $this->view->render($response, 'pages/home.twig', $dataView);
+            return $this->view->render($response, 'index.twig', $dataView);
         }
     )
 ;
 
 // Run Slim
 $app->run();
-
-// Autoloader
-require './includes/Autoloader.php';
-\Pokedex\Autoloader::register();
-
-// Pikachu !
-$pokemon = new PC\Pokemon();
-$pokemon->sayHi();
