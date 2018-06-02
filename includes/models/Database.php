@@ -1,6 +1,6 @@
 <?php
 
-namespace Pokedex;
+namespace Pokedex\Models;
 
 /**
  * Class Database
