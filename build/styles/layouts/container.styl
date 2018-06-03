@@ -1,0 +1,28 @@
+.container
+    position absolute
+    full-size()
+    img
+        position absolute
+        &.left,
+        &.right
+            width auto
+            height 100%
+        &.left
+            top 0
+        &.right
+            top 0
+        &.top,
+        &.bottom
+            width 100%
+            height auto
+        &.top
+            left 0
+        &.bottom
+            left 0
+    .character
+        position absolute
+        overflow hidden
+    .character,
+    .sprite
+        will-change transform
+        z-index 3

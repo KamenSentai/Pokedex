@@ -1,1 +1,16 @@
-<h1>Hey, {{ contents.pokemon }}</h1>
+<div class="container">
+    <img class="top"    src="{{ base.url }}public/assets/images/interface/top.png"    alt="Top"    draggable="false">
+    <img class="right"  src="{{ base.url }}public/assets/images/interface/right.png"  alt="Right"  draggable="false">
+    <img class="bottom" src="{{ base.url }}public/assets/images/interface/bottom.png" alt="Bottom" draggable="false">
+    <img class="left"   src="{{ base.url }}public/assets/images/interface/left.png"   alt="Left"   draggable="false">
+    <img class="map"    src="{{ base.url }}public/assets/images/interface/map.png"    alt="Map"    draggable="false">
+    <div class="character">
+        <img class="sprite" src="{{ base.url }}public/assets/images/interface/sprite.png" alt="Sprite" draggable="false">
+    </div>
+</div>
+<form method="post" action="./" style="display:none;">
+    <input type="hidden" name="pokemon">
+    <input type="hidden" name="positionX" value="{{ data.positionX }}">
+    <input type="hidden" name="positionY" value="{{ data.positionY }}">
+    <input type="submit" value="Submit">
+</form>

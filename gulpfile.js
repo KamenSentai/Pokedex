@@ -52,7 +52,7 @@ const path =
  */
 const depth =
 {
-    assets   : 1,
+    assets   : 2,
     scripts  : 1,
     styles   : 1,
     includes : 2

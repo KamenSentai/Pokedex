@@ -9,11 +9,13 @@ namespace Pokedex\Models;
 class Database
 {
     private $pdo;
+    private $ip;
     private $prepare;
 
-    public function __construct($pdo)
+    public function __construct($pdo, $ip)
     {
         $this->pdo = $pdo;
+        $this->ip  = $ip;
     }
 
     /**
@@ -47,5 +49,32 @@ class Database
     public function getPrepareFetchAll()
     {
         return $this->prepare->fetchAll();
+    }
+
+    /**
+     * @return string $this->ip
+     */
+    public function getIp()
+    {
+        return $this->ip;
+    }
+
+    /**
+     * @param array $users
+     * @param string $ip
+     */
+    public function checkRegistration($users, $ip)
+    {
+        $isRegistered = false;
+
+        foreach ($users as $_user)
+            if ($_user->ip === $ip)
+            {
+                $isRegistered = true;
+                break;
+            }
+
+        if (!$isRegistered)
+            self::setQuery('INSERT INTO users (ip) VALUES ("' . $ip . '")');
     }
 }
