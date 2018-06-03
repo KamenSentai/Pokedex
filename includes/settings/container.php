@@ -73,6 +73,8 @@ $container['home'] = function($container)
 // Catch
 $container['catch'] = function($container)
 {
+    $pokedex = new PM\Data('pokedex');
+    $pokemon = $pokedex->content->pokemon[$_POST['pokemon']];
     $data =
     [
         'base' =>
@@ -83,8 +85,10 @@ $container['catch'] = function($container)
         ],
         'data' =>
         [
-            'positionX' => isset($_POST['positionX']) ? $_POST['positionX'] : 0,
-            'positionY' => isset($_POST['positionY']) ? $_POST['positionY'] : 300,
+            'positionX'     => isset($_POST['positionX']) ? $_POST['positionX'] : 0,
+            'positionY'     => isset($_POST['positionY']) ? $_POST['positionY'] : 300,
+            'pokemonName'   => $pokemon->name,
+            'pokemonNumber' => $pokemon->num,
         ],
     ];
     return $data;
