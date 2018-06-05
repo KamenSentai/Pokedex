@@ -36,9 +36,16 @@ class Page
      */
     public function postHome(Request $request, Response $response)
     {
-        if (isset($_POST['pokemon']))
-            return $this->container->view->render($response, 'index.twig', $this->container->catch);
-        else
-            return $this->container->view->render($response, 'index.twig', $this->container->home);
+        return $this->container->view->render($response, 'index.twig', $this->container->home);
+    }
+
+    /**
+     * @param object $request
+     * @param object $response
+     * @return object $$this->container->view->render()
+     */
+    public function getCatch(Request $request, Response $response)
+    {
+        return $this->container->view->render($response, 'index.twig', $this->container->catch);
     }
 }

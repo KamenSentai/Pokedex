@@ -53,6 +53,16 @@ $container['database'] = function($container)
 // Home
 $container['home'] = function($container)
 {
+    // Insert last pokemon found
+    if (isset($_POST['number']))
+    {
+        $userIp = $container->database->getIp();
+        $container->database->setQuery('SELECT * FROM users WHERE ip = "' . $userIp . '"');
+        $userId = $container->database->getPrepareFetch()->id;
+        $container->database->setQuery('INSERT INTO catch (number, user) VALUES ("' . $_POST['number'] . '", "' . $userId . '")');
+        exit;
+    }
+
     $data =
     [
         'base' =>
@@ -61,11 +71,6 @@ $container['home'] = function($container)
             'title' => TITLE,
             'url'   => URL,
         ],
-        'data' =>
-        [
-            'positionX' => isset($_POST['positionX']) ? $_POST['positionX'] : 0,
-            'positionY' => isset($_POST['positionY']) ? $_POST['positionY'] : 300,
-        ],
     ];
     return $data;
 };
@@ -73,20 +78,45 @@ $container['home'] = function($container)
 // Catch
 $container['catch'] = function($container)
 {
+    // Find user
+    $userIp = $container->database->getIp();
+    $container->database->setQuery('SELECT * FROM users');
+    $users = $container->database->getPrepareFetchAll();
+
+    // Get user id
+    foreach ($users as $_user)
+    {
+        if ($_user->ip === $userIp)
+        {
+            $userId = $_user->id;
+            break;
+        }
+    }
+
+    // Redirect if never connected
+    if (!isset($userId))
+    {
+        header('location: ./');
+        exit;
+    }
+
+    // Select newest pokemon found
+    $container->database->setQuery('SELECT * FROM catch WHERE user = "' . $userId . '"');
+    $catch   = $container->database->getPrepareFetchAll();
+    $last    = end($catch);
     $pokedex = new PM\Data('pokedex');
-    $pokemon = $pokedex->content->pokemon[$_POST['pokemon']];
+    $pokemon = $pokedex->content->pokemon[$last->number];
+
     $data =
     [
         'base' =>
         [
             'page'  => 'catch',
-            'title' => TITLE,
+            'title' => TITLE . ' | Catch ' . $pokemon->name . ' !',
             'url'   => URL,
         ],
         'data' =>
         [
-            'positionX'     => isset($_POST['positionX']) ? $_POST['positionX'] : 0,
-            'positionY'     => isset($_POST['positionY']) ? $_POST['positionY'] : 300,
             'pokemonName'   => $pokemon->name,
             'pokemonNumber' => $pokemon->num,
         ],

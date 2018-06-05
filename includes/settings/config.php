@@ -3,7 +3,8 @@
 // URL
 define('HTTP', isset($_SERVER['HTTPS']) ? 'https' : 'http');
 define('HOST', $_SERVER['HTTP_HOST']);
-define('URI',  $_SERVER['REQUEST_URI']);
+// define('URI',  $_SERVER['REQUEST_URI']);
+define('URI',  '/works/pokedex/');
 define('URL',  HTTP . '://' . HOST . URI);
 
 // Database

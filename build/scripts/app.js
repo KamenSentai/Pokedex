@@ -1,9 +1,4 @@
 const $containerMap = document.querySelector('.container.container-map')
-const $form         = document.querySelector('form')
-const $pokemon      = $form.querySelector('input[name="pokemon"]')
-const $positionX    = $form.querySelector('input[name="positionX"]')
-const $positionY    = $form.querySelector('input[name="positionY"]')
-const $submit       = $form.querySelector('input[type="submit"]')
 if ($containerMap)
 {
     const $top       = $containerMap.querySelector('.top')
@@ -13,7 +8,7 @@ if ($containerMap)
     const $map       = $containerMap.querySelector('.map')
     const $character = $containerMap.querySelector('.character')
     const $sprite    = $character.querySelector('.sprite')
-    const position   = {x: parseInt($positionX.value), y: parseInt($positionY.value)}
+    const position   = {x: 0, y: 300}
     const tileSize   = {x: 0, y: 0}
     const SPAWN_RATE = 0.25
     const MAP_ROW    = 12
@@ -112,13 +107,6 @@ if ($containerMap)
     ]
     let windowWidth  = window.innerWidth
     let windowHeight = window.innerHeight
-    let canSubmit    = false
-    
-    $form.addEventListener('submit', (event) =>
-    {
-        if (!canSubmit)
-            event.preventDefault()
-    })
     
     const setImageSize= (left, top, width, height, transform) =>
     {
@@ -213,11 +201,16 @@ if ($containerMap)
             const isSpawning    = pokemonChance < 0 ? true : false
             if (isSpawning)
             {
-                canSubmit        = true
-                $pokemon.value   = pokemonNumber
-                $positionX.value = position.x
-                $positionY.value = position.y
-                $submit.click()
+                const number = pokemonNumber
+
+                const sendData = () =>
+                {
+                    $.post('./index.php', {number: number}, (response) => 
+                    {
+                        window.location.href = './catch'
+                    })
+                }
+                sendData()          
             }
         }
     }
@@ -283,14 +276,5 @@ if ($containerMap)
         windowWidth  = window.innerWidth
         windowHeight = window.innerHeight
         resizeImage(windowWidth, windowHeight, setOffetset)
-    })
-}
-
-const $return = document.querySelector('.return')
-if ($return)
-{
-    $return.addEventListener('click', () =>
-    {
-        $submit.click()
     })
 }
