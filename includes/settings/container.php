@@ -11,7 +11,7 @@ $container = $app->getContainer();
 // View
 $container['view'] = function()
 {
-    $view = new \Slim\Views\Twig('./includes/views/');
+    $view = new \Slim\Views\Twig('../includes/views/');
     return $view;
 };
 

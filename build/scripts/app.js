@@ -180,7 +180,7 @@ if ($containerMap)
     {
         const xobj = new XMLHttpRequest()
         xobj.overrideMimeType('application/json')
-        xobj.open('GET', './database/pokedex.json', true)
+        xobj.open('GET', '../database/pokedex.json', true)
         xobj.onreadystatechange = () =>
         {
             if (xobj.readyState == 4 && xobj.status == '200')
@@ -205,7 +205,7 @@ if ($containerMap)
 
                 const sendData = () =>
                 {
-                    $.post('./index.php', {number: number}, (response) => 
+                    $.post('./', {number: number}, (response) => 
                     {
                         window.location.href = './catch'
                     })

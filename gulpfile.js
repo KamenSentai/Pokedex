@@ -20,7 +20,7 @@ const gulpUglify       = require('gulp-uglify')
  */
 const path =
 {
-    project : 'works/pokedex/',
+    project : 'works/pokedex/public/',
 
     includes :
     {
@@ -222,7 +222,7 @@ gulp.task('includes', () =>
  */
 gulp.task('index', () =>
 {
-	return gulp.src('./index.php')
+	return gulp.src(`${path.public.root}index.php`)
 		.pipe(gulpPlumber(
 			{
 				errorHandler : gulpNotify.onError(
@@ -232,7 +232,7 @@ gulp.task('index', () =>
 						sound   : 'beep'
 					})
             }))
-        .pipe(gulp.dest('./'))
+        .pipe(gulp.dest(path.public.root))
 		.pipe(gulpNotify(
 			{
 				title   : 'Index',
@@ -270,7 +270,7 @@ gulp.task('watch', () =>
 		.on('change', browserSync.reload)
 
 	// Watch index
-	gulp.watch('./index.php', ['index'])
+	gulp.watch(`${path.public.root}index.php`, ['index'])
 		.on('change', browserSync.reload)
 })
 
