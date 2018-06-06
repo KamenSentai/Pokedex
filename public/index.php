@@ -1,9 +1,7 @@
 <?php
 
-// Autoloaders
+// Autoloader
 require_once '../vendor/autoload.php';
-require_once '../includes/Autoloader.php';
-\Pokedex\Autoloader::register();
 
 // Framework
 $settings  = ['displayErrorDetails' => true];
