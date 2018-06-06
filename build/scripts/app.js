@@ -1,21 +1,23 @@
-const $containerMap = document.querySelector('.container.container-map')
+const $containerMap   = document.querySelector('.container.container-map')
+const $containerCatch = document.querySelector('.container.container-catch')
 if ($containerMap)
 {
-    const $top       = $containerMap.querySelector('.top')
-    const $right     = $containerMap.querySelector('.right')
-    const $bottom    = $containerMap.querySelector('.bottom')
-    const $left      = $containerMap.querySelector('.left')
-    const $map       = $containerMap.querySelector('.map')
-    const $character = $containerMap.querySelector('.character')
-    const $crush     = $containerMap.querySelector('.crush')
-    const $sprite    = $character.querySelector('.sprite')
-    const position   = {x: 0, y: 300}
-    const tileSize   = {x: 0, y: 0}
-    const SPAWN_RATE = 0.125
-    const MAP_ROW    = 12
-    const MAP_COL    = 15
-    const MAP_RATIO  = MAP_COL / MAP_ROW
-    const forbidden  =
+    const $top        = $containerMap.querySelector('.top')
+    const $right      = $containerMap.querySelector('.right')
+    const $bottom     = $containerMap.querySelector('.bottom')
+    const $left       = $containerMap.querySelector('.left')
+    const $map        = $containerMap.querySelector('.map')
+    const $character  = $containerMap.querySelector('.character')
+    const $crush      = $containerMap.querySelector('.crush')
+    const $sprite     = $character.querySelector('.sprite')
+    const $rectangles = $containerMap.querySelector('.rectangles')
+    const position    = {x: parseInt($character.dataset.positionx * 10), y: parseInt($character.dataset.positiony * 10)}
+    const tileSize    = {x: 0, y: 0}
+    const SPAWN_RATE  = 0.125
+    const MAP_ROW     = 12
+    const MAP_COL     = 15
+    const MAP_RATIO   = MAP_COL / MAP_ROW
+    const forbidden   =
     [
         {x: 0, y: 0},
         {x: 0, y: 50},
@@ -140,16 +142,18 @@ if ($containerMap)
         callback()
     }
 
-    const setOffetset = () =>
+    const setStyles = () =>
     {
-        const topOffset   = $map.getBoundingClientRect().top
-        const leftOffset  = $map.getBoundingClientRect().left
-        $top.style.bottom = `${topOffset}px`
-        $right.style.left = `${leftOffset}px`
-        $bottom.style.top = `${topOffset}px`
-        $left.style.right = `${leftOffset}px`
-        tileSize.x = $map.getBoundingClientRect().width  / MAP_COL
-        tileSize.y = $map.getBoundingClientRect().height / MAP_ROW
+        const topOffset    = $map.getBoundingClientRect().top
+        const leftOffset   = $map.getBoundingClientRect().left
+        const widthOffset  = $map.getBoundingClientRect().width
+        const heightOffset = $map.getBoundingClientRect().height
+        $top.style.bottom  = `${topOffset}px`
+        $right.style.left  = `${leftOffset}px`
+        $bottom.style.top  = `${topOffset}px`
+        $left.style.right  = `${leftOffset}px`
+        tileSize.x         = widthOffset  / MAP_COL
+        tileSize.y         = heightOffset / MAP_ROW
         $character.style.left      = `${leftOffset - tileSize.x / 2}px`
         $character.style.top       = `${topOffset}px`
         $character.style.width     = `${tileSize.x * 2}px`
@@ -207,10 +211,14 @@ if ($containerMap)
                 const xhr = new XMLHttpRequest()
                 xhr.open('POST', './')
                 xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
-                xhr.send(encodeURI(`pokemon_number=${pokemonNumber}`))
+                xhr.send(encodeURI(`pokemon_number=${pokemonNumber}&position_x=${position.x / 10}&position_y=${position.y / 10}`))
                 xhr.onload = () =>
                 {
-                    window.location.href = './catch'
+                    $rectangles.classList.add('active')
+                    setTimeout(() =>
+                    {
+                        window.location.href = './catch'
+                    }, 2000)
                 }
             }
         }
@@ -280,13 +288,25 @@ if ($containerMap)
 
     setTimeout(() =>
     {
-        resizeImage(windowWidth, windowHeight, setOffetset)
+        resizeImage(windowWidth, windowHeight, setStyles)
     }, 250)
 
     window.addEventListener('resize', () =>
     {
         windowWidth  = window.innerWidth
         windowHeight = window.innerHeight
-        resizeImage(windowWidth, windowHeight, setOffetset)
+        resizeImage(windowWidth, windowHeight, setStyles)
     })
+}
+else if ($containerCatch)
+{
+    const $rectangles = $containerCatch.querySelector('.rectangles')
+    setTimeout(() =>
+    {
+        $rectangles.classList.remove('active')
+        setTimeout(() =>
+        {
+            $containerCatch.removeChild($rectangles)
+        }, 2000)
+    }, 250)
 }

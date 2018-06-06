@@ -39,3 +39,93 @@
     .sprite
         will-change transform
         z-index 4
+    .rectangles
+        position absolute
+        left 0
+        top 0
+        width 100%
+        height 100%
+        z-index 5
+        .rectangle
+            position absolute
+            background-color #000
+            transition transform linear 0.25s
+            &.left.out,
+            &.right.out
+                width 25%
+                height 100%
+            &.top.out
+                width 50%
+                height 25%
+            &.bottom.out
+                width 100%
+                height 25%
+            &.left.in,
+            &.right.in
+                width 25%
+                height 50%
+            &.bottom.in
+                width 50%
+                height 25%
+            &.left.out
+                left 0
+                top 0
+            &.top.out
+                left 25%
+                top 0
+            &.bottom.out,
+            &.right.out
+                right 0
+                bottom 0
+            &.left.in
+                left 25%
+                top 25%
+            &.bottom.in,
+            &.right.in
+                right 25%
+                bottom 25%
+            &.left.out,
+            &.left.in
+                transform-origin 0 0
+                transform scaleY(0)
+            &.bottom.out,
+            &.bottom.in
+                transform-origin 0 0
+                transform scaleX(0)
+            &.right.out,
+            &.right.in
+                transform-origin 0 100%
+                transform scaleY(0)
+            &.top.out
+                transform-origin 100% 0
+                transform scaleX(0)
+            &.left.out
+                transition-delay 1.5s
+            &.bottom.out
+                transition-delay 1.25s
+            &.right.out
+                transition-delay 1s
+            &.top.out
+                transition-delay 0.75s
+            &.left.in
+                transition-delay 0.5s
+            &.bottom.in
+                transition-delay 0.25s
+            &.right.in
+                transition-delay 0s
+        &.active .rectangle
+            transform none !important
+            &.left.out
+                transition-delay 0s
+            &.bottom.out
+                transition-delay 0.25s
+            &.right.out
+                transition-delay 0.5s
+            &.top.out
+                transition-delay 0.75s
+            &.left.in
+                transition-delay 1s
+            &.bottom.in
+                transition-delay 1.25s
+            &.right.in
+                transition-delay 1.5s

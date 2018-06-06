@@ -5,7 +5,8 @@
     <img class="left"   src="{{ base_url() }}/assets/images/interface/left.png"   alt="Left"   draggable="false">
     <img class="map"    src="{{ base_url() }}/assets/images/interface/map.png"    alt="Map"    draggable="false">
     <img class="crush"  src="{{ base_url() }}/assets/images/interface/crush.png"  alt="Crush"    draggable="false">
-    <div class="character">
+    <div class="character" data-positionx="{{ data.user.position_x }}" data-positiony="{{ data.user.position_y }}">
         <img class="sprite" src="{{ base_url() }}/assets/images/interface/sprite.png" alt="Sprite" draggable="false">
     </div>
+    {{ include('./layouts/rectangles.twig') }}
 </div>

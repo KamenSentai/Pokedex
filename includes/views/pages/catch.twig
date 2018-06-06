@@ -1,5 +1,15 @@
-<h1>{{ data.pokemon.name }}</h1>
-
-<img src="{{ base_url() }}/assets/images/pokemons/{{ data.pokemon.num }}.png" alt="{{ data.pokemon.name }}" draggable="false">
-
-<a href="{{ path_for('home') }}" title="Return">Return</a>
+<div class="container container-catch">
+    <h1>{{ data.pokemon.name }}</h1>
+    <img src="{{ base_url() }}/assets/images/pokemons/{{ data.pokemon.img }}" alt="{{ data.pokemon.name }}" draggable="false">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="{{ path_for('home') }}" title="Return">Return</a>
+    {{ include('./layouts/rectangles.twig', { classRectangles : 'active' }) }}
+</div>

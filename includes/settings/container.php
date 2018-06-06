@@ -45,7 +45,8 @@ $container['getHome'] = function($container)
     // Check registration
     $userIp = $database->getIp();
     $database->setQuery('SELECT * FROM users WHERE ip = "' . $userIp . '"');
-    $database->checkRegistration($database->getPrepareFetch(), $userIp);
+    $user   = $database->getPrepareFetch();
+    $database->checkRegistration($user, $userIp);
 
     $data =
     [
@@ -54,16 +55,24 @@ $container['getHome'] = function($container)
             'page' => 'home',
             'title' => TITLE,
         ],
+        'data' =>
+        [
+            'user' => $user,
+        ],
     ];
     return $data;
 };
 $container['postHome'] = function($container)
 {
-    // Set pokemon that the user meets
+    // Set pokemon that the user meets and update position
     $database      = $container->database;
     $userIp        = $database->getIp();
     $pokemonNumber = $_POST['pokemon_number'];
-    $database->setQuery('UPDATE users SET catching = "' . $pokemonNumber . '" WHERE ip = "' . $userIp . '"');
+    $positionX     = $_POST['position_x'];
+    $positionY     = $_POST['position_y'];
+    $database->setQuery('UPDATE users SET catching   = "' . $pokemonNumber . '" WHERE ip = "' . $userIp . '"');
+    $database->setQuery('UPDATE users SET position_x = "' . $positionX     . '" WHERE ip = "' . $userIp . '"');
+    $database->setQuery('UPDATE users SET position_y = "' . $positionY     . '" WHERE ip = "' . $userIp . '"');
     exit;
 };
 

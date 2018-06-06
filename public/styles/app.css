@@ -279,3 +279,150 @@ html body {
   will-change: transform;
   z-index: 4;
 }
+.container .rectangles {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+.container .rectangles .rectangle {
+  position: absolute;
+  background-color: #000;
+  -webkit-transition: -webkit-transform linear 0.25s;
+  transition: -webkit-transform linear 0.25s;
+  transition: transform linear 0.25s;
+  transition: transform linear 0.25s, -webkit-transform linear 0.25s;
+}
+.container .rectangles .rectangle.left.out,
+.container .rectangles .rectangle.right.out {
+  width: 25%;
+  height: 100%;
+}
+.container .rectangles .rectangle.top.out {
+  width: 50%;
+  height: 25%;
+}
+.container .rectangles .rectangle.bottom.out {
+  width: 100%;
+  height: 25%;
+}
+.container .rectangles .rectangle.left.in,
+.container .rectangles .rectangle.right.in {
+  width: 25%;
+  height: 50%;
+}
+.container .rectangles .rectangle.bottom.in {
+  width: 50%;
+  height: 25%;
+}
+.container .rectangles .rectangle.left.out {
+  left: 0;
+  top: 0;
+}
+.container .rectangles .rectangle.top.out {
+  left: 25%;
+  top: 0;
+}
+.container .rectangles .rectangle.bottom.out,
+.container .rectangles .rectangle.right.out {
+  right: 0;
+  bottom: 0;
+}
+.container .rectangles .rectangle.left.in {
+  left: 25%;
+  top: 25%;
+}
+.container .rectangles .rectangle.bottom.in,
+.container .rectangles .rectangle.right.in {
+  right: 25%;
+  bottom: 25%;
+}
+.container .rectangles .rectangle.left.out,
+.container .rectangles .rectangle.left.in {
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+.container .rectangles .rectangle.bottom.out,
+.container .rectangles .rectangle.bottom.in {
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+}
+.container .rectangles .rectangle.right.out,
+.container .rectangles .rectangle.right.in {
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+.container .rectangles .rectangle.top.out {
+  -webkit-transform-origin: 100% 0;
+          transform-origin: 100% 0;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+}
+.container .rectangles .rectangle.left.out {
+  -webkit-transition-delay: 1.5s;
+          transition-delay: 1.5s;
+}
+.container .rectangles .rectangle.bottom.out {
+  -webkit-transition-delay: 1.25s;
+          transition-delay: 1.25s;
+}
+.container .rectangles .rectangle.right.out {
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+.container .rectangles .rectangle.top.out {
+  -webkit-transition-delay: 0.75s;
+          transition-delay: 0.75s;
+}
+.container .rectangles .rectangle.left.in {
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+.container .rectangles .rectangle.bottom.in {
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+}
+.container .rectangles .rectangle.right.in {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+.container .rectangles.active .rectangle {
+  -webkit-transform: none !important;
+          transform: none !important;
+}
+.container .rectangles.active .rectangle.left.out {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+.container .rectangles.active .rectangle.bottom.out {
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+}
+.container .rectangles.active .rectangle.right.out {
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+.container .rectangles.active .rectangle.top.out {
+  -webkit-transition-delay: 0.75s;
+          transition-delay: 0.75s;
+}
+.container .rectangles.active .rectangle.left.in {
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+.container .rectangles.active .rectangle.bottom.in {
+  -webkit-transition-delay: 1.25s;
+          transition-delay: 1.25s;
+}
+.container .rectangles.active .rectangle.right.in {
+  -webkit-transition-delay: 1.5s;
+          transition-delay: 1.5s;
+}
