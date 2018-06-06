@@ -6,8 +6,4 @@ use \Pokedex\Views       as PV;
 use \Pokedex\Controllers as PC;
 
 // Home
-$app->get('/',  PC\Page::class . ':getHome');
-$app->post('/', PC\Page::class . ':postHome');
-
-// Catch
-$app->get('/catch', PC\Page::class . ':getCatch');
+$app->get('/',  PC\Page::class . ':getHome')->setName('home');

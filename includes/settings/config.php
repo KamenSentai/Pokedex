@@ -1,12 +1,5 @@
 <?php
 
-// URL
-define('HTTP', isset($_SERVER['HTTPS']) ? 'https' : 'http');
-define('HOST', $_SERVER['HTTP_HOST']);
-// define('URI',  $_SERVER['REQUEST_URI']);
-define('URI',  '/works/pokedex/public/');
-define('URL',  HTTP . '://' . HOST . URI);
-
 // Database
 define('DB_HOST', 'localhost');
 define('DB_PORT', '8889');

@@ -28,24 +28,4 @@ class Page
     {
         return $this->container->view->render($response, 'index.twig', $this->container->home);
     }
-
-    /**
-     * @param object $request
-     * @param object $response
-     * @return object $$this->container->view->render()
-     */
-    public function postHome(Request $request, Response $response)
-    {
-        return $this->container->view->render($response, 'index.twig', $this->container->home);
-    }
-
-    /**
-     * @param object $request
-     * @param object $response
-     * @return object $$this->container->view->render()
-     */
-    public function getCatch(Request $request, Response $response)
-    {
-        return $this->container->view->render($response, 'index.twig', $this->container->catch);
-    }
 }
