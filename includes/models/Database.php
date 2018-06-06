@@ -63,18 +63,11 @@ class Database
      * @param array $users
      * @param string $ip
      */
-    public function checkRegistration($users, $ip)
+    public function checkRegistration($user, $ip)
     {
-        $isRegistered = false;
-
-        foreach ($users as $_user)
-            if ($_user->ip === $ip)
-            {
-                $isRegistered = true;
-                break;
-            }
-
-        if (!$isRegistered)
+        if (!$user)
             self::setQuery('INSERT INTO users (ip) VALUES ("' . $ip . '")');
+        else
+            self::setQuery('UPDATE users SET catching = null WHERE ip = "' . $ip . '"');
     }
 }

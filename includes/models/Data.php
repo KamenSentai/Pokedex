@@ -9,11 +9,11 @@ namespace Pokedex\Models;
 class Data
 {
     private $json;
-    public  $content;
+    public  $data;
 
-    public function __construct($data)
+    public function __construct($file)
     {
-        $this->json = file_get_contents('../database/' . $data . '.json');
-        $this->content = json_decode($this->json);
+        $this->json = file_get_contents('../database/' . $file . '.json');
+        $this->data = json_decode($this->json);
     }
 }

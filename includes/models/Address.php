@@ -8,17 +8,10 @@ namespace Pokedex\Models;
  */
 class Address
 {
-    private $ip;
-
-    public function __construct()
-    {
-        $this->ip = self::detectIp();
-    }
-
     /**
      * @return string $ip
      */
-    private function detectIp()
+    private static function detectIp()
     {
         $ip = '';
         if (isset($_SERVER['HTTP_CLIENT_IP']))
@@ -39,10 +32,10 @@ class Address
     }
 
     /**
-     * @return string $this->ip
+     * @return string $ip
      */
-    public function getIp()
+    public static function getIp()
     {
-        return $this->ip;
+        return self::detectIp();
     }
 }

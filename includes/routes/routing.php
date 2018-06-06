@@ -7,3 +7,7 @@ use \Pokedex\Controllers as PC;
 
 // Home
 $app->get('/',  PC\Page::class . ':getHome')->setName('home');
+$app->post('/',  PC\Page::class . ':postHome');
+
+// Catch
+$app->get('/catch',  PC\Page::class . ':getCatch')->setName('catch');

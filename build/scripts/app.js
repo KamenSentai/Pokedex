@@ -107,7 +107,7 @@ if ($containerMap)
     ]
     let windowWidth  = window.innerWidth
     let windowHeight = window.innerHeight
-    
+
     const setImageSize= (left, top, width, height, transform) =>
     {
         $map.style.left      = left
@@ -117,7 +117,7 @@ if ($containerMap)
         $map.style.transform = transform
         $map.style.zIndex    = '2'
     }
-    
+
     const resizeImage = (windowWidth, windowHeight, callback) =>
     {
         if (windowWidth / windowHeight <= MAP_RATIO)
@@ -138,7 +138,7 @@ if ($containerMap)
         }
         callback()
     }
-    
+
     const setOffetset = () =>
     {
         const topOffset   = $map.getBoundingClientRect().top
@@ -157,7 +157,7 @@ if ($containerMap)
         $sprite.style.width        = `300%`
         $sprite.style.height       = `400%`
     }
-    
+
     const allowPosition = (positionX, positionY) =>
     {
         for (const forbiddenPosition of forbidden)
@@ -165,7 +165,7 @@ if ($containerMap)
                 return false
         return true
     }
-    
+
     const stepBush = (positionX, positionY) =>
     {
         for (const bush of bushes)
@@ -175,7 +175,7 @@ if ($containerMap)
             }
         return false
     }
-    
+
     const loadJSON = (callback) =>
     {
         const xobj = new XMLHttpRequest()
@@ -190,7 +190,7 @@ if ($containerMap)
         }
         xobj.send(null)
     }
-    
+
     const loadPokemon = (array) =>
     {
         if (Math.random() - SPAWN_RATE < 0)
@@ -201,11 +201,9 @@ if ($containerMap)
             const isSpawning    = pokemonChance < 0 ? true : false
             if (isSpawning)
             {
-                const number = pokemonNumber
-
                 const sendData = () =>
                 {
-                    $.post('./', {number: number}, (response) => 
+                    $.post('./', {pokemon_number: pokemonNumber}, (response) => 
                     {
                         window.location.href = './catch'
                     })
@@ -214,12 +212,12 @@ if ($containerMap)
             }
         }
     }
-    
+
     loadJSON((response) =>
     {
         const JSON_file     = JSON.parse(response)
         const pokemon_array = JSON_file.pokemon
-    
+
         window.addEventListener('keydown', (event) =>
         {
             switch (event.keyCode)
@@ -264,13 +262,13 @@ if ($containerMap)
             $character.style.transform = `translate(${position.x}%, ${position.y}%)`
         })
     })
-    
+
     resizeImage(windowWidth, windowHeight, setOffetset)
     setTimeout(() =>
     {
         resizeImage(windowWidth, windowHeight, setOffetset)
     }, 250)
-    
+
     window.addEventListener('resize', () =>
     {
         windowWidth  = window.innerWidth

@@ -1,0 +1,5 @@
+<h1>{{ data.pokemon.name }}</h1>
+
+<img src="{{ base_url() }}/assets/images/pokemons/{{ data.pokemon.num }}.png" alt="{{ data.pokemon.name }}" draggable="false">
+
+<a href="{{ path_for('home') }}" title="Return">Return</a>

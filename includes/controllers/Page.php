@@ -22,10 +22,30 @@ class Page
     /**
      * @param object $request
      * @param object $response
-     * @return object $$this->container->view->render()
+     * @return object $this->container->view->render()
      */
     public function getHome(Request $request, Response $response)
     {
-        return $this->container->view->render($response, 'index.twig', $this->container->home);
+        return $this->container->view->render($response, 'index.twig', $this->container->getHome);
+    }
+
+    /**
+     * @param object $request
+     * @param object $response
+     * @return object $this->container->view->render()
+     */
+    public function postHome(Request $request, Response $response)
+    {
+        return $this->container->view->render($response, 'index.twig', $this->container->postHome);
+    }
+
+    /**
+     * @param object $request
+     * @param object $response
+     * @return object $this->container->view->render()
+     */
+    public function getCatch(Request $request, Response $response)
+    {
+        return $this->container->view->render($response, 'index.twig', $this->container->getCatch);
     }
 }
