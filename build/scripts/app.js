@@ -7,10 +7,11 @@ if ($containerMap)
     const $left      = $containerMap.querySelector('.left')
     const $map       = $containerMap.querySelector('.map')
     const $character = $containerMap.querySelector('.character')
+    const $crush     = $containerMap.querySelector('.crush')
     const $sprite    = $character.querySelector('.sprite')
     const position   = {x: 0, y: 300}
     const tileSize   = {x: 0, y: 0}
-    const SPAWN_RATE = 0.25
+    const SPAWN_RATE = 0.125
     const MAP_ROW    = 12
     const MAP_COL    = 15
     const MAP_RATIO  = MAP_COL / MAP_ROW
@@ -107,6 +108,7 @@ if ($containerMap)
     ]
     let windowWidth  = window.innerWidth
     let windowHeight = window.innerHeight
+    let canWalk      = true
 
     const setImageSize= (left, top, width, height, transform) =>
     {
@@ -115,7 +117,6 @@ if ($containerMap)
         $map.style.width     = width
         $map.style.height    = height
         $map.style.transform = transform
-        $map.style.zIndex    = '2'
     }
 
     const resizeImage = (windowWidth, windowHeight, callback) =>
@@ -156,6 +157,10 @@ if ($containerMap)
         $character.style.transform = `translate(${position.x}%, ${position.y}%)`
         $sprite.style.width        = `300%`
         $sprite.style.height       = `400%`
+        $crush.style.left          = `${leftOffset}px`
+        $crush.style.top           = `${topOffset + tileSize.y}px`
+        $crush.style.width         = `${tileSize.x}px`
+        $crush.style.height        = `${tileSize.y}px`
     }
 
     const allowPosition = (positionX, positionY) =>
@@ -170,9 +175,7 @@ if ($containerMap)
     {
         for (const bush of bushes)
             if (bush.x == positionX && bush.y == positionY)
-            {
                 return true
-            }
         return false
     }
 
@@ -184,15 +187,14 @@ if ($containerMap)
         xobj.onreadystatechange = () =>
         {
             if (xobj.readyState == 4 && xobj.status == '200')
-            {
                 callback(xobj.responseText)
-            }
         }
         xobj.send(null)
     }
 
     const loadPokemon = (array) =>
     {
+        $crush.style.opacity = '1'
         if (Math.random() - SPAWN_RATE < 0)
         {
             const pokemonNumber = Math.floor(Math.random() * 151)
@@ -201,11 +203,15 @@ if ($containerMap)
             const isSpawning    = pokemonChance < 0 ? true : false
             if (isSpawning)
             {
+                canWalk = false
                 const xhr = new XMLHttpRequest()
                 xhr.open('POST', './')
                 xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
                 xhr.send(encodeURI(`pokemon_number=${pokemonNumber}`))
-                window.location.href = './catch'      
+                xhr.onload = () =>
+                {
+                    window.location.href = './catch'
+                }
             }
         }
     }
@@ -217,50 +223,61 @@ if ($containerMap)
 
         window.addEventListener('keydown', (event) =>
         {
-            switch (event.keyCode)
+            if (canWalk)
             {
-                case 37:
-                    if (allowPosition(Math.max(0, position.x - 50), position.y))
-                    {
-                        position.x = Math.max(0, position.x - 50)
-                        if (stepBush(position.x, position.y))
-                            loadPokemon(pokemon_array)
-                    }
-                    $sprite.style.transform = `translate(0%, -25%)`
-                    break
-                case 39:
-                    if (allowPosition(Math.min((MAP_COL - 1) * 50, position.x + 50), position.y))
-                    {
-                        position.x = Math.min((MAP_COL - 1) * 50, position.x + 50)
-                        if (stepBush(position.x, position.y))
-                            loadPokemon(pokemon_array)
-                    }
+                switch (event.keyCode)
+                {
+                    case 37:
+                        if (allowPosition(Math.max(0, position.x - 50), position.y))
+                        {
+                            position.x = Math.max(0, position.x - 50)
+                            if (stepBush(position.x, position.y))
+                                loadPokemon(pokemon_array)
+                            else
+                                $crush.style.opacity = '0'
+                        }
+                        $sprite.style.transform = `translate(0%, -25%)`
+                        break
+                    case 39:
+                        if (allowPosition(Math.min((MAP_COL - 1) * 50, position.x + 50), position.y))
+                        {
+                            position.x = Math.min((MAP_COL - 1) * 50, position.x + 50)
+                            if (stepBush(position.x, position.y))
+                                loadPokemon(pokemon_array)
+                            else
+                                $crush.style.opacity = '0'
+                        }
                         $sprite.style.transform = `translate(0%, -75%)`
-                    break
-                case 38:
-                    if (allowPosition(position.x, Math.max(0, position.y - 50)))
-                    {
-                        position.y = Math.max(0, position.y - 50)
-                        if (stepBush(position.x, position.y))
-                            loadPokemon(pokemon_array)
-                    }
-                    $sprite.style.transform = `translate(0%, -50%)`
-                    break
-                case 40:
-                    if (allowPosition(position.x, Math.min((MAP_ROW - 3) * 50, position.y + 50)))
-                    {
-                        position.y = Math.min((MAP_ROW - 3) * 50, position.y + 50)
-                        if (stepBush(position.x, position.y))
-                            loadPokemon(pokemon_array)
-                    }
-                    $sprite.style.transform = `translate(0%, 0)`
-                    break
+                        break
+                    case 38:
+                        if (allowPosition(position.x, Math.max(0, position.y - 50)))
+                        {
+                            position.y = Math.max(0, position.y - 50)
+                            if (stepBush(position.x, position.y))
+                                loadPokemon(pokemon_array)
+                            else
+                                $crush.style.opacity = '0'
+                        }
+                        $sprite.style.transform = `translate(0%, -50%)`
+                        break
+                    case 40:
+                        if (allowPosition(position.x, Math.min((MAP_ROW - 3) * 50, position.y + 50)))
+                        {
+                            position.y = Math.min((MAP_ROW - 3) * 50, position.y + 50)
+                            if (stepBush(position.x, position.y))
+                                loadPokemon(pokemon_array)
+                            else
+                                $crush.style.opacity = '0'
+                        }
+                        $sprite.style.transform = `translate(0%, 0)`
+                        break
+                }
+                $character.style.transform = `translate(${position.x}%, ${position.y}%)`
+                $crush.style.transform     = `translate(${position.x * 2}%, ${position.y * 2}%)`
             }
-            $character.style.transform = `translate(${position.x}%, ${position.y}%)`
         })
     })
 
-    resizeImage(windowWidth, windowHeight, setOffetset)
     setTimeout(() =>
     {
         resizeImage(windowWidth, windowHeight, setOffetset)

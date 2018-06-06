@@ -254,6 +254,22 @@ html body {
 .container img.bottom {
   left: 0;
 }
+.container img.map {
+  left: 50%;
+  top: 0;
+  width: auto;
+  height: 100%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 2;
+}
+.container img.crush {
+  left: 0;
+  top: 0;
+  opacity: 0;
+  will-change: transform, opacity;
+  z-index: 3;
+}
 .container .character {
   position: absolute;
   overflow: hidden;
@@ -261,5 +277,5 @@ html body {
 .container .character,
 .container .sprite {
   will-change: transform;
-  z-index: 3;
+  z-index: 4;
 }
