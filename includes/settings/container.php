@@ -20,7 +20,7 @@ $container['view'] = function($container)
     return $view;
 };
 
-// PDO
+// Database
 $container['database'] = function($container)
 {
     // Connect to database

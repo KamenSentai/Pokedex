@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Pokemon_GB;
+  font-style: normal;
+  src: url("../assets/fonts/Pokemon_GB.ttf");
+}
 html,
 body,
 div,
@@ -270,6 +275,39 @@ html body {
   will-change: transform, opacity;
   z-index: 3;
 }
+.container img.pokemon.unknown {
+  -webkit-filter: brightness(0);
+          filter: brightness(0);
+}
+.container img.appearance {
+  right: 0;
+  bottom: 50%;
+  width: 25%;
+  height: auto;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+.container img.illustration {
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  height: auto;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+.container img.appearance,
+.container img.illustration {
+  -webkit-transition: -webkit-transform 1s ease-out;
+  transition: -webkit-transform 1s ease-out;
+  transition: transform 1s ease-out;
+  transition: transform 1s ease-out, -webkit-transform 1s ease-out;
+  will-change: transform;
+}
+.container img.appearance.active,
+.container img.illustration.active {
+  -webkit-transform: none;
+          transform: none;
+}
 .container .character {
   position: absolute;
   overflow: hidden;
@@ -425,4 +463,38 @@ html body {
 .container .rectangles.active .rectangle.right.in {
   -webkit-transition-delay: 1.5s;
           transition-delay: 1.5s;
+}
+.container.container-catch {
+  background: url("../assets/images/map/background.png") no-repeat center center fixed;
+  background-size: cover;
+}
+.container.container-catch h1 {
+  display: inline-block;
+  position: absolute;
+  left: 1em;
+  top: 1em;
+  padding: 2.5em;
+  background-color: #fff;
+  color: #000;
+  font-family: Pokemon_GB;
+  border: 0.25em solid #000;
+  -webkit-box-shadow: 0.5em 0.5em 1em rgba(0,0,0,0.25);
+          box-shadow: 0.5em 0.5em 1em rgba(0,0,0,0.25);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 1s ease-out;
+  transition: -webkit-transform 1s ease-out;
+  transition: transform 1s ease-out;
+  transition: transform 1s ease-out, -webkit-transform 1s ease-out;
+  will-change: transform;
+}
+.container.container-catch h1.active {
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+  -webkit-transform: none;
+          transform: none;
 }

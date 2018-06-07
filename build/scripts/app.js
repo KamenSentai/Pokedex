@@ -300,10 +300,19 @@ if ($containerMap)
 }
 else if ($containerCatch)
 {
-    const $rectangles = $containerCatch.querySelector('.rectangles')
+    const $rectangles   = $containerCatch.querySelector('.rectangles')
+    const $title        = $containerCatch.querySelector('h1')
+    const $appearance   = $containerCatch.querySelector('.appearance')
+    const $illustration = $containerCatch.querySelector('.illustration')
     setTimeout(() =>
     {
         $rectangles.classList.remove('active')
+        setTimeout(() =>
+        {
+            $title.classList.add('active')
+            $appearance.classList.add('active')
+            $illustration.classList.add('active')
+        }, 1000)
         setTimeout(() =>
         {
             $containerCatch.removeChild($rectangles)
