@@ -23,6 +23,7 @@ if ($containerMap)
     const $character  = $containerMap.querySelector('.character')
     const $crush      = $containerMap.querySelector('.crush')
     const $sprite     = $character.querySelector('.sprite')
+    const $pokedex    = $containerMap.querySelector('.pokedex')
     const $rectangles = $containerMap.querySelector('.rectangles')
     const position    = {x: parseInt($character.dataset.positionx * 10), y: parseInt($character.dataset.positiony * 10)}
     const tileSize    = {x: 0, y: 0}
@@ -178,6 +179,7 @@ if ($containerMap)
         $crush.style.top           = `${topOffset + tileSize.y}px`
         $crush.style.width         = `${tileSize.x}px`
         $crush.style.height        = `${tileSize.y}px`
+        $pokedex.style.bottom      = `${tileSize.y}px`
     }
 
     const allowPosition = (positionX, positionY) =>

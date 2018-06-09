@@ -29,6 +29,15 @@
             opacity 0
             will-change transform, opacity
             z-index 3
+        &.pokedex
+            left 0
+            width 25%
+            height auto
+            transform translateY(100%)
+            composite(transform, 0.5s, ease-out)
+            z-index 4
+            &:hover
+                transform translateY(50%)
         &.pokemon.unknown
             filter brightness(0)
         &.appearance
@@ -81,7 +90,7 @@
         left 0
         top 0
         full-size()
-        z-index 5
+        z-index 0
         .rectangle
             position absolute
             background-color #000
@@ -144,22 +153,24 @@
                 transition-delay 0.25s
             &.right.in
                 transition-delay 0s
-        &.active .rectangle
-            transform none !important
-            &.left.out
-                transition-delay 0s
-            &.bottom.out
-                transition-delay 0.25s
-            &.right.out
-                transition-delay 0.5s
-            &.top.out
-                transition-delay 0.75s
-            &.left.in
-                transition-delay 1s
-            &.bottom.in
-                transition-delay 1.25s
-            &.right.in
-                transition-delay 1.5s
+        &.active
+            z-index 5
+            .rectangle
+                transform none !important
+                &.left.out
+                    transition-delay 0s
+                &.bottom.out
+                    transition-delay 0.25s
+                &.right.out
+                    transition-delay 0.5s
+                &.top.out
+                    transition-delay 0.75s
+                &.left.in
+                    transition-delay 1s
+                &.bottom.in
+                    transition-delay 1.25s
+                &.right.in
+                    transition-delay 1.5s
     &.container-catch
         background url(../assets/images/map/background.png) no-repeat center center fixed
         background-size cover

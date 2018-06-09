@@ -8,5 +8,8 @@
     <div class="character" data-positionx="{{ data.user.position_x }}" data-positiony="{{ data.user.position_y }}">
         <img class="sprite" src="{{ base_url() }}/assets/images/player/sprite.png" alt="Sprite" draggable="false">
     </div>
+    <a class="button button-pokedex" href="{{ path_for('pokedex') }}" title="Pokedex">
+        <img class="pokedex" src="{{ base_url() }}/assets/images/player/pokedex.png" alt="Pokedex" draggable="false">
+    </a>
     {{ include('./layouts/rectangles.twig') }}
 </div>

@@ -130,3 +130,17 @@ $container['getCatch'] = function($container)
         exit;
     }
 };
+
+// Pokedex
+$container['getPokedex'] = function($container)
+{
+    $data =
+    [
+        'base' =>
+        [
+            'page' => 'pokedex',
+            'title' => TITLE . ' | Pokedex',
+        ],
+    ];
+    return $data;
+};

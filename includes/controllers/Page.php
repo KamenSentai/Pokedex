@@ -48,4 +48,14 @@ class Page
     {
         return $this->container->view->render($response, 'index.twig', $this->container->getCatch);
     }
+
+    /**
+     * @param object $request
+     * @param object $response
+     * @return object $this->container->view->render()
+     */
+    public function getPokedex(Request $request, Response $response)
+    {
+        return $this->container->view->render($response, 'index.twig', $this->container->getPokedex);
+    }
 }
