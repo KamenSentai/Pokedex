@@ -1,8 +1,13 @@
 <div class="container container-catch">
-    <h1>A wild {{ data.pokemon.name }} appears !</h1>
-    <div class="minigame">
-        <img class="appearance" src="{{ base_url() }}/assets/images/pokemons/{{ data.pokemon.img }}" alt="{{ data.pokemon.name }}" draggable="false">
-        <img class="illustration" src="{{ base_url() }}/assets/images/player/illustration.png" alt="Illustration" draggable="false">
-    </div>
+    <h1>
+        <span class="appears" >A wild {{ data.pokemon.name }} appears !</span>
+        <span class="caught"  >You caught {{ data.pokemon.name }} !</span>
+        <span class="escaped">{{ data.pokemon.name }} runs away !</span>
+    </h1>
+    <img class="appearance"   src="{{ base_url() }}/assets/images/pokemons/{{ data.pokemon.img }}" alt="{{ data.pokemon.name }}" draggable="false">
+    <img class="illustration" src="{{ base_url() }}/assets/images/player/illustration.png"         alt="Illustration"            draggable="false">
+    <a class="button" href="{{ path_for('home') }}" title="Catch">
+        <img class="tool" src="{{ base_url() }}/assets/images/player/pokeball.png" alt="Tool" draggable="false">
+    </a>
     {{ include('./layouts/rectangles.twig', { classRectangles: 'active' }) }}
 </div>

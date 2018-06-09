@@ -64,15 +64,33 @@ $container['getHome'] = function($container)
 };
 $container['postHome'] = function($container)
 {
-    // Set pokemon that the user meets and update position
-    $database      = $container->database;
-    $userIp        = $database->getIp();
-    $pokemonNumber = $_POST['pokemon_number'];
-    $positionX     = $_POST['position_x'];
-    $positionY     = $_POST['position_y'];
-    $database->setQuery('UPDATE users SET catching   = "' . $pokemonNumber . '" WHERE ip = "' . $userIp . '"');
-    $database->setQuery('UPDATE users SET position_x = "' . $positionX     . '" WHERE ip = "' . $userIp . '"');
-    $database->setQuery('UPDATE users SET position_y = "' . $positionY     . '" WHERE ip = "' . $userIp . '"');
+    if (isset($_POST['action']))
+    {
+        $database     = $container->database;
+        $pokemonIndex = $_POST['pokemon_index'];
+        if ($_POST['action'] === 'catch')
+        {
+            // Set pokemon that the user meets and update position
+            $userIp    = $database->getIp();
+            $positionX = $_POST['position_x'];
+            $positionY = $_POST['position_y'];
+            $database->setQuery('UPDATE users SET catching   = "' . $pokemonIndex . '" WHERE ip = "' . $userIp . '"');
+            $database->setQuery('UPDATE users SET position_x = "' . $positionX    . '" WHERE ip = "' . $userIp . '"');
+            $database->setQuery('UPDATE users SET position_y = "' . $positionY    . '" WHERE ip = "' . $userIp . '"');
+        }
+        elseif ($_POST['action'] === 'caught')
+        {
+            // Add pokemon to user pokedex
+            $userId = $database->getId();
+            $database->setQuery('SELECT * FROM capture WHERE pokemon_id = "' . $pokemonIndex .'" AND user_id = "' . $userId . '"');
+            $pokemons = $database->getPrepareFetch();
+            if (!$pokemons)
+                $database->setQuery('INSERT INTO capture (pokemon_id, user_id) VALUES ("' . $pokemonIndex . '", "' . $userId .'")');
+            else
+                $database->setQuery('UPDATE capture SET number = ' . ($pokemons->number + 1) . ' WHERE id = ' . $pokemons->id);
+        }
+    }
+
     exit;
 };
 

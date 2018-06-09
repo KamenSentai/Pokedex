@@ -1,6 +1,11 @@
 html
     full-size()
+    background-color #000
     body
         position relative
         full-size()
         overflow hidden
+        opacity 1
+        composite(opacity, 1s, ease-out)
+        &.fade
+            opacity 0

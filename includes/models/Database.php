@@ -10,6 +10,7 @@ class Database
 {
     private $pdo;
     private $ip;
+    private $id;
     private $prepare;
 
     public function __construct($pdo, $ip)
@@ -57,6 +58,16 @@ class Database
     public function getIp()
     {
         return $this->ip;
+    }
+
+    /**
+     * @return string $this->id
+     */
+    public function getId()
+    {
+        self::setQuery('SELECT * FROM users WHERE ip = "' . $this->ip . '"');
+        $this->id = self::getPrepareFetch()->id;
+        return $this->id;
     }
 
     /**

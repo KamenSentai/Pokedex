@@ -3,6 +3,74 @@
   font-style: normal;
   src: url("../assets/fonts/Pokemon_GB.ttf");
 }
+@-webkit-keyframes throw {
+  0% {
+    -webkit-transform: translate(50%, 50%);
+            transform: translate(50%, 50%);
+  }
+  15.625% {
+    -webkit-transform: translate(50%, calc(50% - 75vh)) scale(0.5);
+            transform: translate(50%, calc(50% - 75vh)) scale(0.5);
+  }
+  25% {
+    -webkit-transform: translate(50%, calc(50% - 50vh)) scale(0.25);
+            transform: translate(50%, calc(50% - 50vh)) scale(0.25);
+  }
+  46.875% {
+    -webkit-transform: translate(50%, calc(50% - 50vh)) scale(0.25);
+            transform: translate(50%, calc(50% - 50vh)) scale(0.25);
+  }
+  59.375% {
+    -webkit-transform: translate(50%, calc(50% - 37.5vh)) scale(0.25);
+            transform: translate(50%, calc(50% - 37.5vh)) scale(0.25);
+  }
+  68.75% {
+    -webkit-transform: translate(50%, calc(50% - 40.625vh)) scale(0.25);
+            transform: translate(50%, calc(50% - 40.625vh)) scale(0.25);
+  }
+  78.125% {
+    -webkit-transform: translate(50%, calc(50% - 37.5vh)) scale(0.25);
+            transform: translate(50%, calc(50% - 37.5vh)) scale(0.25);
+  }
+  100% {
+    -webkit-transform: translate(50%, calc(50% - 37.5vh)) scale(0.25);
+            transform: translate(50%, calc(50% - 37.5vh)) scale(0.25);
+  }
+}
+@keyframes throw {
+  0% {
+    -webkit-transform: translate(50%, 50%);
+            transform: translate(50%, 50%);
+  }
+  15.625% {
+    -webkit-transform: translate(50%, calc(50% - 75vh)) scale(0.5);
+            transform: translate(50%, calc(50% - 75vh)) scale(0.5);
+  }
+  25% {
+    -webkit-transform: translate(50%, calc(50% - 50vh)) scale(0.25);
+            transform: translate(50%, calc(50% - 50vh)) scale(0.25);
+  }
+  46.875% {
+    -webkit-transform: translate(50%, calc(50% - 50vh)) scale(0.25);
+            transform: translate(50%, calc(50% - 50vh)) scale(0.25);
+  }
+  59.375% {
+    -webkit-transform: translate(50%, calc(50% - 37.5vh)) scale(0.25);
+            transform: translate(50%, calc(50% - 37.5vh)) scale(0.25);
+  }
+  68.75% {
+    -webkit-transform: translate(50%, calc(50% - 40.625vh)) scale(0.25);
+            transform: translate(50%, calc(50% - 40.625vh)) scale(0.25);
+  }
+  78.125% {
+    -webkit-transform: translate(50%, calc(50% - 37.5vh)) scale(0.25);
+            transform: translate(50%, calc(50% - 37.5vh)) scale(0.25);
+  }
+  100% {
+    -webkit-transform: translate(50%, calc(50% - 37.5vh)) scale(0.25);
+            transform: translate(50%, calc(50% - 37.5vh)) scale(0.25);
+  }
+}
 html,
 body,
 div,
@@ -222,12 +290,20 @@ a {
 html {
   width: 100%;
   height: 100%;
+  background-color: #000;
 }
 html body {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
+  opacity: 1;
+  -webkit-transition: opacity 1s ease-out;
+  transition: opacity 1s ease-out;
+  will-change: opacity;
+}
+html body.fade {
+  opacity: 0;
 }
 .container {
   position: absolute;
@@ -286,6 +362,32 @@ html body {
   height: auto;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
+  -webkit-transition: -webkit-transform 1s ease-out;
+  transition: -webkit-transform 1s ease-out;
+  transition: transform 1s ease-out;
+  transition: transform 1s ease-out, -webkit-transform 1s ease-out;
+  will-change: opacity, transform;
+}
+.container img.appearance.active {
+  -webkit-transition: opacity 1s ease-out, -webkit-transform 1s ease-out, -webkit-filter 1s ease-out 1s;
+  transition: opacity 1s ease-out, -webkit-transform 1s ease-out, -webkit-filter 1s ease-out 1s;
+  transition: transform 1s ease-out, opacity 1s ease-out, filter 1s ease-out 1s;
+  transition: transform 1s ease-out, opacity 1s ease-out, filter 1s ease-out 1s, -webkit-transform 1s ease-out, -webkit-filter 1s ease-out 1s;
+  -webkit-filter: none;
+          filter: none;
+}
+.container img.appearance.active.caught {
+  -webkit-filter: brightness(0) invert(1) blur(0.5em);
+          filter: brightness(0) invert(1) blur(0.5em);
+  opacity: 0;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: opacity 1s ease-out 1s, -webkit-transform 1s ease-out 1s, -webkit-filter 1s ease-out;
+  transition: opacity 1s ease-out 1s, -webkit-transform 1s ease-out 1s, -webkit-filter 1s ease-out;
+  transition: transform 1s ease-out 1s, opacity 1s ease-out 1s, filter 1s ease-out;
+  transition: transform 1s ease-out 1s, opacity 1s ease-out 1s, filter 1s ease-out, -webkit-transform 1s ease-out 1s, -webkit-filter 1s ease-out;
 }
 .container img.illustration {
   left: 0;
@@ -294,9 +396,6 @@ html body {
   height: auto;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
-}
-.container img.appearance,
-.container img.illustration {
   -webkit-transition: -webkit-transform 1s ease-out;
   transition: -webkit-transform 1s ease-out;
   transition: transform 1s ease-out;
@@ -307,6 +406,31 @@ html body {
 .container img.illustration.active {
   -webkit-transform: none;
           transform: none;
+}
+.container img.tool {
+  right: 12.5%;
+  bottom: 25%;
+  width: 6.25%;
+  height: auto;
+  -webkit-transform: translate(50%, calc(50% + 50vh));
+          transform: translate(50%, calc(50% + 50vh));
+  -webkit-transition: -webkit-transform 1s ease-out;
+  transition: -webkit-transform 1s ease-out;
+  transition: transform 1s ease-out;
+  transition: transform 1s ease-out, -webkit-transform 1s ease-out;
+  will-change: transform;
+}
+.container img.tool.active {
+  -webkit-transform: translate(50%, 50%);
+          transform: translate(50%, 50%);
+}
+.container img.tool.active:hover {
+  -webkit-transform: translate(50%, calc(50% + 1em));
+          transform: translate(50%, calc(50% + 1em));
+}
+.container img.tool.thrown {
+  -webkit-animation: throw 5s ease-in-out forwards;
+          animation: throw 5s ease-in-out forwards;
 }
 .container .character {
   position: absolute;
@@ -497,4 +621,8 @@ html body {
           transition-delay: 0.5s;
   -webkit-transform: none;
           transform: none;
+}
+.container.container-catch h1 span.caught,
+.container.container-catch h1 span.escaped {
+  display: none;
 }

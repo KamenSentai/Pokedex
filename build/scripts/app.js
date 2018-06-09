@@ -1,3 +1,16 @@
+const loadJSON = (file, callback) =>
+{
+    const xobj = new XMLHttpRequest()
+    xobj.overrideMimeType('application/json')
+    xobj.open('GET', `../database/${file}.json`, true)
+    xobj.onreadystatechange = () =>
+    {
+        if (xobj.readyState == 4 && xobj.status == '200')
+            callback(xobj.responseText)
+    }
+    xobj.send(null)
+}
+
 const $containerMap   = document.querySelector('.container.container-map')
 const $containerCatch = document.querySelector('.container.container-catch')
 if ($containerMap)
@@ -13,7 +26,7 @@ if ($containerMap)
     const $rectangles = $containerMap.querySelector('.rectangles')
     const position    = {x: parseInt($character.dataset.positionx * 10), y: parseInt($character.dataset.positiony * 10)}
     const tileSize    = {x: 0, y: 0}
-    const SPAWN_RATE  = 0.125
+    const SPAW_RATE   = 25
     const MAP_ROW     = 12
     const MAP_COL     = 15
     const MAP_RATIO   = MAP_COL / MAP_ROW
@@ -183,51 +196,35 @@ if ($containerMap)
         return false
     }
 
-    const loadJSON = (callback) =>
-    {
-        const xobj = new XMLHttpRequest()
-        xobj.overrideMimeType('application/json')
-        xobj.open('GET', '../database/pokedex.json', true)
-        xobj.onreadystatechange = () =>
-        {
-            if (xobj.readyState == 4 && xobj.status == '200')
-                callback(xobj.responseText)
-        }
-        xobj.send(null)
-    }
-
     const loadPokemon = (array) =>
     {
         $crush.style.opacity = '1'
-        if (Math.random() - SPAWN_RATE < 0)
+        const pokemonIndex  = Math.floor(Math.random() * 151)
+        const pokemonSpawn  = array[pokemonIndex].spawn_chance
+        const pokemonChance = Math.random() * SPAW_RATE - pokemonSpawn
+        const isSpawned     = pokemonChance < 0 ? true : false
+        if (isSpawned)
         {
-            const pokemonNumber = Math.floor(Math.random() * 151)
-            const pokemonSpawn  = array[pokemonNumber].spawn_chance
-            const pokemonChance = Math.random() - pokemonSpawn
-            const isSpawning    = pokemonChance < 0 ? true : false
-            if (isSpawning)
+            canWalk = false
+            const xhr = new XMLHttpRequest()
+            xhr.open('POST', './')
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+            xhr.send(encodeURI(`action=catch&pokemon_index=${pokemonIndex}&position_x=${position.x / 10}&position_y=${position.y / 10}`))
+            xhr.onload = () =>
             {
-                canWalk = false
-                const xhr = new XMLHttpRequest()
-                xhr.open('POST', './')
-                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
-                xhr.send(encodeURI(`pokemon_number=${pokemonNumber}&position_x=${position.x / 10}&position_y=${position.y / 10}`))
-                xhr.onload = () =>
+                $rectangles.classList.add('active')
+                setTimeout(() =>
                 {
-                    $rectangles.classList.add('active')
-                    setTimeout(() =>
-                    {
-                        window.location.href = './catch'
-                    }, 2000)
-                }
+                    window.location.href = './catch'
+                }, 2000)
             }
         }
     }
 
-    loadJSON((response) =>
+    loadJSON('pokedex', (response) =>
     {
-        const JSON_file     = JSON.parse(response)
-        const pokemon_array = JSON_file.pokemon
+        const JSON_file = JSON.parse(response)
+        const pokemons  = JSON_file.pokemon
 
         window.addEventListener('keydown', (event) =>
         {
@@ -240,7 +237,7 @@ if ($containerMap)
                         {
                             position.x = Math.max(0, position.x - 50)
                             if (stepBush(position.x, position.y))
-                                loadPokemon(pokemon_array)
+                                loadPokemon(pokemons)
                             else
                                 $crush.style.opacity = '0'
                         }
@@ -251,7 +248,7 @@ if ($containerMap)
                         {
                             position.x = Math.min((MAP_COL - 1) * 50, position.x + 50)
                             if (stepBush(position.x, position.y))
-                                loadPokemon(pokemon_array)
+                                loadPokemon(pokemons)
                             else
                                 $crush.style.opacity = '0'
                         }
@@ -262,7 +259,7 @@ if ($containerMap)
                         {
                             position.y = Math.max(0, position.y - 50)
                             if (stepBush(position.x, position.y))
-                                loadPokemon(pokemon_array)
+                                loadPokemon(pokemons)
                             else
                                 $crush.style.opacity = '0'
                         }
@@ -273,7 +270,7 @@ if ($containerMap)
                         {
                             position.y = Math.min((MAP_ROW - 3) * 50, position.y + 50)
                             if (stepBush(position.x, position.y))
-                                loadPokemon(pokemon_array)
+                                loadPokemon(pokemons)
                             else
                                 $crush.style.opacity = '0'
                         }
@@ -289,6 +286,7 @@ if ($containerMap)
     setTimeout(() =>
     {
         resizeImage(windowWidth, windowHeight, setStyles)
+        document.body.classList.remove('fade')
     }, 250)
 
     window.addEventListener('resize', () =>
@@ -302,20 +300,89 @@ else if ($containerCatch)
 {
     const $rectangles   = $containerCatch.querySelector('.rectangles')
     const $title        = $containerCatch.querySelector('h1')
+    const $appears      = $title.querySelector('.appears')
+    const $caught       = $title.querySelector('.caught')
+    const $escaped      = $title.querySelector('.escaped')
     const $appearance   = $containerCatch.querySelector('.appearance')
     const $illustration = $containerCatch.querySelector('.illustration')
-    setTimeout(() =>
+    const $button       = $containerCatch.querySelector('.button')
+    const $tool         = $button.querySelector('.tool')
+    const CATCH_RATE    = 75
+
+    loadJSON('pokedex', (response) =>
     {
-        $rectangles.classList.remove('active')
+        const JSON_file    = JSON.parse(response)
+        const pokemons     = JSON_file.pokemon
+        const pokemonName  = $appearance.getAttribute('alt')
+        const pokemon      = pokemons.find(pokemon => pokemon.name == pokemonName)
+        const pokemonIndex = pokemons.indexOf(pokemon)
+        const pokemonCatch = pokemon.catch_chance
+
         setTimeout(() =>
         {
-            $title.classList.add('active')
-            $appearance.classList.add('active')
-            $illustration.classList.add('active')
-        }, 1000)
-        setTimeout(() =>
-        {
-            $containerCatch.removeChild($rectangles)
-        }, 2000)
-    }, 250)
+            $rectangles.classList.remove('active')
+            setTimeout(() =>
+            {
+                $title.classList.add('active')
+                $appearance.classList.add('active')
+                $illustration.classList.add('active')
+                setTimeout(() =>
+                {
+                    $tool.classList.add('active')
+                    $containerCatch.removeChild($rectangles)
+                    $button.addEventListener('click', (event) =>
+                    {
+                        event.preventDefault()
+                        $tool.classList.add('thrown')
+                        setTimeout(() => 
+                        {
+                            $appearance.classList.add('caught')
+                            setTimeout(() =>
+                            {
+                                $appears.style.display = 'none'
+                                const pokemonChance = Math.random() * CATCH_RATE - pokemonCatch
+                                const isCaught      = pokemonChance < 0 ? true : false
+                                if (isCaught)
+                                {
+                                    $caught.style.display = 'block'
+                                    const xhr = new XMLHttpRequest()
+                                    xhr.open('POST', './')
+                                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+                                    xhr.send(encodeURI(`action=caught&pokemon_index=${pokemonIndex}`))
+                                    xhr.onload = () =>
+                                    {
+                                        setTimeout(() =>
+                                        {
+                                            document.body.classList.add('fade')
+                                            setTimeout(() =>
+                                            {
+                                                window.location.href = './'
+                                            }, 1250)
+                                        }, 1250)
+                                    }
+                                }
+                                else
+                                {
+                                    $escaped.style.display = 'block'
+                                    $appearance.classList.remove('caught')
+                                    setTimeout(() =>
+                                    {
+                                        $appearance.classList.remove('active')
+                                        setTimeout(() =>
+                                        {
+                                            document.body.classList.add('fade')
+                                            setTimeout(() =>
+                                            {
+                                                window.location.href = './'
+                                            }, 1250)
+                                        }, 1250)
+                                    }, 2000)
+                                }
+                            }, 5000)
+                        }, 1250)
+                    })
+                }, 1000)
+            }, 1000)
+        }, 250)
+    })
 }
