@@ -48,11 +48,11 @@ $container['getHome'] = function($container)
     $user   = $database->getPrepareFetch();
     $database->checkRegistration($user, $userIp);
 
-    $data =
+    $dataView =
     [
         'base' =>
         [
-            'page' => 'home',
+            'page'  => 'home',
             'title' => TITLE,
         ],
         'data' =>
@@ -60,7 +60,7 @@ $container['getHome'] = function($container)
             'user' => $user,
         ],
     ];
-    return $data;
+    return $dataView;
 };
 $container['postHome'] = function($container)
 {
@@ -83,14 +83,13 @@ $container['postHome'] = function($container)
             // Add pokemon to user pokedex
             $userId = $database->getId();
             $database->setQuery('SELECT * FROM capture WHERE pokemon_id = "' . $pokemonIndex .'" AND user_id = "' . $userId . '"');
-            $pokemons = $database->getPrepareFetch();
-            if (!$pokemons)
+            $owned = $database->getPrepareFetch();
+            if (!$owned)
                 $database->setQuery('INSERT INTO capture (pokemon_id, user_id) VALUES ("' . $pokemonIndex . '", "' . $userId .'")');
             else
-                $database->setQuery('UPDATE capture SET number = ' . ($pokemons->number + 1) . ' WHERE id = ' . $pokemons->id);
+                $database->setQuery('UPDATE capture SET number = ' . ($owned->number + 1) . ' WHERE id = ' . $owned->id);
         }
     }
-
     exit;
 };
 
@@ -110,11 +109,11 @@ $container['getCatch'] = function($container)
         $data    = new PM\Data('pokedex');
         $pokemon = $data->data->pokemon[$user->catching];
 
-        $data =
+        $dataView =
         [
             'base' =>
             [
-                'page' => 'catch',
+                'page'  => 'catch',
                 'title' => TITLE . ' | Catch ' . $pokemon->name . ' !',
             ],
             'data' =>
@@ -122,7 +121,7 @@ $container['getCatch'] = function($container)
                 'pokemon' => $pokemon
             ],
         ];
-        return $data;
+        return $dataView;
     }
     else
     {
@@ -134,13 +133,34 @@ $container['getCatch'] = function($container)
 // Pokedex
 $container['getPokedex'] = function($container)
 {
-    $data =
+    // Get all pokemons
+    $data     = new PM\Data('pokedex');
+    $pokemons = $data->data->pokemon;
+
+    // Get pokemons owned
+    $database = $container->database;
+    $userId   = $database->getId();
+    $database->setQuery('SELECT * FROM capture WHERE user_id = "' . $userId . '"');
+    $owned    = $database->getPrepareFetchAll();
+
+    // Check which pokemons are owned
+    foreach ($owned as $_owned)
+    {
+        $pokemons[$_owned->pokemon_id]->is_owned     = true;
+        $pokemons[$_owned->pokemon_id]->number_owned = $_owned->number;
+    }
+
+    $dataView =
     [
         'base' =>
         [
-            'page' => 'pokedex',
+            'page'  => 'pokedex',
             'title' => TITLE . ' | Pokedex',
         ],
+        'data' =>
+        [
+            'pokemons' => $pokemons,
+        ],
     ];
-    return $data;
+    return $dataView;
 };

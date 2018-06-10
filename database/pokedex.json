@@ -790,7 +790,7 @@
         {
             "id": 29,
             "num": "029",
-            "name": "Nidoran ♀ (Female)",
+            "name": "Nidoran ♀",
             "img": "029.png",
             "type": [
                 "Poison"
@@ -835,7 +835,7 @@
             "prev_evolution": [
                 {
                     "num": "029",
-                    "name": "Nidoran(Female)"
+                    "name": "Nidoran ♀"
                 }
             ],
             "next_evolution": [
@@ -868,7 +868,7 @@
             "prev_evolution": [
                 {
                     "num": "029",
-                    "name": "Nidoran(Female)"
+                    "name": "Nidoran ♀"
                 },
                 {
                     "num": "030",
@@ -879,7 +879,7 @@
         {
             "id": 32,
             "num": "032",
-            "name": "Nidoran ♂ (Male)",
+            "name": "Nidoran ♂",
             "img": "032.png",
             "type": [
                 "Poison"
@@ -924,7 +924,7 @@
             "prev_evolution": [
                 {
                     "num": "032",
-                    "name": "Nidoran(Male)"
+                    "name": "Nidoran ♂"
                 }
             ],
             "next_evolution": [
@@ -957,7 +957,7 @@
             "prev_evolution": [
                 {
                     "num": "032",
-                    "name": "Nidoran(Male)"
+                    "name": "Nidoran ♂"
                 },
                 {
                     "num": "033",
