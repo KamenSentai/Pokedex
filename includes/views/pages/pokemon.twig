@@ -19,6 +19,22 @@
             <h2>#{{ data.pokemon.num }}</h2>
         </div>
         <div class="sheet-data">
+            <h5>
+                {% if data.pokemon.is_owned %}
+                    {% if data.pokemon.type | length == 1 %}
+                        Type :
+                    {% else %}
+                        Types :
+                    {% endif %}
+                    {% for _type in data.pokemon.type %}
+                        <a class="sheet-icon-link" href="{{ path_for('type', { slug: _type | lower }) }}" title="{{ _type }}">
+                                <img class="sheet-icon" src="{{ base_url() }}/assets/images/logo/{{ _type | lower }}_icon.png" alt="{{ _type }}" draggable="false">
+                        </a>
+                    {% endfor %}
+                {% else %}
+                    Type : ???
+                {% endif %}
+            </h5>
             <h5>Height : {{ data.pokemon.is_owned ? data.pokemon.height : '???' }}</h5>
             <h5>Weight : {{ data.pokemon.is_owned ? data.pokemon.weight : '???' }}</h5>
             <h5>Owning : {{ data.pokemon.is_owned ? data.pokemon.number_owned : 0 }}</h5>

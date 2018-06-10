@@ -205,3 +205,20 @@ $container['getRandom'] = function($container)
 
     return $dataView;
 };
+
+// 404
+$container['notFoundHandler'] = function($container)
+{
+    return function($request, $response) use ($container)
+    {
+        $dataView =
+        [
+            'base' =>
+            [
+                'page'  => '404',
+                'title' => TITLE . ' | 404',
+            ],
+        ];
+        return $container['view']->render($response->withStatus(404), 'index.twig', $dataView);
+    };
+};

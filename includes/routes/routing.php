@@ -29,7 +29,12 @@ $app
             $dataData     = $dataView['data'];
             $slug         = $arguments['slug'];
             $pokemonIndex = strtolower(array_search($slug, array_column($dataData['pokemons'], 'slug')));
-            $pokemon      = $dataData['pokemons'][$pokemonIndex];
+
+            // Exception
+            if (!$pokemonIndex)
+                throw new \Slim\Exception\NotFoundException($request, $response);
+            else
+                $pokemon = $dataData['pokemons'][$pokemonIndex];
 
             // Set new data
             $dataBase['page']    = 'pokemon';
@@ -59,6 +64,10 @@ $app
             $dataData = $dataView['data'];
             $pokemons = $dataData['pokemons'];
             $slug     = $arguments['slug'];
+
+            // Exception
+            if (!in_array(ucfirst($slug), $this->getTypes['data']['types']))
+                throw new \Slim\Exception\NotFoundException($request, $response);
 
             // Remove unused pokemons
             foreach ($pokemons as $_pokemon)

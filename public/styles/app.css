@@ -897,6 +897,25 @@ html body.overflow {
 .container.container-pokedex .content .sheet {
   width: 100%;
 }
+.container.container-pokedex .content .sheet > h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+.container.container-pokedex .content .sheet > p {
+  margin-bottom: 1.25rem;
+}
+.container.container-pokedex .content .sheet > .sheet-error {
+  position: relative;
+  width: 100%;
+  height: 25rem;
+}
+.container.container-pokedex .content .sheet > .sheet-error img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: auto;
+  height: 100%;
+}
 .container.container-pokedex .content .sheet .sheet-screen {
   position: relative;
   width: 100%;
@@ -994,4 +1013,18 @@ html body.overflow {
 .container.container-pokedex .content .sheet .sheet-data h5 {
   margin: 1rem 0;
   border-bottom: 0.125rem solid #8b0000;
+}
+.container.container-pokedex .content .sheet .sheet-data .sheet-icon-link {
+  display: inline-block;
+}
+.container.container-pokedex .content .sheet .sheet-data .sheet-icon-link:not(:first-child) .sheet-icon {
+  -webkit-transform: translate(100%, -75%);
+          transform: translate(100%, -75%);
+}
+.container.container-pokedex .content .sheet .sheet-data .sheet-icon {
+  display: inline-block;
+  width: auto;
+  height: 1.5em;
+  -webkit-transform: translateY(-75%);
+          transform: translateY(-75%);
 }
