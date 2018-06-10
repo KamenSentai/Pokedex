@@ -18,6 +18,12 @@
             <h1>{{ data.pokemon.is_owned ? data.pokemon.name : '???' }}</h1>
             <h2>#{{ data.pokemon.num }}</h2>
         </div>
+        <div class="sheet-data">
+            <h5>Height : {{ data.pokemon.is_owned ? data.pokemon.height : '???' }}</h5>
+            <h5>Weight : {{ data.pokemon.is_owned ? data.pokemon.weight : '???' }}</h5>
+            <h5>Owning : {{ data.pokemon.is_owned ? data.pokemon.number_owned : 0 }}</h5>
+            <h5>Description : {{ data.pokemon.is_owned ? data.pokemon.description : '???' }}</h5>
+        </div>
     </div>
     {% if data.pokemon.is_owned  %}
         <audio src="https://play.pokemonshowdown.com/audio/cries/{{ data.pokemon.name | lower }}.mp3" style="display:none;"></audio>

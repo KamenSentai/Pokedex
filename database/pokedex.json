@@ -15,6 +15,7 @@
             "spawn_chance": 0.69,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "There is a plant seed on its back right from the day this POKéMON is born. The seed slowly grows larger.",
             "weaknesses": [
                 "Fire",
                 "Ice",
@@ -47,6 +48,7 @@
             "spawn_chance": 0.042,
             "catch_chance": 12.7,
             "is_unique": false,
+            "description": "There is a plant bulb on its back. When it absorbs nutrients, the bulb is said to blossom into a large flower.",
             "weaknesses": [
                 "Fire",
                 "Ice",
@@ -81,6 +83,7 @@
             "spawn_chance": 0.017,
             "catch_chance": 6.5,
             "is_unique": false,
+            "description": "A bewitching aroma wafts from its flower. The fragrance becalms those engaged in a battle.",
             "weaknesses": [
                 "Fire",
                 "Ice",
@@ -112,6 +115,7 @@
             "spawn_chance": 0.253,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "From the time it is born, a flame burns at the tip of its tail. Its life would end if the flame were to go out.",
             "weaknesses": [
                 "Water",
                 "Ground",
@@ -142,6 +146,7 @@
             "spawn_chance": 0.012,
             "catch_chance": 12.7,
             "is_unique": false,
+            "description": "It lashes about with its tail to knock down its foe. It then tears up the fallen opponent with sharp claws.",
             "weaknesses": [
                 "Water",
                 "Ground",
@@ -175,6 +180,7 @@
             "spawn_chance": 0.0031,
             "catch_chance": 6.5,
             "is_unique": false,
+            "description": "Its wings can carry this POKéMON close to an altitude of 4,600 feet. It blows out fire at very high temperatures.",
             "weaknesses": [
                 "Water",
                 "Electric",
@@ -205,6 +211,7 @@
             "spawn_chance": 0.58,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "When it retracts its long neck into its shell, it squirts out water with vigorous force.",
             "weaknesses": [
                 "Electric",
                 "Grass"
@@ -234,6 +241,7 @@
             "spawn_chance": 0.034,
             "catch_chance": 12.7,
             "is_unique": false,
+            "description": "This POKéMON is very popular as a pet. Its fur-covered tail is a symbol of its longevity.",
             "weaknesses": [
                 "Electric",
                 "Grass"
@@ -265,6 +273,7 @@
             "spawn_chance": 0.0067,
             "catch_chance": 6.5,
             "is_unique": false,
+            "description": "It crushes its foe under its heavy body to cause fainting. In a pinch, it will withdraw inside its shell.",
             "weaknesses": [
                 "Electric",
                 "Grass"
@@ -294,6 +303,7 @@
             "spawn_chance": 3.032,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "It is covered with a green skin. When it grows, it sheds the skin, covers itself with silk, and becomes a cocoon.",
             "weaknesses": [
                 "Fire",
                 "Flying",
@@ -324,6 +334,7 @@
             "spawn_chance": 0.187,
             "catch_chance": 30.1,
             "is_unique": false,
+            "description": "Even though it is encased in a sturdy shell, the body inside is tender. It can’t withstand a harsh attack.",
             "weaknesses": [
                 "Fire",
                 "Flying",
@@ -357,6 +368,7 @@
             "spawn_chance": 0.022,
             "catch_chance": 15.7,
             "is_unique": false,
+            "description": "The wings are protected by rain-repellent dust. As a result, this POKéMON can fly about even in rain.",
             "weaknesses": [
                 "Fire",
                 "Electric",
@@ -390,6 +402,7 @@
             "spawn_chance": 7.12,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "Often found in forests and grasslands. It has a sharp, toxic barb of around two inches on top of its head.",
             "weaknesses": [
                 "Fire",
                 "Flying",
@@ -422,6 +435,7 @@
             "spawn_chance": 0.44,
             "catch_chance": 30.1,
             "is_unique": false,
+            "description": "This POKéMON is in a temporary stage while making its body. It is almost completely unable to move on its own.",
             "weaknesses": [
                 "Fire",
                 "Flying",
@@ -456,6 +470,7 @@
             "spawn_chance": 0.051,
             "catch_chance": 15.7,
             "is_unique": false,
+            "description": "May appear in a swarm. Flies at violent speeds, all the while stabbing with the toxic stinger on its rear.",
             "weaknesses": [
                 "Fire",
                 "Flying",
@@ -488,6 +503,7 @@
             "spawn_chance": 15.98,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "Does not like to fight. It hides in tall grass and so on, foraging for food such as small bugs.",
             "weaknesses": [
                 "Electric",
                 "Rock"
@@ -518,6 +534,7 @@
             "spawn_chance": 1.02,
             "catch_chance": 30.1,
             "is_unique": false,
+            "description": "The claws on its feet are well developed. It can carry prey such as an EXEGGCUTE to its nest over 60 miles away.",
             "weaknesses": [
                 "Electric",
                 "Rock"
@@ -550,6 +567,7 @@
             "spawn_chance": 0.13,
             "catch_chance": 15.7,
             "is_unique": false,
+            "description": "It spreads its gorgeous wings widely to intimidate enemies. It races through the skies at Mach-2 speed.",
             "weaknesses": [
                 "Electric",
                 "Rock"
@@ -579,6 +597,7 @@
             "spawn_chance": 13.05,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "Its fangs are long and very sharp. They grow continuously, so it gnaws on hard things to whittle them down.",
             "weaknesses": [
                 "Fight"
             ],
@@ -603,6 +622,7 @@
             "spawn_chance": 0.41,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "Its rear feet have three toes each. They are webbed, enabling it to swim across rivers.",
             "weaknesses": [
                 "Fight"
             ],
@@ -628,6 +648,7 @@
             "spawn_chance": 4.73,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "It busily flits around here and there. Even if it is frail, it can be a tough foe that uses MIRROR MOVE.",
             "weaknesses": [
                 "Electric",
                 "Rock"
@@ -654,6 +675,7 @@
             "spawn_chance": 0.15,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "Its huge and magnificent wings can keep it aloft in the sky. It can remain flying a whole day without landing.",
             "weaknesses": [
                 "Electric",
                 "Rock"
@@ -679,6 +701,7 @@
             "spawn_chance": 2.27,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "A very common sight in grassland, etc. It flicks its tongue in and out to sense danger in its surroundings.",
             "weaknesses": [
                 "Ground",
                 "Psychic"
@@ -704,6 +727,7 @@
             "spawn_chance": 0.072,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "The pattern on its belly appears to be a frightening face. Weak foes will flee just at the sight of the pattern.",
             "weaknesses": [
                 "Ground",
                 "Psychic"
@@ -729,6 +753,7 @@
             "spawn_chance": 0.21,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "It has small electric sacs on both its cheeks. If threatened, it looses electric charges from the sacs.",
             "weaknesses": [
                 "Ground"
             ],
@@ -753,6 +778,7 @@
             "spawn_chance": 0.0076,
             "catch_chance": 12.7,
             "is_unique": false,
+            "description": "Its electric charges can reach even 100,000 volts. Careless contact can cause even an Indian elephant to faint.",
             "weaknesses": [
                 "Ground"
             ],
@@ -777,6 +803,7 @@
             "spawn_chance": 1.11,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "It burrows and lives underground. If threatened, it curls itself up into a ball for protection.",
             "weaknesses": [
                 "Water",
                 "Grass",
@@ -803,6 +830,7 @@
             "spawn_chance": 0.037,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "It is adept at attacking with the spines on its back and its sharp claws while quickly scurrying about.",
             "weaknesses": [
                 "Water",
                 "Grass",
@@ -829,6 +857,7 @@
             "spawn_chance": 1.38,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "Though small, it must be treated with caution because of its powerfully toxic barbs. The female has smaller horns.",
             "weaknesses": [
                 "Ground",
                 "Psychic"
@@ -858,6 +887,7 @@
             "spawn_chance": 0.088,
             "catch_chance": 30.1,
             "is_unique": false,
+            "description": "The female has a gentle temperament. It emits ultrasonic cries that have the power to befuddle foes.",
             "weaknesses": [
                 "Ground",
                 "Psychic"
@@ -890,6 +920,7 @@
             "spawn_chance": 0.012,
             "catch_chance": 15.7,
             "is_unique": false,
+            "description": "The body is covered by stiff, needle-like scales. If it becomes excited, the needles bristle outwards.",
             "weaknesses": [
                 "Water",
                 "Ice",
@@ -921,6 +952,7 @@
             "spawn_chance": 1.31,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "Its large ears are flapped like wings when it is listening to distant sounds. It extends toxic barbs when angered.",
             "weaknesses": [
                 "Ground",
                 "Psychic"
@@ -950,6 +982,7 @@
             "spawn_chance": 0.083,
             "catch_chance": 30.1,
             "is_unique": false,
+            "description": "It is easily angered. By swinging its well-developed horn wildly, it can even punch through diamond.",
             "weaknesses": [
                 "Ground",
                 "Psychic"
@@ -982,6 +1015,7 @@
             "spawn_chance": 0.017,
             "catch_chance": 15.7,
             "is_unique": false,
+            "description": "It is recognized by its rock-hard hide and its extended horn. Be careful with the horn as it contains venom.",
             "weaknesses": [
                 "Water",
                 "Ice",
@@ -1013,6 +1047,7 @@
             "spawn_chance": 0.92,
             "catch_chance": 35.5,
             "is_unique": false,
+            "description": "Its adorable appearance makes it popular as a pet. However, it is rare and difficult to find.",
             "weaknesses": [
                 "Fight"
             ],
@@ -1037,6 +1072,7 @@
             "spawn_chance": 0.012,
             "catch_chance": 12.7,
             "is_unique": false,
+            "description": "It has an acute sense of hearing. It can easily hear a pin being dropped nearly 1,100 yards away.",
             "weaknesses": [
                 "Fight"
             ],
@@ -1061,6 +1097,7 @@
             "spawn_chance": 0.22,
             "catch_chance": 35.5,
             "is_unique": false,
+            "description": "While young, it has six gorgeous tails. When it grows, several new tails are sprouted.",
             "weaknesses": [
                 "Water",
                 "Ground",
@@ -1087,6 +1124,7 @@
             "spawn_chance": 0.0077,
             "catch_chance": 12.7,
             "is_unique": false,
+            "description": "It has nine long tails and fur that gleams gold. It is said to live for 1,000 years.",
             "weaknesses": [
                 "Water",
                 "Ground",
@@ -1113,6 +1151,7 @@
             "spawn_chance": 0.39,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "It captivates foes with its huge, round eyes, then lulls them to sleep by singing a soothing melody.",
             "weaknesses": [
                 "Fight"
             ],
@@ -1137,6 +1176,7 @@
             "spawn_chance": 0.018,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "Its fur is extremely fine, dense, and supple. The exquisitely pleasant fur conveys an image of luxury.",
             "weaknesses": [
                 "Fight"
             ],
@@ -1162,6 +1202,7 @@
             "spawn_chance": 6.52,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "It has no eyes. Instead, it relies on its ultrasonic cries for echo location to flit about in darkness.",
             "weaknesses": [
                 "Electric",
                 "Ice",
@@ -1190,6 +1231,7 @@
             "spawn_chance": 0.42,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "It clamps down on its prey with needle-sharp fangs and drains over 10 ounces of blood in one gulp.",
             "weaknesses": [
                 "Electric",
                 "Ice",
@@ -1218,6 +1260,7 @@
             "spawn_chance": 1.02,
             "catch_chance": 63.3,
             "is_unique": false,
+            "description": "Its scientific name is \"Oddium Wanderus.\" At night, it is said to walk nearly 1,000 feet on its two roots.",
             "weaknesses": [
                 "Fire",
                 "Ice",
@@ -1250,6 +1293,7 @@
             "spawn_chance": 0.064,
             "catch_chance": 35.5,
             "is_unique": false,
+            "description": "Its pistils exude an incredibly foul odor. The horrid stench can cause fainting at a distance of 1.25 miles.",
             "weaknesses": [
                 "Fire",
                 "Ice",
@@ -1284,6 +1328,7 @@
             "spawn_chance": 0.0097,
             "catch_chance": 18.7,
             "is_unique": false,
+            "description": "Its petals are the largest in the world. It fiendishly scatters allergy-causing pollen from its petals.",
             "weaknesses": [
                 "Fire",
                 "Ice",
@@ -1316,6 +1361,7 @@
             "spawn_chance": 2.36,
             "catch_chance": 45.6,
             "is_unique": false,
+            "description": "Growing out of the bug’s back are mushrooms called tochukaso. The mushrooms grow with the bug host.",
             "weaknesses": [
                 "Fire",
                 "Ice",
@@ -1346,6 +1392,7 @@
             "spawn_chance": 0.074,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "It scatters toxic spores from the mushroom cap. In China, the spores are used as herbal medicine.",
             "weaknesses": [
                 "Fire",
                 "Ice",
@@ -1376,6 +1423,7 @@
             "spawn_chance": 2.28,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "Its eyes act as radar, enabling it to be active in darkness. The eyes can also shoot powerful beams.",
             "weaknesses": [
                 "Fire",
                 "Flying",
@@ -1404,6 +1452,7 @@
             "spawn_chance": 0.072,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "The wings are covered with dustlike scales. Every time it flaps its wings, it looses highly toxic dust.",
             "weaknesses": [
                 "Fire",
                 "Flying",
@@ -1431,6 +1480,7 @@
             "spawn_chance": 0.4,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "t burrows through the ground at a shallow depth. It leaves raised earth in its wake, making it easy to spot.",
             "weaknesses": [
                 "Water",
                 "Grass",
@@ -1457,6 +1507,7 @@
             "spawn_chance": 0.014,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "In battle, it digs through the ground and strikes the unsuspecting foe from an unexpected direction.",
             "weaknesses": [
                 "Water",
                 "Grass",
@@ -1483,6 +1534,7 @@
             "spawn_chance": 0.86,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "All it does is sleep during the daytime. At night, it patrols its territory with its eyes aglow.",
             "weaknesses": [
                 "Fight"
             ],
@@ -1507,6 +1559,7 @@
             "spawn_chance": 0.022,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "Has a vicious temperament. Beware if it raises its tail straight up. It is a signal that it is about to pounce and bite.",
             "weaknesses": [
                 "Fight"
             ],
@@ -1531,6 +1584,7 @@
             "spawn_chance": 2.54,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "It is constantly wracked by a headache. When the headache turns intense, it begins using mysterious powers.",
             "weaknesses": [
                 "Electric",
                 "Grass"
@@ -1556,6 +1610,7 @@
             "spawn_chance": 0.087,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "The forelegs are webbed, helping to make it an adept swimmer. It can be seen swimming elegantly in lakes, etc.",
             "weaknesses": [
                 "Electric",
                 "Grass"
@@ -1581,6 +1636,7 @@
             "spawn_chance": 0.92,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "Light and agile on its feet, and ferocious in temperament. When angered, it flies into an uncontrollable frenzy.",
             "weaknesses": [
                 "Flying",
                 "Psychic",
@@ -1607,6 +1663,7 @@
             "spawn_chance": 0.031,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "It is always outrageously furious. If it gives chase, it will tenaciously track the target no matter how far.",
             "weaknesses": [
                 "Flying",
                 "Psychic",
@@ -1633,6 +1690,7 @@
             "spawn_chance": 0.92,
             "catch_chance": 35.5,
             "is_unique": false,
+            "description": "Very friendly and faithful to people. It will try to repel enemies by barking and biting.",
             "weaknesses": [
                 "Water",
                 "Ground",
@@ -1659,6 +1717,7 @@
             "spawn_chance": 0.017,
             "catch_chance": 12.7,
             "is_unique": false,
+            "description": "A POKéMON that is described in Chinese legends. It is said to race at an unbelievable speed.",
             "weaknesses": [
                 "Water",
                 "Ground",
@@ -1685,6 +1744,7 @@
             "spawn_chance": 2.19,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "Its slick black skin is thin and damp. A part of its internal organs can be seen through the skin as a spiral pattern.",
             "weaknesses": [
                 "Electric",
                 "Grass"
@@ -1714,6 +1774,7 @@
             "spawn_chance": 0.13,
             "catch_chance": 30.1,
             "is_unique": false,
+            "description": "Its two legs are well developed. Even though it can live on the ground, it prefers living in water.",
             "weaknesses": [
                 "Electric",
                 "Grass"
@@ -1746,6 +1807,7 @@
             "spawn_chance": 0.011,
             "catch_chance": 15.7,
             "is_unique": false,
+            "description": "An adept swimmer, it knows the front crawl, butterfly, and more. It is faster than the best human swimmers.",
             "weaknesses": [
                 "Electric",
                 "Grass",
@@ -1778,6 +1840,7 @@
             "spawn_chance": 0.42,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "It sleeps for 18 hours a day. It uses a variety of extrasensory powers even while asleep.",
             "weaknesses": [
                 "Bug",
                 "Ghost",
@@ -1808,6 +1871,7 @@
             "spawn_chance": 0.027,
             "catch_chance": 30.1,
             "is_unique": false,
+            "description": "It happened one morning - a boy with extrasensory powers awoke in bed transformed into KADABRA.",
             "weaknesses": [
                 "Bug",
                 "Ghost",
@@ -1840,6 +1904,7 @@
             "spawn_chance": 0.0073,
             "catch_chance": 12.7,
             "is_unique": false,
+            "description": "It does not like physical attacks very much. Instead, it freely uses extrasensory powers to defeat foes.",
             "weaknesses": [
                 "Bug",
                 "Ghost",
@@ -1870,6 +1935,7 @@
             "spawn_chance": 0.49,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "Its whole body is composed of muscles. Even though it’s the size of a human child, it can hurl 100 grown-ups.",
             "weaknesses": [
                 "Flying",
                 "Psychic",
@@ -1900,6 +1966,7 @@
             "spawn_chance": 0.034,
             "catch_chance": 30.1,
             "is_unique": false,
+            "description": "Its formidable body never gets tired. It helps people by doing work such as the moving of heavy goods.",
             "weaknesses": [
                 "Flying",
                 "Psychic",
@@ -1932,6 +1999,7 @@
             "spawn_chance": 0.0068,
             "catch_chance": 12.7,
             "is_unique": false,
+            "description": "Its four ruggedly developed arms can launch a flurry of 1,000 punches in just two seconds.",
             "weaknesses": [
                 "Flying",
                 "Psychic",
@@ -1963,6 +2031,7 @@
             "spawn_chance": 1.15,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "Its bud looks like a human face. Because of the bud, it is rumored to be a type of legendary mandrake plant.",
             "weaknesses": [
                 "Fire",
                 "Ice",
@@ -1995,6 +2064,7 @@
             "spawn_chance": 0.072,
             "catch_chance": 30.1,
             "is_unique": false,
+            "description": "The leafy parts act as cutters for slashing foes. It spits a fluid that dissolves everything.",
             "weaknesses": [
                 "Fire",
                 "Ice",
@@ -2029,6 +2099,7 @@
             "spawn_chance": 0.0059,
             "catch_chance": 15.7,
             "is_unique": false,
+            "description": "Lures prey into its mouth with a honeylike aroma. The helpless prey is melted with a dissolving fluid.",
             "weaknesses": [
                 "Fire",
                 "Ice",
@@ -2061,6 +2132,7 @@
             "spawn_chance": 0.81,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "Its eyes are as transparent as crystals. From them, it shoots mysterious beams of light.",
             "weaknesses": [
                 "Electric",
                 "Ground",
@@ -2088,6 +2160,7 @@
             "spawn_chance": 0.082,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "It has 80 tentacles that move about freely. They can sting, causing poisoning and sharp, stabbing pain.",
             "weaknesses": [
                 "Electric",
                 "Ground",
@@ -2115,6 +2188,7 @@
             "spawn_chance": 1.19,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "Its round form makes it easy to pick up. Some people have used them to hurl at each other in a snowball fight.",
             "weaknesses": [
                 "Water",
                 "Grass",
@@ -2149,6 +2223,7 @@
             "spawn_chance": 0.071,
             "catch_chance": 30.1,
             "is_unique": false,
+            "description": "Be careful while hiking on mountain trails. GRAVELER may come rolling down the path without slowing.",
             "weaknesses": [
                 "Water",
                 "Grass",
@@ -2185,6 +2260,7 @@
             "spawn_chance": 0.0047,
             "catch_chance": 15.7,
             "is_unique": false,
+            "description": "It is enclosed in a hard shell that is as rugged as slabs of rock. It sheds skin once a year to grow larger.",
             "weaknesses": [
                 "Water",
                 "Grass",
@@ -2218,6 +2294,7 @@
             "spawn_chance": 0.51,
             "catch_chance": 45.6,
             "is_unique": false,
+            "description": "Its body is light, and its legs are incredibly powerful. It can clear Ayers Rock in one leap.",
             "weaknesses": [
                 "Water",
                 "Ground",
@@ -2244,6 +2321,7 @@
             "spawn_chance": 0.011,
             "catch_chance": 18.7,
             "is_unique": false,
+            "description": "It can gallop at a top speed of 150 miles per hour. It can race as fast as a bullet train while ablaze.",
             "weaknesses": [
                 "Water",
                 "Ground",
@@ -2271,6 +2349,7 @@
             "spawn_chance": 1.05,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "It is always vacantly lost in thought, but no one knows what it is thinking about. It is good at fishing with its tail.",
             "weaknesses": [
                 "Electric",
                 "Grass",
@@ -2300,6 +2379,7 @@
             "spawn_chance": 0.036,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "When a SLOWPOKE went hunting in the sea, its tail was bitten by a SHELLDER. That made it evolve into SLOWBRO.",
             "weaknesses": [
                 "Electric",
                 "Grass",
@@ -2328,6 +2408,7 @@
             "spawn_chance": 0.71,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "It moves while constantly hovering. It discharges THUNDER WAVE and so on from the units at its sides.",
             "weaknesses": [
                 "Fire",
                 "Water",
@@ -2354,6 +2435,7 @@
             "spawn_chance": 0.023,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "A linked cluster formed of several MAGNEMITE. It discharges powerful magnetic waves at high voltage.",
             "weaknesses": [
                 "Fire",
                 "Water",
@@ -2381,6 +2463,7 @@
             "spawn_chance": 0.0212,
             "catch_chance": 35.5,
             "is_unique": false,
+            "description": "It always walks about with a plant stalk clamped in its beak. The stalk is used for building its nest.",
             "weaknesses": [
                 "Electric",
                 "Rock"
@@ -2401,6 +2484,7 @@
             "spawn_chance": 0.52,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "A two-headed POKéMON that was discovered as a sudden mutation. It runs at a pace of over 60 miles per hour.",
             "weaknesses": [
                 "Electric",
                 "Rock"
@@ -2427,6 +2511,7 @@
             "spawn_chance": 0.22,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "An odd species that is rarely found. The three heads respectively represent joy, sadness, and anger.",
             "weaknesses": [
                 "Electric",
                 "Rock"
@@ -2452,6 +2537,7 @@
             "spawn_chance": 0.28,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "Covered with light blue fur, its hide is thick and tough. It is active in bitter cold of minus 40 degrees Fahrenheit.",
             "weaknesses": [
                 "Electric",
                 "Grass"
@@ -2478,6 +2564,7 @@
             "spawn_chance": 0.013,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "Its body is covered with a pure white fur. The colder the weather, the more active it becomes.",
             "weaknesses": [
                 "Electric",
                 "Grass",
@@ -2505,6 +2592,7 @@
             "spawn_chance": 0.052,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "Sludge exposed to X rays from the moon transformed into GRIMER. It loves feeding on filthy things.",
             "weaknesses": [
                 "Ground",
                 "Psychic"
@@ -2530,6 +2618,7 @@
             "spawn_chance": 0.0031,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "It is usually undetectable because it blends in with the ground. Touching it can cause terrible poisoning.",
             "weaknesses": [
                 "Ground",
                 "Psychic"
@@ -2555,6 +2644,7 @@
             "spawn_chance": 0.52,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "It is encased in a shell that is harder than diamond. Inside, however, it is surprisingly tender.",
             "weaknesses": [
                 "Electric",
                 "Grass"
@@ -2581,6 +2671,7 @@
             "spawn_chance": 0.015,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "Its shell is extremely hard. It cannot be shattered, even with a bomb. The shell opens only when it is attacking.",
             "weaknesses": [
                 "Electric",
                 "Grass",
@@ -2609,6 +2700,7 @@
             "spawn_chance": 0.79,
             "catch_chance": 45.6,
             "is_unique": false,
+            "description": "A being that exists as a thin gas. It can topple an Indian elephant by enveloping the prey in two seconds.",
             "weaknesses": [
                 "Ground",
                 "Psychic",
@@ -2641,6 +2733,7 @@
             "spawn_chance": 0.052,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "If you get the feeling of being watched in darkness when nobody is around, HAUNTER is there.",
             "weaknesses": [
                 "Ground",
                 "Psychic",
@@ -2675,6 +2768,7 @@
             "spawn_chance": 0.0067,
             "catch_chance": 12.7,
             "is_unique": false,
+            "description": "It is said to emerge from darkness to steal the lives of those who become lost in mountains.",
             "weaknesses": [
                 "Ground",
                 "Psychic",
@@ -2707,6 +2801,7 @@
             "spawn_chance": 0.1,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "It usually lives underground. It searches for food while boring its way through the ground at 50 miles per hour.",
             "weaknesses": [
                 "Water",
                 "Grass",
@@ -2730,6 +2825,7 @@
             "spawn_chance": 3.21,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "A descendent of the legendary animal baku, which is said to eat dreams. It is skilled at hypnotism.",
             "weaknesses": [
                 "Bug",
                 "Ghost",
@@ -2756,6 +2852,7 @@
             "spawn_chance": 0.1,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "It carries a pendulum-like device. There once was an incident in which it took away a child it hypnotized.",
             "weaknesses": [
                 "Bug",
                 "Ghost",
@@ -2782,6 +2879,7 @@
             "spawn_chance": 2.12,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "It can be found near the sea. The large pincers grow back if they are torn out of their sockets.",
             "weaknesses": [
                 "Electric",
                 "Grass"
@@ -2807,6 +2905,7 @@
             "spawn_chance": 0.062,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "Its large and hard pincer has 10,000-horsepower strength. However, being so big, it is unwieldy to move.",
             "weaknesses": [
                 "Electric",
                 "Grass"
@@ -2832,6 +2931,7 @@
             "spawn_chance": 0.65,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "A life-form whose identity is unknown. It is said to SCREECH or suddenly SELFDESTRUCT.",
             "weaknesses": [
                 "Ground"
             ],
@@ -2856,6 +2956,7 @@
             "spawn_chance": 0.02,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "It explodes in response to even minor stimuli. It is feared, with the nickname of \"The Bomb Ball.\"",
             "weaknesses": [
                 "Ground"
             ],
@@ -2881,6 +2982,7 @@
             "spawn_chance": 0.78,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "Even though it appears to be eggs of some sort, it was discovered to be a life-form more like plant seeds.",
             "weaknesses": [
                 "Fire",
                 "Ice",
@@ -2912,6 +3014,7 @@
             "spawn_chance": 0.014,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "It is called \"The Walking Tropical Rainforest.\" Each of the nuts has a face and a will of its own.",
             "weaknesses": [
                 "Fire",
                 "Ice",
@@ -2942,6 +3045,7 @@
             "spawn_chance": 0.61,
             "catch_chance": 45.6,
             "is_unique": false,
+            "description": "It wears the skull of its dead mother on its head. When it becomes lonesome, it is said to cry loudly.",
             "weaknesses": [
                 "Water",
                 "Grass",
@@ -2968,6 +3072,7 @@
             "spawn_chance": 0.02,
             "catch_chance": 18.7,
             "is_unique": false,
+            "description": "It is small and was originally very weak. Its temperament turned ferocious when it began using bones.",
             "weaknesses": [
                 "Water",
                 "Grass",
@@ -2994,6 +3099,7 @@
             "spawn_chance": 0.02,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "The legs freely contract and stretch. The stretchy legs allow it to hit a distant foe with a rising kick.",
             "weaknesses": [
                 "Flying",
                 "Psychic",
@@ -3014,6 +3120,7 @@
             "spawn_chance": 0.022,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "The spirit of a pro boxer has infused this POKéMON. It throws punches that are faster than a bullet train.",
             "weaknesses": [
                 "Flying",
                 "Psychic",
@@ -3034,6 +3141,7 @@
             "spawn_chance": 0.011,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "Its tongue is twice the length of its body. It can be moved like an arm for grabbing food and attacking.",
             "weaknesses": [
                 "Fight"
             ]
@@ -3052,6 +3160,7 @@
             "spawn_chance": 0.2,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "Its thin, balloon-like body is inflated by horribly toxic gases. It reeks when it is nearby.",
             "weaknesses": [
                 "Ground",
                 "Psychic"
@@ -3077,6 +3186,7 @@
             "spawn_chance": 0.016,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "Very rarely, a sudden mutation can result in two small KOFFING twins becoming conjoined as a WEEZING.",
             "weaknesses": [
                 "Ground",
                 "Psychic"
@@ -3103,6 +3213,7 @@
             "spawn_chance": 0.63,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "Strong, but not too bright, this POKéMON can shatter even a skyscraper with its charging TACKLES.",
             "weaknesses": [
                 "Water",
                 "Grass",
@@ -3133,6 +3244,7 @@
             "spawn_chance": 0.022,
             "catch_chance": 6.5,
             "is_unique": false,
+            "description": "It begins walking on its hind legs after evolution. It can punch holes through boulders with its horn.",
             "weaknesses": [
                 "Water",
                 "Grass",
@@ -3162,6 +3274,7 @@
             "spawn_chance": 0.013,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "It lays several eggs a day. The eggs are apparently rich in nutrients and extremely delicious.",
             "weaknesses": [
                 "Fight"
             ]
@@ -3180,6 +3293,7 @@
             "spawn_chance": 0.228,
             "catch_chance": 45.6,
             "is_unique": false,
+            "description": "Blue plant vines cloak the POKéMON’s identity in a tangled mass. It entangles anything that gets close.",
             "weaknesses": [
                 "Fire",
                 "Ice",
@@ -3202,6 +3316,7 @@
             "spawn_chance": 0.0086,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "The female raises its offspring in a pouch on its belly. It is skilled at attacking using COMET PUNCH.",
             "weaknesses": [
                 "Fight"
             ]
@@ -3220,6 +3335,7 @@
             "spawn_chance": 1.13,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "It maintains balance using its tail, which is wound up like a coil. It may spray ink from its mouth.",
             "weaknesses": [
                 "Electric",
                 "Grass"
@@ -3245,6 +3361,7 @@
             "spawn_chance": 0.034,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "Its body bristles with sharp spikes. Carelessly trying to touch it could cause fainting from the spikes.",
             "weaknesses": [
                 "Electric",
                 "Grass"
@@ -3270,6 +3387,7 @@
             "spawn_chance": 2.18,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "Its dorsal and pectoral fins are strongly developed like muscles. It can swim at a speed of five knots.",
             "weaknesses": [
                 "Electric",
                 "Grass"
@@ -3295,6 +3413,7 @@
             "spawn_chance": 0.08,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "The horn on its head is sharp like a drill. It bores a hole in a boulder to make its nest.",
             "weaknesses": [
                 "Electric",
                 "Grass"
@@ -3320,6 +3439,7 @@
             "spawn_chance": 1.95,
             "catch_chance": 54.9,
             "is_unique": false,
+            "description": "It appears in large numbers by seashores. At night, its central core flashes with a red light.",
             "weaknesses": [
                 "Electric",
                 "Grass"
@@ -3346,6 +3466,7 @@
             "spawn_chance": 0.034,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "This POKéMON has a geometric body. Because of its body, the locals suspect that it is an alien creature.",
             "weaknesses": [
                 "Electric",
                 "Grass",
@@ -3374,6 +3495,7 @@
             "spawn_chance": 0.0031,
             "catch_chance": 35.5,
             "is_unique": false,
+            "description": "It is adept at conning people. It is said to be able to create walls out of thin air by miming.",
             "weaknesses": [
                 "Bug",
                 "Ghost",
@@ -3395,6 +3517,7 @@
             "spawn_chance": 0.14,
             "catch_chance": 35.5,
             "is_unique": false,
+            "description": "It tears and shreds prey with its wickedly sharp scythes. It very rarely spreads its wings to fly.",
             "weaknesses": [
                 "Fire",
                 "Electric",
@@ -3418,6 +3541,7 @@
             "spawn_chance": 0.35,
             "catch_chance": 35.5,
             "is_unique": false,
+            "description": "It speaks using a language that sounds human. Research is under way to determine what is being said.",
             "weaknesses": [
                 "Fire",
                 "Bug",
@@ -3441,6 +3565,7 @@
             "spawn_chance": 0.074,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "It loves to feed on strong electricity. It occasionally appears around large power plants and so on.",
             "weaknesses": [
                 "Ground"
             ]
@@ -3459,6 +3584,7 @@
             "spawn_chance": 0.1,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "Found near the mouth of a volcano. This fire-breather’s body temperature is nearly 2,200 degrees Fahrenheit.",
             "weaknesses": [
                 "Water",
                 "Ground",
@@ -3479,6 +3605,7 @@
             "spawn_chance": 0.99,
             "catch_chance": 35.5,
             "is_unique": false,
+            "description": "Its two long pincer horns are powerful. Once they grip an enemy, they won’t release until the foe is torn.",
             "weaknesses": [
                 "Fire",
                 "Flying",
@@ -3499,6 +3626,7 @@
             "spawn_chance": 0.12,
             "catch_chance": 35.5,
             "is_unique": false,
+            "description": "When it is about to TACKLE, it whips its body repeatedly with its three long tails.",
             "weaknesses": [
                 "Fight"
             ]
@@ -3517,6 +3645,7 @@
             "spawn_chance": 4.78,
             "catch_chance": 70.8,
             "is_unique": false,
+            "description": "It is virtually worthless in terms of both power and speed. It is the most weak and pathetic POKéMON in the world.",
             "weaknesses": [
                 "Electric",
                 "Grass"
@@ -3543,6 +3672,7 @@
             "spawn_chance": 0.0032,
             "catch_chance": 12.7,
             "is_unique": false,
+            "description": "It has an extremely aggressive nature. The HYPER BEAM it shoots from its mouth totally incinerates all targets.",
             "weaknesses": [
                 "Electric",
                 "Rock"
@@ -3569,6 +3699,7 @@
             "spawn_chance": 0.006,
             "catch_chance": 6.5,
             "is_unique": false,
+            "description": "Its high intelligence enables it to understand human speech. It likes to ferry people on its back.",
             "weaknesses": [
                 "Electric",
                 "Grass",
@@ -3590,6 +3721,7 @@
             "spawn_chance": 0.0001,
             "catch_chance": 24.5,
             "is_unique": true,
+            "description": "It can freely recombine its own cellular structure to transform into other life-forms.",
             "weaknesses": [
                 "Fight"
             ]
@@ -3608,6 +3740,7 @@
             "spawn_chance": 2.75,
             "catch_chance": 45.6,
             "is_unique": false,
+            "description": "An extremely rare POKéMON that may evolve in a number of different ways depending on stimuli.",
             "weaknesses": [
                 "Fight"
             ],
@@ -3640,6 +3773,7 @@
             "spawn_chance": 0.014,
             "catch_chance": 15.7,
             "is_unique": false,
+            "description": "Its body’s cellular structure is similar to the molecular composition of water. It can melt invisibly in water.",
             "weaknesses": [
                 "Electric",
                 "Grass"
@@ -3665,6 +3799,7 @@
             "spawn_chance": 0.012,
             "catch_chance": 15.7,
             "is_unique": false,
+            "description": "If it is angered or startled, the fur all over its body bristles like sharp needles that pierce foes.",
             "weaknesses": [
                 "Ground"
             ],
@@ -3689,6 +3824,7 @@
             "spawn_chance": 0.017,
             "catch_chance": 15.7,
             "is_unique": false,
+            "description": "It has a flame bag inside its body. After inhaling deeply, it blows out flames of nearly 3,100 degrees Fahrenheit.",
             "weaknesses": [
                 "Water",
                 "Ground",
@@ -3715,6 +3851,7 @@
             "spawn_chance": 0.012,
             "catch_chance": 45.6,
             "is_unique": false,
+            "description": "Using the most advanced technologies, scientists finally succeeded in making the first artificial POKéMON.",
             "weaknesses": [
                 "Fight"
             ]
@@ -3734,6 +3871,7 @@
             "spawn_chance": 0.14,
             "catch_chance": 45.6,
             "is_unique": false,
+            "description": "A prehistoric POKéMON that lived in the primordial sea, it swims by twisting its 10 tentacles about.",
             "weaknesses": [
                 "Electric",
                 "Grass",
@@ -3762,6 +3900,7 @@
             "spawn_chance": 0.0061,
             "catch_chance": 18.7,
             "is_unique": false,
+            "description": "Its tentacles are highly developed as if they are hands and feet. As soon as it ensnares prey, it bites.",
             "weaknesses": [
                 "Electric",
                 "Grass",
@@ -3790,6 +3929,7 @@
             "spawn_chance": 0.1,
             "catch_chance": 45.6,
             "is_unique": false,
+            "description": "This POKéMON was regenerated from the fossil of an ancient creature. It protects itself with a hard shell.",
             "weaknesses": [
                 "Electric",
                 "Grass",
@@ -3818,6 +3958,7 @@
             "spawn_chance": 0.0032,
             "catch_chance": 18.7,
             "is_unique": false,
+            "description": "It swims freely through water. It catches prey with its scythe-like arms and drains the victim’s fluids.",
             "weaknesses": [
                 "Electric",
                 "Grass",
@@ -3846,6 +3987,7 @@
             "spawn_chance": 0.018,
             "catch_chance": 24.5,
             "is_unique": false,
+            "description": "It was regenerated from a dinosaur’s genetic matter that was found in amber. It flies with high-pitched cries.",
             "weaknesses": [
                 "Water",
                 "Electric",
@@ -3868,6 +4010,7 @@
             "spawn_chance": 0.016,
             "catch_chance": 6.5,
             "is_unique": false,
+            "description": "It is not satisfied unless it eats over 880 pounds of food every day. When it is done eating, it goes promptly to sleep.",
             "weaknesses": [
                 "Fight"
             ]
@@ -3887,6 +4030,7 @@
             "spawn_chance": 0.0001,
             "catch_chance": 3.9,
             "is_unique": true,
+            "description": "One of the legendary bird POKéMON. With its long tail trailing behind, its flying form is magnificent.",
             "weaknesses": [
                 "Fire",
                 "Electric",
@@ -3909,6 +4053,7 @@
             "spawn_chance": 0.0001,
             "catch_chance": 3.9,
             "is_unique": true,
+            "description": "One of the legendary bird POKéMON. While it is flying, it makes crackling and snapping sounds.",
             "weaknesses": [
                 "Ice",
                 "Rock"
@@ -3929,6 +4074,7 @@
             "spawn_chance": 0.0001,
             "catch_chance": 3.9,
             "is_unique": true,
+            "description": "One of the legendary bird POKéMON. Those seeing it are overwhelmed by its orange wings that seem to be on fire.",
             "weaknesses": [
                 "Water",
                 "Electric",
@@ -3949,6 +4095,7 @@
             "spawn_chance": 0.3,
             "catch_chance": 45.6,
             "is_unique": false,
+            "description": "Even the young can exceed 6.5 feet in length. It grows larger by repeatedly shedding skin.",
             "weaknesses": [
                 "Ice",
                 "Dragon",
@@ -3979,6 +4126,7 @@
             "spawn_chance": 0.02,
             "catch_chance": 12.7,
             "is_unique": false,
+            "description": "It is said to live in seas and lakes. Even though it has no wings, it has been seen flying occasionally.",
             "weaknesses": [
                 "Ice",
                 "Dragon",
@@ -4012,6 +4160,7 @@
             "spawn_chance": 0.0011,
             "catch_chance": 6.5,
             "is_unique": false,
+            "description": "It can fly in spite of its big and bulky physique. It circles the globe in just 16 hours.",
             "weaknesses": [
                 "Ice",
                 "Rock",
@@ -4043,6 +4192,7 @@
             "spawn_chance": 0.0001,
             "catch_chance": 7.7,
             "is_unique": true,
+            "description": "A POKéMON whose genetic code was repeatedly recombined for research. It turned vicious as a result.",
             "weaknesses": [
                 "Bug",
                 "Ghost",
@@ -4063,6 +4213,7 @@
             "spawn_chance": 0.0001,
             "catch_chance": 7.7,
             "is_unique": true,
+            "description": "A POKéMON of South America that was thought to have been extinct. It is very intelligent and learns any move.",
             "weaknesses": [
                 "Bug",
                 "Ghost",
