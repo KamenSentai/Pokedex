@@ -1,3 +1,4 @@
+// Load JSON file
 const loadJSON = (file, callback) =>
 {
     const xobj = new XMLHttpRequest()
@@ -11,10 +12,14 @@ const loadJSON = (file, callback) =>
     xobj.send(null)
 }
 
+// Get container
 const $containerMap   = document.querySelector('.container.container-map')
 const $containerCatch = document.querySelector('.container.container-catch')
+
+// Check if map page
 if ($containerMap)
 {
+    //Get elements
     const $top        = $containerMap.querySelector('.top')
     const $right      = $containerMap.querySelector('.right')
     const $bottom     = $containerMap.querySelector('.bottom')
@@ -25,6 +30,8 @@ if ($containerMap)
     const $sprite     = $character.querySelector('.sprite')
     const $pokedex    = $containerMap.querySelector('.pokedex')
     const $rectangles = $containerMap.querySelector('.rectangles')
+    
+    // Define valuesw
     const position    = {x: parseInt($character.dataset.positionx * 10), y: parseInt($character.dataset.positiony * 10)}
     const tileSize    = {x: 0, y: 0}
     const SPAW_RATE   = 25
@@ -126,6 +133,7 @@ if ($containerMap)
     let windowHeight = window.innerHeight
     let canWalk      = true
 
+    // Set size to map
     const setImageSize= (left, top, width, height, transform) =>
     {
         $map.style.left      = left
@@ -135,8 +143,10 @@ if ($containerMap)
         $map.style.transform = transform
     }
 
+    // Resize images
     const resizeImage = (windowWidth, windowHeight, callback) =>
     {
+        // Check if landscape or portrait
         if (windowWidth / windowHeight <= MAP_RATIO)
         {
             setImageSize('0', '50%', '100%', 'auto', 'translateY(-50%)')
@@ -156,6 +166,7 @@ if ($containerMap)
         callback()
     }
 
+    // Set style to elements
     const setStyles = () =>
     {
         const topOffset    = $map.getBoundingClientRect().top
@@ -182,6 +193,7 @@ if ($containerMap)
         $pokedex.style.bottom      = `${tileSize.y}px`
     }
 
+    // Check if nex position of character is allowed
     const allowPosition = (positionX, positionY) =>
     {
         for (const forbiddenPosition of forbidden)
@@ -190,6 +202,7 @@ if ($containerMap)
         return true
     }
 
+    // Check if walking on bush
     const stepBush = (positionX, positionY) =>
     {
         for (const bush of bushes)
@@ -198,6 +211,7 @@ if ($containerMap)
         return false
     }
 
+    // Load pokemon
     const loadPokemon = (array) =>
     {
         $crush.style.opacity = '1'
@@ -205,16 +219,26 @@ if ($containerMap)
         const pokemonSpawn  = array[pokemonIndex].spawn_chance
         const pokemonChance = Math.random() * SPAW_RATE - pokemonSpawn
         const isSpawned     = pokemonChance < 0 ? true : false
+
+        // Check if pokemon is spawned
         if (isSpawned)
         {
+            // Forbid to walk
             canWalk = false
+
+            // Send data
             const xhr = new XMLHttpRequest()
             xhr.open('POST', './')
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
             xhr.send(encodeURI(`action=catch&pokemon_index=${pokemonIndex}&position_x=${position.x / 10}&position_y=${position.y / 10}`))
+
+            // Listen to request done
             xhr.onload = () =>
             {
+                // Add rectangles
                 $rectangles.classList.add('active')
+
+                // Load new page
                 setTimeout(() =>
                 {
                     window.location.href = './catch'
@@ -223,13 +247,17 @@ if ($containerMap)
         }
     }
 
+    // Load pokedx data
     loadJSON('pokedex', (response) =>
     {
+        // Parse data
         const JSON_file = JSON.parse(response)
         const pokemons  = JSON_file.pokemon
 
+        // Listen to keydown
         window.addEventListener('keydown', (event) =>
         {
+            // Check if character can walk
             if (canWalk)
             {
                 switch (event.keyCode)
@@ -279,18 +307,21 @@ if ($containerMap)
                         $sprite.style.transform = `translate(0%, 0)`
                         break
                 }
+                // Update position
                 $character.style.transform = `translate(${position.x}%, ${position.y}%)`
                 $crush.style.transform     = `translate(${position.x * 2}%, ${position.y * 2}%)`
             }
         })
     })
 
+    // Initialize map size
     setTimeout(() =>
     {
         resizeImage(windowWidth, windowHeight, setStyles)
         document.body.classList.remove('fade')
     }, 250)
 
+    // Listen to resize
     window.addEventListener('resize', () =>
     {
         windowWidth  = window.innerWidth
@@ -298,8 +329,10 @@ if ($containerMap)
         resizeImage(windowWidth, windowHeight, setStyles)
     })
 }
+// Check if catching page
 else if ($containerCatch)
 {
+    // Get elements
     const $rectangles   = $containerCatch.querySelector('.rectangles')
     const $title        = $containerCatch.querySelector('h1')
     const $appears      = $title.querySelector('.appears')
@@ -311,8 +344,10 @@ else if ($containerCatch)
     const $tool         = $button.querySelector('.tool')
     const CATCH_RATE    = 75
 
+    // Load pokedex data
     loadJSON('pokedex', (response) =>
     {
+        // Parse data
         const JSON_file    = JSON.parse(response)
         const pokemons     = JSON_file.pokemon
         const pokemonName  = $appearance.getAttribute('alt')
@@ -320,14 +355,19 @@ else if ($containerCatch)
         const pokemonIndex = pokemons.indexOf(pokemon)
         const pokemonCatch = pokemon.catch_chance
 
+        // Remove rectangles
         setTimeout(() =>
         {
             $rectangles.classList.remove('active')
+
+            // Display elements
             setTimeout(() =>
             {
                 $title.classList.add('active')
                 $appearance.classList.add('active')
                 $illustration.classList.add('active')
+
+                // Display button
                 setTimeout(() =>
                 {
                     $tool.classList.add('active')
@@ -336,17 +376,26 @@ else if ($containerCatch)
                     {
                         event.preventDefault()
                         $tool.classList.add('thrown')
+
+                        // Throw pokeball
                         setTimeout(() => 
                         {
                             $appearance.classList.add('caught')
+
+                            // Catch pokemon
                             setTimeout(() =>
                             {
                                 $appears.style.display = 'none'
                                 const pokemonChance = Math.random() * CATCH_RATE - pokemonCatch
                                 const isCaught      = pokemonChance < 0 ? true : false
+                                
+                                // Check if pokemon is caught
                                 if (isCaught)
                                 {
+                                    // Update
                                     $caught.style.display = 'block'
+
+                                    // Send data
                                     const xhr = new XMLHttpRequest()
                                     xhr.open('POST', './')
                                     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
@@ -365,14 +414,21 @@ else if ($containerCatch)
                                 }
                                 else
                                 {
+                                    // Update
                                     $escaped.style.display = 'block'
                                     $appearance.classList.remove('caught')
+
+                                    // Set pokemon escaping
                                     setTimeout(() =>
                                     {
                                         $appearance.classList.remove('active')
+
+                                        // Fadeout window
                                         setTimeout(() =>
                                         {
                                             document.body.classList.add('fade')
+
+                                            // Redirect to map page
                                             setTimeout(() =>
                                             {
                                                 window.location.href = './'
