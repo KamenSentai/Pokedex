@@ -198,7 +198,7 @@ $container['getRandom'] = function($container)
 
     // Set new data
     $dataBase['page']    = 'pokemon';
-    $dataBase['title']   = TITLE . ' | ' . $pokemon->name;
+    $dataBase['title']   = TITLE . ' | ' . (isset($pokemon->is_owned) ? $pokemon->name : '???');
     $dataData['pokemon'] = $pokemon;
     $dataView['base']    = $dataBase;
     $dataView['data']    = $dataData;

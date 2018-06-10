@@ -28,17 +28,17 @@ $app
             $dataBase     = $dataView['base'];
             $dataData     = $dataView['data'];
             $slug         = $arguments['slug'];
-            $pokemonIndex = strtolower(array_search($slug, array_column($dataData['pokemons'], 'slug')));
+            $pokemonIndex = array_search($slug, array_column($dataData['pokemons'], 'slug'));
 
             // Exception
-            if (!$pokemonIndex)
+            if (!$pokemonIndex && !is_int($pokemonIndex))
                 throw new \Slim\Exception\NotFoundException($request, $response);
             else
                 $pokemon = $dataData['pokemons'][$pokemonIndex];
 
             // Set new data
             $dataBase['page']    = 'pokemon';
-            $dataBase['title']   = TITLE . ' | ' . $pokemon->name;
+            $dataBase['title']   = TITLE . ' | ' . (isset($pokemon->is_owned) ? $pokemon->name : '???');
             $dataData['pokemon'] = $pokemon;
             $dataView['base']    = $dataBase;
             $dataView['data']    = $dataData;
