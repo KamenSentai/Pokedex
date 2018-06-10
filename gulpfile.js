@@ -280,9 +280,9 @@ gulp.task('watch', () =>
 gulp.task('minify', () =>
 {
     // Images
-    gulp.src(`${path.public.assets}images/*.*`)
+    gulp.src(`${path.public.assets}images/**/*.*`)
         .pipe(gulpImagemin())
-        .pipe(gulp.dest(`${path.public.assets}images/`))
+        .pipe(gulp.dest(`${path.public.assets}images/**/`))
         .pipe(gulpNotify(
             {
                 title   : 'Images',
