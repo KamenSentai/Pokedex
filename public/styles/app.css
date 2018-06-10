@@ -835,8 +835,7 @@ html body.overflow {
   -webkit-box-shadow: 0 0.25rem 0.5rem 0 rgba(0,0,0,0.25);
           box-shadow: 0 0.25rem 0.5rem 0 rgba(0,0,0,0.25);
 }
-.container.container-pokedex .content .cards .card::before {
-  content: '';
+.container.container-pokedex .content .cards .card .card-shadow {
   position: absolute;
   left: 0;
   top: 0;
@@ -849,7 +848,7 @@ html body.overflow {
   transition: opacity 0.25s ease-out;
   will-change: opacity;
 }
-.container.container-pokedex .content .cards .card:hover::before {
+.container.container-pokedex .content .cards .card:hover .card-shadow {
   opacity: 1;
 }
 .container.container-pokedex .content .cards .card .card-img {
