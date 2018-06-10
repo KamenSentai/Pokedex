@@ -339,51 +339,53 @@
                     width 12.5rem
                     margin 1rem 0
                     box-shadow 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.25)
-                    .card-shadow
-                        position absolute
-                        left 0
-                        top 0
-                        width 100%
-                        height 100%
-                        box-shadow 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.25)
-                        opacity 0
-                        composite(opacity, 0.25s, ease-out)
-                    &:hover .card-shadow
-                        opacity 1
-                    .card-img
+            .cards .card,
+            .sheet .sheet-card
+                .card-shadow
+                    position absolute
+                    left 0
+                    top 0
+                    width 100%
+                    height 100%
+                    box-shadow 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.25)
+                    opacity 0
+                    composite(opacity, 0.25s, ease-out)
+                &:hover .card-shadow
+                    opacity 1
+                .card-img
+                    position static
+                    width 100%
+                    height auto
+                    background-color rgba(#000, 0.125)
+                    &.unknown
+                        filter brightness(0)
+                        opacity 0.75
+                .card-labels
+                    position absolute
+                    right 0
+                    top 0
+                    width 25%
+                    font-size 0
+                    .card-label
                         position static
                         width 100%
                         height auto
-                        background-color rgba(#000, 0.125)
-                        &.unknown
-                            filter brightness(0)
-                            opacity 0.75
-                    .card-labels
+                .card-body
+                    position relative
+                    padding 1rem
+                    .card-icon
                         position absolute
-                        right 0
+                        left 50%
                         top 0
-                        width 25%
-                        font-size 0
-                        .card-label
-                            position static
-                            width 100%
-                            height auto
-                    .card-body
-                        position relative
-                        padding 1rem
-                        .card-icon
-                            position absolute
-                            left 50%
-                            top 0
-                            height 2rem
-                            width auto
-                            transform translateX(-50%)
-                .card-error
-                    h1
-                        font-size 2rem
-                        margin-bottom 1.5rem
-                    p
-                        margin 1rem 0
+                        height 2rem
+                        width auto
+                        transform translateX(-50%)
+            .card-error
+                h1
+                    font-size 2rem
+                    margin-bottom 1.5rem
+                p
+                    margin 1rem 0
 
             // Sheet
             .sheet
@@ -482,6 +484,8 @@
                     h2
                         font-size 1.5rem
                         margin 0.5rem 0
+                    h4
+                        font-size 1.25rem
                     h5
                         margin 1rem 0
                         border-bottom 0.125rem solid $C-reddark
@@ -494,3 +498,22 @@
                         width auto
                         height 1.5em
                         transform translateY(-75%)
+                
+                // Evolution
+                .sheet-cards
+                    display flex
+                    width 100%
+                    flex-direction row
+                    justify-content space-between
+                    flex-wrap wrap
+                    .sheet-col
+                        display flex
+                        width 12.5rem
+                        flex-direction column
+                        align-content space-between
+                        flex-wrap wrap
+                        .sheet-card
+                            display inline-block
+                            position relative
+                            width 100%
+                            box-shadow 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.25)

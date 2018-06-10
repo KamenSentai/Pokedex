@@ -5,27 +5,7 @@
         {# Card #}
         {% if data.pokemons | length > 0 %}
             {% for _pokemon in data.pokemons %}
-                <div class="card">
-                    <a href="{{ path_for('pokemon', { slug: _pokemon.slug }) }}" title="{{ _pokemon.is_owned ? _pokemon.name : '???' }}">
-                        <div class="card-shadow"></div>
-                        <img class="card-img {{ _pokemon.is_owned ? : 'unknown' }}" src="{{ base_url() }}/assets/images/pokemons/{{ _pokemon.img }}" alt="{{ _pokemon.name }}" draggable="false">
-                        {% if _pokemon.is_owned %}
-                            <div class="card-labels">
-                                {% for _type in _pokemon.type %}
-                                    <a href="{{ path_for('type', { slug: _type | lower }) }}" title="{{ _type | lower }}">
-                                        <img class="card-label" src="{{ base_url() }}/assets/images/logo/{{ _type | lower }}_icon.png" alt="{{ _type }}" draggable="false">
-                                    </a>
-                                {% endfor %}
-                            </div>
-                        {% endif %}
-                    </a>
-                    <a href="{{ path_for('pokemon', { slug: _pokemon.slug }) }}" title="{{ _pokemon.is_owned ? _pokemon.name : '???' }}">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ _pokemon.is_owned ? _pokemon.name : '???' }}</h5>
-                            <p class="card-text">#{{ _pokemon.num }}</p>
-                        </div>
-                    </a>
-                </div>
+                {{ include('./layouts/card.twig', { _pokemon: _pokemon, isSheet: false }) }}
             {% endfor %}
         {% else %}
             <div class="card-error">

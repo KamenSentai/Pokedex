@@ -28,7 +28,7 @@
                     {% endif %}
                     {% for _type in data.pokemon.type %}
                         <a class="sheet-icon-link" href="{{ path_for('type', { slug: _type | lower }) }}" title="{{ _type }}">
-                                <img class="sheet-icon" src="{{ base_url() }}/assets/images/logo/{{ _type | lower }}_icon.png" alt="{{ _type }}" draggable="false">
+                            <img class="sheet-icon" src="{{ base_url() }}/assets/images/logo/{{ _type | lower }}_icon.png" alt="{{ _type }}" draggable="false">
                         </a>
                     {% endfor %}
                 {% else %}
@@ -39,6 +39,56 @@
             <h5>Weight : {{ data.pokemon.is_owned ? data.pokemon.weight : '???' }}</h5>
             <h5>Owning : {{ data.pokemon.is_owned ? data.pokemon.number_owned : 0 }}</h5>
             <h5>Description : {{ data.pokemon.is_owned ? data.pokemon.description : '???' }}</h5>
+        </div>
+        <div class="sheet-data">
+            <h4>Evolutions</h4>
+        </div>
+        <div class="sheet-cards">
+            {% if data.pokemon.prev_evolution | length > 0 %}
+                <div class="sheet-col">
+                    {% for _prev_evolution in data.pokemon.prev_evolution %}
+                        {% if data.pokemons[_prev_evolution.id - 1] |length > 0 %}
+                            {% for _prev_prev_evolution in data.pokemons[_prev_evolution.id - 1].prev_evolution %}                                
+                                <div class="sheet-card">
+                                    {{ include('./layouts/card.twig', { _pokemon: data.pokemons[_prev_prev_evolution.id - 1], isSheet: true }) }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="sheet-col">
+                    {% for _prev_evolution in data.pokemon.prev_evolution %}
+                        <div class="sheet-card">
+                            {{ include('./layouts/card.twig', { _pokemon: data.pokemons[_prev_evolution.id - 1], isSheet: true }) }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% if data.pokemon.prev_evolution | length > 0 or data.pokemon.next_evolution | length > 0 %}
+                <div class="sheet-col">
+                    {{ include('./layouts/card.twig', { _pokemon: data.pokemon, isSheet: true }) }}
+                </div>
+            {% endif %}
+            {% if data.pokemon.next_evolution | length > 0 %}
+                <div class="sheet-col">
+                    {% for _next_evolution in data.pokemon.next_evolution %}
+                        <div class="sheet-card">
+                            {{ include('./layouts/card.twig', { _pokemon: data.pokemons[_next_evolution.id - 1], isSheet: true }) }}
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="sheet-col">
+                    {% for _next_evolution in data.pokemon.next_evolution %}
+                        {% if data.pokemons[_next_evolution.id - 1] |length > 0 %}
+                            {% for _next_next_evolution in data.pokemons[_next_evolution.id - 1].next_evolution %}                                
+                                <div class="sheet-card">
+                                    {{ include('./layouts/card.twig', { _pokemon: data.pokemons[_next_next_evolution.id - 1], isSheet: true }) }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
         </div>
     </div>
     {% if data.pokemon.is_owned  %}

@@ -24,12 +24,8 @@
             ],
             "next_evolution": [
                 {
-                    "num": "002",
+                    "id": 2,
                     "name": "Ivysaur"
-                },
-                {
-                    "num": "003",
-                    "name": "Venusaur"
                 }
             ]
         },
@@ -57,13 +53,13 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "001",
+                    "id": 1,
                     "name": "Bulbasaur"
                 }
             ],
             "next_evolution": [
                 {
-                    "num": "003",
+                    "id": 3,
                     "name": "Venusaur"
                 }
             ]
@@ -92,11 +88,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "001",
-                    "name": "Bulbasaur"
-                },
-                {
-                    "num": "002",
+                    "id": 2,
                     "name": "Ivysaur"
                 }
             ]
@@ -123,12 +115,8 @@
             ],
             "next_evolution": [
                 {
-                    "num": "005",
+                    "id": 5,
                     "name": "Charmeleon"
-                },
-                {
-                    "num": "006",
-                    "name": "Charizard"
                 }
             ]
         },
@@ -154,13 +142,13 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "004",
+                    "id": 4,
                     "name": "Charmander"
                 }
             ],
             "next_evolution": [
                 {
-                    "num": "006",
+                    "id": 6,
                     "name": "Charizard"
                 }
             ]
@@ -188,11 +176,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "004",
-                    "name": "Charmander"
-                },
-                {
-                    "num": "005",
+                    "id": 5,
                     "name": "Charmeleon"
                 }
             ]
@@ -218,12 +202,8 @@
             ],
             "next_evolution": [
                 {
-                    "num": "008",
+                    "id": 8,
                     "name": "Wartortle"
-                },
-                {
-                    "num": "009",
-                    "name": "Blastoise"
                 }
             ]
         },
@@ -248,13 +228,13 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "007",
+                    "id": 7,
                     "name": "Squirtle"
                 }
             ],
             "next_evolution": [
                 {
-                    "num": "009",
+                    "id": 9,
                     "name": "Blastoise"
                 }
             ]
@@ -280,11 +260,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "007",
-                    "name": "Squirtle"
-                },
-                {
-                    "num": "008",
+                    "id": 8,
                     "name": "Wartortle"
                 }
             ]
@@ -311,12 +287,8 @@
             ],
             "next_evolution": [
                 {
-                    "num": "011",
+                    "id": 11,
                     "name": "Metapod"
-                },
-                {
-                    "num": "012",
-                    "name": "Butterfree"
                 }
             ]
         },
@@ -342,13 +314,13 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "010",
+                    "id": 10,
                     "name": "Caterpie"
                 }
             ],
             "next_evolution": [
                 {
-                    "num": "012",
+                    "id": 12,
                     "name": "Butterfree"
                 }
             ]
@@ -378,11 +350,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "010",
-                    "name": "Caterpie"
-                },
-                {
-                    "num": "011",
+                    "id": 11,
                     "name": "Metapod"
                 }
             ]
@@ -411,12 +379,8 @@
             ],
             "next_evolution": [
                 {
-                    "num": "014",
+                    "id": 14,
                     "name": "Kakuna"
-                },
-                {
-                    "num": "015",
-                    "name": "Beedrill"
                 }
             ]
         },
@@ -444,13 +408,13 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "013",
+                    "id": 13,
                     "name": "Weedle"
                 }
             ],
             "next_evolution": [
                 {
-                    "num": "015",
+                    "id": 15,
                     "name": "Beedrill"
                 }
             ]
@@ -479,11 +443,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "013",
-                    "name": "Weedle"
-                },
-                {
-                    "num": "014",
+                    "id": 14,
                     "name": "Kakuna"
                 }
             ]
@@ -510,12 +470,8 @@
             ],
             "next_evolution": [
                 {
-                    "num": "017",
+                    "id": 17,
                     "name": "Pidgeotto"
-                },
-                {
-                    "num": "018",
-                    "name": "Pidgeot"
                 }
             ]
         },
@@ -541,13 +497,13 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "016",
+                    "id": 16,
                     "name": "Pidgey"
                 }
             ],
             "next_evolution": [
                 {
-                    "num": "018",
+                    "id": 18,
                     "name": "Pidgeot"
                 }
             ]
@@ -574,11 +530,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "016",
-                    "name": "Pidgey"
-                },
-                {
-                    "num": "017",
+                    "id": 17,
                     "name": "Pidgeotto"
                 }
             ]
@@ -603,7 +555,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "020",
+                    "id": 20,
                     "name": "Raticate"
                 }
             ]
@@ -628,7 +580,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "019",
+                    "id": 19,
                     "name": "Rattata"
                 }
             ]
@@ -655,7 +607,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "022",
+                    "id": 22,
                     "name": "Fearow"
                 }
             ]
@@ -682,7 +634,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "021",
+                    "id": 21,
                     "name": "Spearow"
                 }
             ]
@@ -708,7 +660,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "024",
+                    "id": 24,
                     "name": "Arbok"
                 }
             ]
@@ -734,7 +686,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "023",
+                    "id": 23,
                     "name": "Ekans"
                 }
             ]
@@ -759,7 +711,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "026",
+                    "id": 26,
                     "name": "Raichu"
                 }
             ]
@@ -784,7 +736,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "025",
+                    "id": 25,
                     "name": "Pikachu"
                 }
             ]
@@ -811,7 +763,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "028",
+                    "id": 28,
                     "name": "Sandslash"
                 }
             ]
@@ -838,7 +790,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "027",
+                    "id": 27,
                     "name": "Sandshrew"
                 }
             ]
@@ -864,12 +816,8 @@
             ],
             "next_evolution": [
                 {
-                    "num": "030",
+                    "id": 30,
                     "name": "Nidorina"
-                },
-                {
-                    "num": "031",
-                    "name": "Nidoqueen"
                 }
             ]
         },
@@ -894,13 +842,13 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "029",
+                    "id": 29,
                     "name": "Nidoran ♀"
                 }
             ],
             "next_evolution": [
                 {
-                    "num": "031",
+                    "id": 31,
                     "name": "Nidoqueen"
                 }
             ]
@@ -929,11 +877,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "029",
-                    "name": "Nidoran ♀"
-                },
-                {
-                    "num": "030",
+                    "id": 30,
                     "name": "Nidorina"
                 }
             ]
@@ -959,12 +903,8 @@
             ],
             "next_evolution": [
                 {
-                    "num": "033",
+                    "id": 33,
                     "name": "Nidorino"
-                },
-                {
-                    "num": "034",
-                    "name": "Nidoking"
                 }
             ]
         },
@@ -989,13 +929,13 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "032",
+                    "id": 32,
                     "name": "Nidoran ♂"
                 }
             ],
             "next_evolution": [
                 {
-                    "num": "034",
+                    "id": 34,
                     "name": "Nidoking"
                 }
             ]
@@ -1024,11 +964,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "032",
-                    "name": "Nidoran ♂"
-                },
-                {
-                    "num": "033",
+                    "id": 33,
                     "name": "Nidorino"
                 }
             ]
@@ -1053,7 +989,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "036",
+                    "id": 36,
                     "name": "Clefable"
                 }
             ]
@@ -1078,7 +1014,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "035",
+                    "id": 35,
                     "name": "Clefairy"
                 }
             ]
@@ -1105,7 +1041,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "038",
+                    "id": 38,
                     "name": "Ninetales"
                 }
             ]
@@ -1132,7 +1068,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "037",
+                    "id": 37,
                     "name": "Vulpix"
                 }
             ]
@@ -1157,7 +1093,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "040",
+                    "id": 40,
                     "name": "Wigglytuff"
                 }
             ]
@@ -1182,7 +1118,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "039",
+                    "id": 39,
                     "name": "Jigglypuff"
                 }
             ]
@@ -1211,7 +1147,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "042",
+                    "id": 42,
                     "name": "Golbat"
                 }
             ]
@@ -1240,7 +1176,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "041",
+                    "id": 41,
                     "name": "Zubat"
                 }
             ]
@@ -1269,12 +1205,8 @@
             ],
             "next_evolution": [
                 {
-                    "num": "044",
+                    "id": 44,
                     "name": "Gloom"
-                },
-                {
-                    "num": "045",
-                    "name": "Vileplume"
                 }
             ]
         },
@@ -1302,13 +1234,13 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "043",
+                    "id": 43,
                     "name": "Oddish"
                 }
             ],
             "next_evolution": [
                 {
-                    "num": "045",
+                    "id": 45,
                     "name": "Vileplume"
                 }
             ]
@@ -1337,11 +1269,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "043",
-                    "name": "Oddish"
-                },
-                {
-                    "num": "044",
+                    "id": 44,
                     "name": "Gloom"
                 }
             ]
@@ -1372,7 +1300,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "047",
+                    "id": 47,
                     "name": "Parasect"
                 }
             ]
@@ -1403,7 +1331,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "046",
+                    "id": 46,
                     "name": "Paras"
                 }
             ]
@@ -1432,7 +1360,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "049",
+                    "id": 49,
                     "name": "Venomoth"
                 }
             ]
@@ -1461,7 +1389,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "048",
+                    "id": 48,
                     "name": "Venonat"
                 }
             ]
@@ -1488,7 +1416,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "051",
+                    "id": 51,
                     "name": "Dugtrio"
                 }
             ]
@@ -1515,7 +1443,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "050",
+                    "id": 50,
                     "name": "Diglett"
                 }
             ]
@@ -1540,7 +1468,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "053",
+                    "id": 53,
                     "name": "Persian"
                 }
             ]
@@ -1565,7 +1493,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "052",
+                    "id": 52,
                     "name": "Meowth"
                 }
             ]
@@ -1591,7 +1519,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "055",
+                    "id": 55,
                     "name": "Golduck"
                 }
             ]
@@ -1617,7 +1545,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "054",
+                    "id": 54,
                     "name": "Psyduck"
                 }
             ]
@@ -1644,7 +1572,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "057",
+                    "id": 57,
                     "name": "Primeape"
                 }
             ]
@@ -1671,7 +1599,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "056",
+                    "id": 56,
                     "name": "Mankey"
                 }
             ]
@@ -1698,7 +1626,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "059",
+                    "id": 59,
                     "name": "Arcanine"
                 }
             ]
@@ -1725,7 +1653,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "058",
+                    "id": 58,
                     "name": "Growlithe"
                 }
             ]
@@ -1751,12 +1679,8 @@
             ],
             "next_evolution": [
                 {
-                    "num": "061",
+                    "id": 61,
                     "name": "Poliwhirl"
-                },
-                {
-                    "num": "062",
-                    "name": "Poliwrath"
                 }
             ]
         },
@@ -1781,13 +1705,13 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "060",
+                    "id": 60,
                     "name": "Poliwag"
                 }
             ],
             "next_evolution": [
                 {
-                    "num": "062",
+                    "id": 62,
                     "name": "Poliwrath"
                 }
             ]
@@ -1817,11 +1741,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "060",
-                    "name": "Poliwag"
-                },
-                {
-                    "num": "061",
+                    "id": 61,
                     "name": "Poliwhirl"
                 }
             ]
@@ -1848,12 +1768,8 @@
             ],
             "next_evolution": [
                 {
-                    "num": "064",
+                    "id": 64,
                     "name": "Kadabra"
-                },
-                {
-                    "num": "065",
-                    "name": "Alakazam"
                 }
             ]
         },
@@ -1879,13 +1795,13 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "063",
+                    "id": 63,
                     "name": "Abra"
                 }
             ],
             "next_evolution": [
                 {
-                    "num": "065",
+                    "id": 65,
                     "name": "Alakazam"
                 }
             ]
@@ -1912,11 +1828,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "063",
-                    "name": "Abra"
-                },
-                {
-                    "num": "064",
+                    "id": 64,
                     "name": "Kadabra"
                 }
             ]
@@ -1943,12 +1855,8 @@
             ],
             "next_evolution": [
                 {
-                    "num": "067",
+                    "id": 67,
                     "name": "Machoke"
-                },
-                {
-                    "num": "068",
-                    "name": "Machamp"
                 }
             ]
         },
@@ -1974,13 +1882,13 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "066",
+                    "id": 66,
                     "name": "Machop"
                 }
             ],
             "next_evolution": [
                 {
-                    "num": "068",
+                    "id": 68,
                     "name": "Machamp"
                 }
             ]
@@ -2007,11 +1915,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "066",
-                    "name": "Machop"
-                },
-                {
-                    "num": "067",
+                    "id": 67,
                     "name": "Machoke"
                 }
             ]
@@ -2040,12 +1944,8 @@
             ],
             "next_evolution": [
                 {
-                    "num": "070",
+                    "id": 70,
                     "name": "Weepinbell"
-                },
-                {
-                    "num": "071",
-                    "name": "Victreebel"
                 }
             ]
         },
@@ -2073,13 +1973,13 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "069",
+                    "id": 69,
                     "name": "Bellsprout"
                 }
             ],
             "next_evolution": [
                 {
-                    "num": "071",
+                    "id": 71,
                     "name": "Victreebel"
                 }
             ]
@@ -2108,11 +2008,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "069",
-                    "name": "Bellsprout"
-                },
-                {
-                    "num": "070",
+                    "id": 70,
                     "name": "Weepinbell"
                 }
             ]
@@ -2140,7 +2036,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "073",
+                    "id": 73,
                     "name": "Tentacruel"
                 }
             ]
@@ -2168,7 +2064,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "072",
+                    "id": 72,
                     "name": "Tentacool"
                 }
             ]
@@ -2199,12 +2095,8 @@
             ],
             "next_evolution": [
                 {
-                    "num": "075",
+                    "id": 75,
                     "name": "Graveler"
-                },
-                {
-                    "num": "076",
-                    "name": "Golem"
                 }
             ]
         },
@@ -2234,13 +2126,13 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "074",
+                    "id": 74,
                     "name": "Geodude"
                 }
             ],
             "next_evolution": [
                 {
-                    "num": "076",
+                    "id": 76,
                     "name": "Golem"
                 }
             ]
@@ -2271,11 +2163,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "074",
-                    "name": "Geodude"
-                },
-                {
-                    "num": "075",
+                    "id": 75,
                     "name": "Graveler"
                 }
             ]
@@ -2302,7 +2190,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "078",
+                    "id": 78,
                     "name": "Rapidash"
                 }
             ]
@@ -2329,7 +2217,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "077",
+                    "id": 77,
                     "name": "Ponyta"
                 }
             ]
@@ -2359,7 +2247,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "080",
+                    "id": 80,
                     "name": "Slowbro"
                 }
             ]
@@ -2389,7 +2277,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "079",
+                    "id": 79,
                     "name": "Slowpoke"
                 }
             ]
@@ -2416,7 +2304,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "082",
+                    "id": 82,
                     "name": "Magneton"
                 }
             ]
@@ -2443,7 +2331,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "081",
+                    "id": 81,
                     "name": "Magnemite"
                 }
             ]
@@ -2491,7 +2379,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "085",
+                    "id": 85,
                     "name": "Dodrio"
                 }
             ]
@@ -2518,7 +2406,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "084",
+                    "id": 84,
                     "name": "Doduo"
                 }
             ]
@@ -2544,7 +2432,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "087",
+                    "id": 87,
                     "name": "Dewgong"
                 }
             ]
@@ -2573,7 +2461,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "086",
+                    "id": 86,
                     "name": "Seel"
                 }
             ]
@@ -2599,7 +2487,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "089",
+                    "id": 89,
                     "name": "Muk"
                 }
             ]
@@ -2625,7 +2513,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "088",
+                    "id": 88,
                     "name": "Grimer"
                 }
             ]
@@ -2651,7 +2539,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "091",
+                    "id": 91,
                     "name": "Cloyster"
                 }
             ]
@@ -2680,7 +2568,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "090",
+                    "id": 90,
                     "name": "Shellder"
                 }
             ]
@@ -2709,12 +2597,8 @@
             ],
             "next_evolution": [
                 {
-                    "num": "093",
+                    "id": 93,
                     "name": "Haunter"
-                },
-                {
-                    "num": "094",
-                    "name": "Gengar"
                 }
             ]
         },
@@ -2742,13 +2626,13 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "092",
+                    "id": 92,
                     "name": "Gastly"
                 }
             ],
             "next_evolution": [
                 {
-                    "num": "094",
+                    "id": 94,
                     "name": "Gengar"
                 }
             ]
@@ -2777,11 +2661,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "092",
-                    "name": "Gastly"
-                },
-                {
-                    "num": "093",
+                    "id": 93,
                     "name": "Haunter"
                 }
             ]
@@ -2833,7 +2713,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "097",
+                    "id": 97,
                     "name": "Hypno"
                 }
             ]
@@ -2860,7 +2740,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "096",
+                    "id": 96,
                     "name": "Drowzee"
                 }
             ]
@@ -2886,7 +2766,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "099",
+                    "id": 99,
                     "name": "Kingler"
                 }
             ]
@@ -2912,7 +2792,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "098",
+                    "id": 98,
                     "name": "Krabby"
                 }
             ]
@@ -2937,7 +2817,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "101",
+                    "id": 101,
                     "name": "Electrode"
                 }
             ]
@@ -2962,7 +2842,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "100",
+                    "id": 100,
                     "name": "Voltorb"
                 }
             ]
@@ -2994,7 +2874,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "103",
+                    "id": 103,
                     "name": "Exeggutor"
                 }
             ]
@@ -3026,7 +2906,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "102",
+                    "id": 102,
                     "name": "Exeggcute"
                 }
             ]
@@ -3053,7 +2933,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "105",
+                    "id": 105,
                     "name": "Marowak"
                 }
             ]
@@ -3080,7 +2960,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "104",
+                    "id": 104,
                     "name": "Cubone"
                 }
             ]
@@ -3167,7 +3047,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "110",
+                    "id": 110,
                     "name": "Weezing"
                 }
             ]
@@ -3193,7 +3073,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "109",
+                    "id": 109,
                     "name": "Koffing"
                 }
             ]
@@ -3224,7 +3104,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "112",
+                    "id": 112,
                     "name": "Rhydon"
                 }
             ]
@@ -3255,7 +3135,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "111",
+                    "id": 111,
                     "name": "Rhyhorn"
                 }
             ]
@@ -3342,7 +3222,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "117",
+                    "id": 117,
                     "name": "Seadra"
                 }
             ]
@@ -3368,7 +3248,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "116",
+                    "id": 116,
                     "name": "Horsea"
                 }
             ]
@@ -3394,7 +3274,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "119",
+                    "id": 119,
                     "name": "Seaking"
                 }
             ]
@@ -3420,7 +3300,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "118",
+                    "id": 118,
                     "name": "Goldeen"
                 }
             ]
@@ -3446,7 +3326,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "121",
+                    "id": 121,
                     "name": "Starmie"
                 }
             ]
@@ -3476,7 +3356,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "120",
+                    "id": 120,
                     "name": "Staryu"
                 }
             ]
@@ -3652,7 +3532,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "130",
+                    "id": 130,
                     "name": "Gyarados"
                 }
             ]
@@ -3679,7 +3559,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "129",
+                    "id": 129,
                     "name": "Magikarp"
                 }
             ]
@@ -3746,15 +3626,15 @@
             ],
             "next_evolution": [
                 {
-                    "num": "134",
+                    "id": 134,
                     "name": "Vaporeon"
                 },
                 {
-                    "num": "135",
+                    "id": 135,
                     "name": "Jolteon"
                 },
                 {
-                    "num": "136",
+                    "id": 136,
                     "name": "Flareon"
                 }
             ]
@@ -3780,7 +3660,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "133",
+                    "id": 133,
                     "name": "Eevee"
                 }
             ]
@@ -3805,7 +3685,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "133",
+                    "id": 133,
                     "name": "Eevee"
                 }
             ]
@@ -3832,7 +3712,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "133",
+                    "id": 133,
                     "name": "Eevee"
                 }
             ]
@@ -3880,7 +3760,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "139",
+                    "id": 139,
                     "name": "Omastar"
                 }
             ]
@@ -3909,7 +3789,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "138",
+                    "id": 138,
                     "name": "Omanyte"
                 }
             ]
@@ -3938,7 +3818,7 @@
             ],
             "next_evolution": [
                 {
-                    "num": "141",
+                    "id": 141,
                     "name": "Kabutops"
                 }
             ]
@@ -3967,7 +3847,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "140",
+                    "id": 140,
                     "name": "Kabuto"
                 }
             ]
@@ -4103,12 +3983,8 @@
             ],
             "next_evolution": [
                 {
-                    "num": "148",
+                    "id": 148,
                     "name": "Dragonair"
-                },
-                {
-                    "num": "149",
-                    "name": "Dragonite"
                 }
             ]
         },
@@ -4134,13 +4010,13 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "147",
+                    "id": 147,
                     "name": "Dratini"
                 }
             ],
             "next_evolution": [
                 {
-                    "num": "149",
+                    "id": 149,
                     "name": "Dragonite"
                 }
             ]
@@ -4169,11 +4045,7 @@
             ],
             "prev_evolution": [
                 {
-                    "num": "147",
-                    "name": "Dratini"
-                },
-                {
-                    "num": "148",
+                    "id": 148,
                     "name": "Dragonair"
                 }
             ]

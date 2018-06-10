@@ -448,9 +448,15 @@ else if ($containerCatch)
 else if ($audio)
 {
     const $button = document.querySelector('.sheet-button')
-
     $button.addEventListener('click', () =>
     {
         $audio.play()
     })
 }
+
+// Remove empty columns
+const $sheetCols = document.querySelectorAll('.sheet-col')
+if ($sheetCols.length > 0)
+    for (const $sheetCol of $sheetCols)
+        if ($sheetCol.childElementCount == 0)
+            $sheetCol.parentNode.removeChild($sheetCol)
