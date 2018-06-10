@@ -1,0 +1,34 @@
+{% extends './layouts/base.twig' %}
+
+{% block contents %}
+    <div class="cards">
+        {# Card #}
+        {% if data.pokemons | length > 0 %}
+            {% for _pokemon in data.pokemons %}
+                <a href="{{ path_for('pokemon', { slug: _pokemon.slug }) }}" title="{{ _pokemon.is_owned ? _pokemon.name : '???' }}">
+                    <div class="card">
+                        <img class="card-img {{ _pokemon.is_owned ? : 'unknown' }}" src="{{ base_url() }}/assets/images/pokemons/{{ _pokemon.img }}" alt="{{ _pokemon.name }}" draggable="false">
+                        {% if _pokemon.is_owned %}
+                            <div class="card-labels">
+                                {% for _type in _pokemon.type %}
+                                    <img class="card-label" src="{{ base_url() }}/assets/images/logo/{{ _type | lower }}_icon.png" alt="{{ _type }}" draggable="false">
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ _pokemon.is_owned ? _pokemon.name : '???' }}</h5>
+                            <p class="card-text">#{{ _pokemon.num }}</p>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        {% else %}
+            <div class="card-error">
+                <h1>No pokemon found</h1>
+                <p>The pokedex database only provides pokemons of the first season with 151 pokemons.</p>
+                <p>Pokemons with type {{ data.type }} appear later.</p>
+                <p>Please checkout later the website when the database is updated.</p>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -264,18 +264,33 @@
                     opacity 0.6
                     border-radius 1rem 0.5rem
             .top-button
+                position relative
                 width 1.25rem
                 height 1.25rem
                 margin-right 0.625rem
                 float left
                 box-shadow 0 0 0.625rem $C-redblur
                 border-radius 50%
+                &::after
+                    pseudo-element()
+                    border-radius 50%
+                    filter blur(0.25em)
+                    opacity 0
+                    composite(opacity, 0.125s, ease-out)
+                &:hover::after
+                    opacity 1
                 &.top-button-red
                     background radial-gradient(#fb7b7b, #fb0505)
+                    &::after
+                        background-color lighten(#fb0505, 37.5)
                 &.top-button-yellow
                     background radial-gradient(#fbfb9b, #fbfb05)
+                    &::after
+                        background-color lighten(#fbfb05, 37.5)
                 &.top-button-green
                     background radial-gradient(#b0fb7b, #50fb05)
+                    &::after
+                        background-color lighten(#50fb05, 37.5)
         .content
             position absolute
             left 0
@@ -316,23 +331,21 @@
                 display flex
                 width 100%
                 flex-direction row
-                flex-wrap wrap
                 justify-content space-between
+                flex-wrap wrap
                 .card
                     display inline-block
                     position relative
                     width 12.5rem
                     margin 1rem 0
                     box-shadow 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.25)
-                    &::after
+                    &::before
                         pseudo-element()
                         box-shadow 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.25)
                         opacity 0
                         composite(opacity, 0.25s, ease-out)
-                    &:hover::after
+                    &:hover::before
                         opacity 1
-                    .card-body
-                        padding 1rem
                     .card-img
                         position static
                         width 100%
@@ -341,3 +354,112 @@
                         &.unknown
                             filter brightness(0)
                             opacity 0.75
+                    .card-labels
+                        position absolute
+                        right 0
+                        top 0
+                        width 25%
+                        font-size 0
+                        .card-label
+                            position static
+                            width 100%
+                            height auto
+                    .card-body
+                        position relative
+                        padding 1rem
+                        .card-icon
+                            position absolute
+                            left 50%
+                            top 0
+                            height 2rem
+                            width auto
+                            transform translateX(-50%)
+                .card-error
+                    h1
+                        font-size 2rem
+                        margin-bottom 1.5rem
+                    p
+                        margin 1rem 0
+
+            // Sheet
+            .sheet
+                width 100%
+
+                // Screen
+                .sheet-screen
+                    position relative
+                    width 100%
+                    height 25rem
+                    background-color #b0b0b0
+                    border-radius 1rem
+                    box-shadow 0.125rem 0.25rem 0 #909090
+                    &:before
+                        content ''
+                        position absolute
+                        left 0rem
+                        bottom -2.5rem
+                        height 0
+                        border-top 5rem solid transparent
+                        border-left 5rem solid $C-redbody
+                    &:after
+                        content ''
+                        position absolute
+                        left 0
+                        bottom 0
+                        height 0
+                        border-top 2.5rem solid #b0b0b0
+                        border-left 2.5rem solid $C-redbody
+                    .sheet-picture
+                        position absolute
+                        left 50%
+                        top 1rem
+                        height 20rem
+                        width calc(100% - 2.5rem)
+                        background-color #eee
+                        border 0.25rem solid #494949
+                        border-radius 1rem
+                        box-shadow 0.125rem 0.25rem 0 #303030
+                        transform translateX(-50%)
+                        .sheet-img
+                            display block
+                            margin 0 auto
+                            position static
+                            width auto
+                            height 100%
+                            &.unknown
+                                filter brightness(0)
+                                opacity 0.75
+                    .sheet-button
+                        position absolute
+                        left 3.75rem
+                        bottom 1.25rem
+                        height 1.5rem
+                        width 1.5rem
+                        background linear-gradient(to bottom, $C-redbody 0%, #8b0000 80%)
+                        background-color $C-redbody
+                        border-radius 3rem
+                        box-shadow 0.0625rem 0.125rem $C-redshadow
+                        cursor pointer
+                    .sheet-speakers
+                        position absolute
+                        right 1.25rem
+                        bottom 1.25rem
+                        width 5rem
+                        height 1.5rem
+                        .sheet-speaker
+                            height 0.25rem
+                            margin-bottom 0.25rem
+                            background-color #494949
+                            border-radius 2rem
+
+                // Data
+                .sheet-data
+                    margin 2.5rem 0
+                    padding 1.25rem
+                    background-color rgba(#000, 0.125)
+                    box-shadow 0.125rem 0.25rem 0 $C-reddark
+                    h1
+                        font-size 2rem
+                    h2
+                        font-size 1.5rem
+                        margin 0.5rem 0

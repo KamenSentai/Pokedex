@@ -15,6 +15,7 @@ const loadJSON = (file, callback) =>
 // Get container
 const $containerMap   = document.querySelector('.container.container-map')
 const $containerCatch = document.querySelector('.container.container-catch')
+const $audio          = document.querySelector('audio')
 
 // Check if map page
 if ($containerMap)
@@ -442,5 +443,14 @@ else if ($containerCatch)
                 }, 1000)
             }, 1000)
         }, 250)
+    })
+}
+else if ($audio)
+{
+    const $button = document.querySelector('.sheet-button')
+
+    $button.addEventListener('click', () =>
+    {
+        $audio.play()
     })
 }

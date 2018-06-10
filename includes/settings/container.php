@@ -130,8 +130,8 @@ $container['getCatch'] = function($container)
     }
 };
 
-// Pokedex
-$container['getPokedex'] = function($container)
+// Pokemons
+$container['getPokemons'] = function($container)
 {
     // Get all pokemons
     $data     = new PM\Data('pokedex');
@@ -154,13 +154,54 @@ $container['getPokedex'] = function($container)
     [
         'base' =>
         [
-            'page'  => 'pokedex',
-            'title' => TITLE . ' | Pokedex',
+            'page'  => 'pokemons',
+            'title' => TITLE . ' | Pokemons',
         ],
         'data' =>
         [
             'pokemons' => $pokemons,
         ],
     ];
+    return $dataView;
+};
+
+// Types
+$container['getTypes'] = function($container)
+{
+    // Get all pokemons and types
+    $data  = new PM\Data('pokedex');
+    $types = $data->data->types;
+
+    $dataView =
+    [
+        'base' =>
+        [
+            'page'  => 'types',
+            'title' => TITLE . ' | Types',
+        ],
+        'data' =>
+        [
+            'types' => $types,
+        ],
+    ];
+    return $dataView;
+};
+
+// Random
+$container['getRandom'] = function($container)
+{
+    // Get pokemons data
+    $dataView = $container->getPokemons;
+    $dataBase = $dataView['base'];
+    $dataData = $dataView['data'];
+    $pokemon  = $dataData['pokemons'][rand(0, 150)];
+
+    // Set new data
+    $dataBase['page']    = 'pokemon';
+    $dataBase['title']   = TITLE . ' | ' . $pokemon->name;
+    $dataData['pokemon'] = $pokemon;
+    $dataView['base']    = $dataBase;
+    $dataView['data']    = $dataData;
+
     return $dataView;
 };

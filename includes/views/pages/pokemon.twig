@@ -1,0 +1,25 @@
+{% extends './layouts/base.twig' %}
+
+{% block contents %}
+    <div class="sheet">
+        <div class="sheet-screen">
+            <div class="sheet-picture">
+                <img class="sheet-img {{ data.pokemon.is_owned ? : 'unknown' }}" src="{{ base_url() }}/assets/images/pokemons/{{ data.pokemon.img }}" alt="{{ data.pokemon.name }}" draggable="false">
+            </div>
+            <div class="sheet-button"></div>
+            <div class="sheet-speakers">
+                <div class="sheet-speaker"></div>
+                <div class="sheet-speaker"></div>
+                <div class="sheet-speaker"></div>
+                <div class="sheet-speaker"></div>
+            </div>
+        </div>
+        <div class="sheet-data">
+            <h1>{{ data.pokemon.is_owned ? data.pokemon.name : '???' }}</h1>
+            <h2>#{{ data.pokemon.num }}</h2>
+        </div>
+    </div>
+    {% if data.pokemon.is_owned  %}
+        <audio src="https://play.pokemonshowdown.com/audio/cries/{{ data.pokemon.name | lower }}.mp3" style="display:none;"></audio>
+    {% endif %}
+{% endblock %}

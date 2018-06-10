@@ -4,6 +4,7 @@
             "id": 1,
             "num": "001",
             "name": "Bulbasaur",
+            "slug": "bulbasaur",
             "img": "001.png",
             "type": [
                 "Grass",
@@ -35,6 +36,7 @@
             "id": 2,
             "num": "002",
             "name": "Ivysaur",
+            "slug": "ivysaur",
             "img": "002.png",
             "type": [
                 "Grass",
@@ -68,6 +70,7 @@
             "id": 3,
             "num": "003",
             "name": "Venusaur",
+            "slug": "venusaur",
             "img": "003.png",
             "type": [
                 "Grass",
@@ -99,6 +102,7 @@
             "id": 4,
             "num": "004",
             "name": "Charmander",
+            "slug": "charmander",
             "img": "004.png",
             "type": [
                 "Fire"
@@ -128,6 +132,7 @@
             "id": 5,
             "num": "005",
             "name": "Charmeleon",
+            "slug": "charmeleon",
             "img": "005.png",
             "type": [
                 "Fire"
@@ -159,6 +164,7 @@
             "id": 6,
             "num": "006",
             "name": "Charizard",
+            "slug": "charizard",
             "img": "006.png",
             "type": [
                 "Fire",
@@ -189,6 +195,7 @@
             "id": 7,
             "num": "007",
             "name": "Squirtle",
+            "slug": "squirtle",
             "img": "007.png",
             "type": [
                 "Water"
@@ -217,6 +224,7 @@
             "id": 8,
             "num": "008",
             "name": "Wartortle",
+            "slug": "wartortle",
             "img": "008.png",
             "type": [
                 "Water"
@@ -247,6 +255,7 @@
             "id": 9,
             "num": "009",
             "name": "Blastoise",
+            "slug": "blastoise",
             "img": "009.png",
             "type": [
                 "Water"
@@ -275,6 +284,7 @@
             "id": 10,
             "num": "010",
             "name": "Caterpie",
+            "slug": "caterpie",
             "img": "010.png",
             "type": [
                 "Bug"
@@ -304,6 +314,7 @@
             "id": 11,
             "num": "011",
             "name": "Metapod",
+            "slug": "metapod",
             "img": "011.png",
             "type": [
                 "Bug"
@@ -335,6 +346,7 @@
             "id": 12,
             "num": "012",
             "name": "Butterfree",
+            "slug": "butterfree",
             "img": "012.png",
             "type": [
                 "Bug",
@@ -367,6 +379,7 @@
             "id": 13,
             "num": "013",
             "name": "Weedle",
+            "slug": "weedle",
             "img": "013.png",
             "type": [
                 "Bug",
@@ -398,6 +411,7 @@
             "id": 14,
             "num": "014",
             "name": "Kakuna",
+            "slug": "kakuna",
             "img": "014.png",
             "type": [
                 "Bug",
@@ -431,6 +445,7 @@
             "id": 15,
             "num": "015",
             "name": "Beedrill",
+            "slug": "beedrill",
             "img": "015.png",
             "type": [
                 "Bug",
@@ -462,6 +477,7 @@
             "id": 16,
             "num": "016",
             "name": "Pidgey",
+            "slug": "pidgey",
             "img": "016.png",
             "type": [
                 "Normal",
@@ -491,6 +507,7 @@
             "id": 17,
             "num": "017",
             "name": "Pidgeotto",
+            "slug": "pidgeotto",
             "img": "017.png",
             "type": [
                 "Normal",
@@ -522,6 +539,7 @@
             "id": 18,
             "num": "018",
             "name": "Pidgeot",
+            "slug": "pidgeot",
             "img": "018.png",
             "type": [
                 "Normal",
@@ -551,6 +569,7 @@
             "id": 19,
             "num": "019",
             "name": "Rattata",
+            "slug": "rattata",
             "img": "019.png",
             "type": [
                 "Normal"
@@ -561,7 +580,7 @@
             "catch_chance": 54.9,
             "is_unique": false,
             "weaknesses": [
-                "Fighting"
+                "Fight"
             ],
             "next_evolution": [
                 {
@@ -574,6 +593,7 @@
             "id": 20,
             "num": "020",
             "name": "Raticate",
+            "slug": "raticate",
             "img": "020.png",
             "type": [
                 "Normal"
@@ -584,7 +604,7 @@
             "catch_chance": 24.5,
             "is_unique": false,
             "weaknesses": [
-                "Fighting"
+                "Fight"
             ],
             "prev_evolution": [
                 {
@@ -597,6 +617,7 @@
             "id": 21,
             "num": "021",
             "name": "Spearow",
+            "slug": "spearow",
             "img": "021.png",
             "type": [
                 "Normal",
@@ -622,6 +643,7 @@
             "id": 22,
             "num": "022",
             "name": "Fearow",
+            "slug": "fearow",
             "img": "022.png",
             "type": [
                 "Normal",
@@ -647,6 +669,7 @@
             "id": 23,
             "num": "023",
             "name": "Ekans",
+            "slug": "ekans",
             "img": "023.png",
             "type": [
                 "Poison"
@@ -671,6 +694,7 @@
             "id": 24,
             "num": "024",
             "name": "Arbok",
+            "slug": "arbok",
             "img": "024.png",
             "type": [
                 "Poison"
@@ -695,6 +719,7 @@
             "id": 25,
             "num": "025",
             "name": "Pikachu",
+            "slug": "pikachu",
             "img": "025.png",
             "type": [
                 "Electric"
@@ -718,6 +743,7 @@
             "id": 26,
             "num": "026",
             "name": "Raichu",
+            "slug": "raichu",
             "img": "026.png",
             "type": [
                 "Electric"
@@ -741,6 +767,7 @@
             "id": 27,
             "num": "027",
             "name": "Sandshrew",
+            "slug": "sandshrew",
             "img": "027.png",
             "type": [
                 "Ground"
@@ -766,6 +793,7 @@
             "id": 28,
             "num": "028",
             "name": "Sandslash",
+            "slug": "sandslash",
             "img": "028.png",
             "type": [
                 "Ground"
@@ -791,6 +819,7 @@
             "id": 29,
             "num": "029",
             "name": "Nidoran ♀",
+            "slug": "nidoran_female",
             "img": "029.png",
             "type": [
                 "Poison"
@@ -819,6 +848,7 @@
             "id": 30,
             "num": "030",
             "name": "Nidorina",
+            "slug": "nidorina",
             "img": "030.png",
             "type": [
                 "Poison"
@@ -849,6 +879,7 @@
             "id": 31,
             "num": "031",
             "name": "Nidoqueen",
+            "slug": "nidoqueen",
             "img": "031.png",
             "type": [
                 "Poison",
@@ -880,6 +911,7 @@
             "id": 32,
             "num": "032",
             "name": "Nidoran ♂",
+            "slug": "nidoran_male",
             "img": "032.png",
             "type": [
                 "Poison"
@@ -908,6 +940,7 @@
             "id": 33,
             "num": "033",
             "name": "Nidorino",
+            "slug": "nidorino",
             "img": "033.png",
             "type": [
                 "Poison"
@@ -938,6 +971,7 @@
             "id": 34,
             "num": "034",
             "name": "Nidoking",
+            "slug": "nidoking",
             "img": "034.png",
             "type": [
                 "Poison",
@@ -969,6 +1003,7 @@
             "id": 35,
             "num": "035",
             "name": "Clefairy",
+            "slug": "clefairy",
             "img": "035.png",
             "type": [
                 "Normal"
@@ -979,7 +1014,7 @@
             "catch_chance": 35.5,
             "is_unique": false,
             "weaknesses": [
-                "Fighting"
+                "Fight"
             ],
             "next_evolution": [
                 {
@@ -992,6 +1027,7 @@
             "id": 36,
             "num": "036",
             "name": "Clefable",
+            "slug": "clefable",
             "img": "036.png",
             "type": [
                 "Normal"
@@ -1002,7 +1038,7 @@
             "catch_chance": 12.7,
             "is_unique": false,
             "weaknesses": [
-                "Fighting"
+                "Fight"
             ],
             "prev_evolution": [
                 {
@@ -1015,6 +1051,7 @@
             "id": 37,
             "num": "037",
             "name": "Vulpix",
+            "slug": "vulpix",
             "img": "037.png",
             "type": [
                 "Fire"
@@ -1040,6 +1077,7 @@
             "id": 38,
             "num": "038",
             "name": "Ninetales",
+            "slug": "ninetales",
             "img": "038.png",
             "type": [
                 "Fire"
@@ -1065,6 +1103,7 @@
             "id": 39,
             "num": "039",
             "name": "Jigglypuff",
+            "slug": "jigglypuff",
             "img": "039.png",
             "type": [
                 "Normal"
@@ -1075,7 +1114,7 @@
             "catch_chance": 54.9,
             "is_unique": false,
             "weaknesses": [
-                "Fighting"
+                "Fight"
             ],
             "next_evolution": [
                 {
@@ -1088,6 +1127,7 @@
             "id": 40,
             "num": "040",
             "name": "Wigglytuff",
+            "slug": "wigglytuff",
             "img": "040.png",
             "type": [
                 "Normal"
@@ -1098,7 +1138,7 @@
             "catch_chance": 24.5,
             "is_unique": false,
             "weaknesses": [
-                "Fighting"
+                "Fight"
             ],
             "prev_evolution": [
                 {
@@ -1111,6 +1151,7 @@
             "id": 41,
             "num": "041",
             "name": "Zubat",
+            "slug": "zubat",
             "img": "041.png",
             "type": [
                 "Poison",
@@ -1138,6 +1179,7 @@
             "id": 42,
             "num": "042",
             "name": "Golbat",
+            "slug": "golbat",
             "img": "042.png",
             "type": [
                 "Poison",
@@ -1165,6 +1207,7 @@
             "id": 43,
             "num": "043",
             "name": "Oddish",
+            "slug": "oddish",
             "img": "043.png",
             "type": [
                 "Grass",
@@ -1196,6 +1239,7 @@
             "id": 44,
             "num": "044",
             "name": "Gloom",
+            "slug": "gloom",
             "img": "044.png",
             "type": [
                 "Grass",
@@ -1229,6 +1273,7 @@
             "id": 45,
             "num": "045",
             "name": "Vileplume",
+            "slug": "vileplume",
             "img": "045.png",
             "type": [
                 "Grass",
@@ -1260,6 +1305,7 @@
             "id": 46,
             "num": "046",
             "name": "Paras",
+            "slug": "paras",
             "img": "046.png",
             "type": [
                 "Bug",
@@ -1289,6 +1335,7 @@
             "id": 47,
             "num": "047",
             "name": "Parasect",
+            "slug": "parasect",
             "img": "047.png",
             "type": [
                 "Bug",
@@ -1318,6 +1365,7 @@
             "id": 48,
             "num": "048",
             "name": "Venonat",
+            "slug": "venonat",
             "img": "048.png",
             "type": [
                 "Bug",
@@ -1345,6 +1393,7 @@
             "id": 49,
             "num": "049",
             "name": "Venomoth",
+            "slug": "venomoth",
             "img": "049.png",
             "type": [
                 "Bug",
@@ -1372,6 +1421,7 @@
             "id": 50,
             "num": "050",
             "name": "Diglett",
+            "slug": "diglett",
             "img": "050.png",
             "type": [
                 "Ground"
@@ -1397,6 +1447,7 @@
             "id": 51,
             "num": "051",
             "name": "Dugtrio",
+            "slug": "dugtrio",
             "img": "051.png",
             "type": [
                 "Ground"
@@ -1422,6 +1473,7 @@
             "id": 52,
             "num": "052",
             "name": "Meowth",
+            "slug": "meowth",
             "img": "052.png",
             "type": [
                 "Normal"
@@ -1432,7 +1484,7 @@
             "catch_chance": 54.9,
             "is_unique": false,
             "weaknesses": [
-                "Fighting"
+                "Fight"
             ],
             "next_evolution": [
                 {
@@ -1445,6 +1497,7 @@
             "id": 53,
             "num": "053",
             "name": "Persian",
+            "slug": "persian",
             "img": "053.png",
             "type": [
                 "Normal"
@@ -1455,7 +1508,7 @@
             "catch_chance": 24.5,
             "is_unique": false,
             "weaknesses": [
-                "Fighting"
+                "Fight"
             ],
             "prev_evolution": [
                 {
@@ -1468,6 +1521,7 @@
             "id": 54,
             "num": "054",
             "name": "Psyduck",
+            "slug": "psyduck",
             "img": "054.png",
             "type": [
                 "Water"
@@ -1492,6 +1546,7 @@
             "id": 55,
             "num": "055",
             "name": "Golduck",
+            "slug": "golduck",
             "img": "055.png",
             "type": [
                 "Water"
@@ -1516,9 +1571,10 @@
             "id": 56,
             "num": "056",
             "name": "Mankey",
+            "slug": "mankey",
             "img": "056.png",
             "type": [
-                "Fighting"
+                "Fight"
             ],
             "height": "0.51 m",
             "weight": "28.0 kg",
@@ -1541,9 +1597,10 @@
             "id": 57,
             "num": "057",
             "name": "Primeape",
+            "slug": "primeape",
             "img": "057.png",
             "type": [
-                "Fighting"
+                "Fight"
             ],
             "height": "0.99 m",
             "weight": "32.0 kg",
@@ -1566,6 +1623,7 @@
             "id": 58,
             "num": "058",
             "name": "Growlithe",
+            "slug": "growlithe",
             "img": "058.png",
             "type": [
                 "Fire"
@@ -1591,6 +1649,7 @@
             "id": 59,
             "num": "059",
             "name": "Arcanine",
+            "slug": "arcanine",
             "img": "059.png",
             "type": [
                 "Fire"
@@ -1616,6 +1675,7 @@
             "id": 60,
             "num": "060",
             "name": "Poliwag",
+            "slug": "poliwag",
             "img": "060.png",
             "type": [
                 "Water"
@@ -1644,6 +1704,7 @@
             "id": 61,
             "num": "061",
             "name": "Poliwhirl",
+            "slug": "poliwhirl",
             "img": "061.png",
             "type": [
                 "Water"
@@ -1674,10 +1735,11 @@
             "id": 62,
             "num": "062",
             "name": "Poliwrath",
+            "slug": "poliwrath",
             "img": "062.png",
             "type": [
                 "Water",
-                "Fighting"
+                "Fight"
             ],
             "height": "1.30 m",
             "weight": "54.0 kg",
@@ -1706,6 +1768,7 @@
             "id": 63,
             "num": "063",
             "name": "Abra",
+            "slug": "abra",
             "img": "063.png",
             "type": [
                 "Psychic"
@@ -1735,6 +1798,7 @@
             "id": 64,
             "num": "064",
             "name": "Kadabra",
+            "slug": "kadabra",
             "img": "064.png",
             "type": [
                 "Psychic"
@@ -1766,6 +1830,7 @@
             "id": 65,
             "num": "065",
             "name": "Alakazam",
+            "slug": "alakazam",
             "img": "065.png",
             "type": [
                 "Psychic"
@@ -1795,9 +1860,10 @@
             "id": 66,
             "num": "066",
             "name": "Machop",
+            "slug": "machop",
             "img": "066.png",
             "type": [
-                "Fighting"
+                "Fight"
             ],
             "height": "0.79 m",
             "weight": "19.5 kg",
@@ -1824,9 +1890,10 @@
             "id": 67,
             "num": "067",
             "name": "Machoke",
+            "slug": "machoke",
             "img": "067.png",
             "type": [
-                "Fighting"
+                "Fight"
             ],
             "height": "1.50 m",
             "weight": "70.5 kg",
@@ -1855,9 +1922,10 @@
             "id": 68,
             "num": "068",
             "name": "Machamp",
+            "slug": "machamp",
             "img": "068.png",
             "type": [
-                "Fighting"
+                "Fight"
             ],
             "height": "1.60 m",
             "weight": "130.0 kg",
@@ -1884,6 +1952,7 @@
             "id": 69,
             "num": "069",
             "name": "Bellsprout",
+            "slug": "bellsprout",
             "img": "069.png",
             "type": [
                 "Grass",
@@ -1915,6 +1984,7 @@
             "id": 70,
             "num": "070",
             "name": "Weepinbell",
+            "slug": "weepinbell",
             "img": "070.png",
             "type": [
                 "Grass",
@@ -1948,6 +2018,7 @@
             "id": 71,
             "num": "071",
             "name": "Victreebel",
+            "slug": "victreebel",
             "img": "071.png",
             "type": [
                 "Grass",
@@ -1979,6 +2050,7 @@
             "id": 72,
             "num": "072",
             "name": "Tentacool",
+            "slug": "tentacool",
             "img": "072.png",
             "type": [
                 "Water",
@@ -2005,6 +2077,7 @@
             "id": 73,
             "num": "073",
             "name": "Tentacruel",
+            "slug": "tentacruel",
             "img": "073.png",
             "type": [
                 "Water",
@@ -2031,6 +2104,7 @@
             "id": 74,
             "num": "074",
             "name": "Geodude",
+            "slug": "geodude",
             "img": "074.png",
             "type": [
                 "Rock",
@@ -2045,7 +2119,7 @@
                 "Water",
                 "Grass",
                 "Ice",
-                "Fighting",
+                "Fight",
                 "Ground",
                 "Steel"
             ],
@@ -2064,6 +2138,7 @@
             "id": 75,
             "num": "075",
             "name": "Graveler",
+            "slug": "graveler",
             "img": "075.png",
             "type": [
                 "Rock",
@@ -2078,7 +2153,7 @@
                 "Water",
                 "Grass",
                 "Ice",
-                "Fighting",
+                "Fight",
                 "Ground",
                 "Steel"
             ],
@@ -2099,6 +2174,7 @@
             "id": 76,
             "num": "076",
             "name": "Golem",
+            "slug": "golem",
             "img": "076.png",
             "type": [
                 "Rock",
@@ -2113,7 +2189,7 @@
                 "Water",
                 "Grass",
                 "Ice",
-                "Fighting",
+                "Fight",
                 "Ground",
                 "Steel"
             ],
@@ -2132,6 +2208,7 @@
             "id": 77,
             "num": "077",
             "name": "Ponyta",
+            "slug": "ponyta",
             "img": "077.png",
             "type": [
                 "Fire"
@@ -2157,6 +2234,7 @@
             "id": 78,
             "num": "078",
             "name": "Rapidash",
+            "slug": "rapidash",
             "img": "078.png",
             "type": [
                 "Fire"
@@ -2182,6 +2260,7 @@
             "id": 79,
             "num": "079",
             "name": "Slowpoke",
+            "slug": "slowpoke",
             "img": "079.png",
             "type": [
                 "Water",
@@ -2210,6 +2289,7 @@
             "id": 80,
             "num": "080",
             "name": "Slowbro",
+            "slug": "slowbro",
             "img": "080.png",
             "type": [
                 "Water",
@@ -2238,6 +2318,7 @@
             "id": 81,
             "num": "081",
             "name": "Magnemite",
+            "slug": "magnemite",
             "img": "081.png",
             "type": [
                 "Electric"
@@ -2263,6 +2344,7 @@
             "id": 82,
             "num": "082",
             "name": "Magneton",
+            "slug": "magneton",
             "img": "082.png",
             "type": [
                 "Electric"
@@ -2288,6 +2370,7 @@
             "id": 83,
             "num": "083",
             "name": "Farfetch'd",
+            "slug": "farfetch_d",
             "img": "083.png",
             "type": [
                 "Normal",
@@ -2307,6 +2390,7 @@
             "id": 84,
             "num": "084",
             "name": "Doduo",
+            "slug": "doduo",
             "img": "084.png",
             "type": [
                 "Normal",
@@ -2332,6 +2416,7 @@
             "id": 85,
             "num": "085",
             "name": "Dodrio",
+            "slug": "dodrio",
             "img": "085.png",
             "type": [
                 "Normal",
@@ -2357,6 +2442,7 @@
             "id": 86,
             "num": "086",
             "name": "Seel",
+            "slug": "seel",
             "img": "086.png",
             "type": [
                 "Water"
@@ -2381,6 +2467,7 @@
             "id": 87,
             "num": "087",
             "name": "Dewgong",
+            "slug": "dewgong",
             "img": "087.png",
             "type": [
                 "Water",
@@ -2394,7 +2481,7 @@
             "weaknesses": [
                 "Electric",
                 "Grass",
-                "Fighting",
+                "Fight",
                 "Rock"
             ],
             "prev_evolution": [
@@ -2408,6 +2495,7 @@
             "id": 88,
             "num": "088",
             "name": "Grimer",
+            "slug": "grimer",
             "img": "088.png",
             "type": [
                 "Poison"
@@ -2432,6 +2520,7 @@
             "id": 89,
             "num": "089",
             "name": "Muk",
+            "slug": "muk",
             "img": "089.png",
             "type": [
                 "Poison"
@@ -2456,6 +2545,7 @@
             "id": 90,
             "num": "090",
             "name": "Shellder",
+            "slug": "shellder",
             "img": "090.png",
             "type": [
                 "Water"
@@ -2480,6 +2570,7 @@
             "id": 91,
             "num": "091",
             "name": "Cloyster",
+            "slug": "cloyster",
             "img": "091.png",
             "type": [
                 "Water",
@@ -2493,7 +2584,7 @@
             "weaknesses": [
                 "Electric",
                 "Grass",
-                "Fighting",
+                "Fight",
                 "Rock"
             ],
             "prev_evolution": [
@@ -2507,6 +2598,7 @@
             "id": 92,
             "num": "092",
             "name": "Gastly",
+            "slug": "gastly",
             "img": "092.png",
             "type": [
                 "Ghost",
@@ -2538,6 +2630,7 @@
             "id": 93,
             "num": "093",
             "name": "Haunter",
+            "slug": "haunter",
             "img": "093.png",
             "type": [
                 "Ghost",
@@ -2571,6 +2664,7 @@
             "id": 94,
             "num": "094",
             "name": "Gengar",
+            "slug": "gengar",
             "img": "094.png",
             "type": [
                 "Ghost",
@@ -2602,6 +2696,7 @@
             "id": 95,
             "num": "095",
             "name": "Onix",
+            "slug": "onix",
             "img": "095.png",
             "type": [
                 "Rock",
@@ -2616,7 +2711,7 @@
                 "Water",
                 "Grass",
                 "Ice",
-                "Fighting",
+                "Fight",
                 "Ground",
                 "Steel"
             ]
@@ -2625,6 +2720,7 @@
             "id": 96,
             "num": "096",
             "name": "Drowzee",
+            "slug": "drowzee",
             "img": "096.png",
             "type": [
                 "Psychic"
@@ -2650,6 +2746,7 @@
             "id": 97,
             "num": "097",
             "name": "Hypno",
+            "slug": "hypno",
             "img": "097.png",
             "type": [
                 "Psychic"
@@ -2675,6 +2772,7 @@
             "id": 98,
             "num": "098",
             "name": "Krabby",
+            "slug": "krabby",
             "img": "098.png",
             "type": [
                 "Water"
@@ -2699,6 +2797,7 @@
             "id": 99,
             "num": "099",
             "name": "Kingler",
+            "slug": "kingler",
             "img": "099.png",
             "type": [
                 "Water"
@@ -2723,6 +2822,7 @@
             "id": 100,
             "num": "100",
             "name": "Voltorb",
+            "slug": "voltorb",
             "img": "100.png",
             "type": [
                 "Electric"
@@ -2746,6 +2846,7 @@
             "id": 101,
             "num": "101",
             "name": "Electrode",
+            "slug": "electrode",
             "img": "101.png",
             "type": [
                 "Electric"
@@ -2769,6 +2870,7 @@
             "id": 102,
             "num": "102",
             "name": "Exeggcute",
+            "slug": "exeggcute",
             "img": "102.png",
             "type": [
                 "Grass",
@@ -2799,6 +2901,7 @@
             "id": 103,
             "num": "103",
             "name": "Exeggutor",
+            "slug": "exeggutor",
             "img": "103.png",
             "type": [
                 "Grass",
@@ -2829,6 +2932,7 @@
             "id": 104,
             "num": "104",
             "name": "Cubone",
+            "slug": "cubone",
             "img": "104.png",
             "type": [
                 "Ground"
@@ -2854,6 +2958,7 @@
             "id": 105,
             "num": "105",
             "name": "Marowak",
+            "slug": "marowak",
             "img": "105.png",
             "type": [
                 "Ground"
@@ -2879,9 +2984,10 @@
             "id": 106,
             "num": "106",
             "name": "Hitmonlee",
+            "slug": "hitmonlee",
             "img": "106.png",
             "type": [
-                "Fighting"
+                "Fight"
             ],
             "height": "1.50 m",
             "weight": "49.8 kg",
@@ -2898,9 +3004,10 @@
             "id": 107,
             "num": "107",
             "name": "Hitmonchan",
+            "slug": "hitmonchan",
             "img": "107.png",
             "type": [
-                "Fighting"
+                "Fight"
             ],
             "height": "1.40 m",
             "weight": "50.2 kg",
@@ -2917,6 +3024,7 @@
             "id": 108,
             "num": "108",
             "name": "Lickitung",
+            "slug": "lickitung",
             "img": "108.png",
             "type": [
                 "Normal"
@@ -2927,13 +3035,14 @@
             "catch_chance": 24.5,
             "is_unique": false,
             "weaknesses": [
-                "Fighting"
+                "Fight"
             ]
         },
         {
             "id": 109,
             "num": "109",
             "name": "Koffing",
+            "slug": "koffing",
             "img": "109.png",
             "type": [
                 "Poison"
@@ -2958,6 +3067,7 @@
             "id": 110,
             "num": "110",
             "name": "Weezing",
+            "slug": "weezing",
             "img": "110.png",
             "type": [
                 "Poison"
@@ -2982,6 +3092,7 @@
             "id": 111,
             "num": "111",
             "name": "Rhyhorn",
+            "slug": "rhyhorn",
             "img": "111.png",
             "type": [
                 "Ground",
@@ -2996,7 +3107,7 @@
                 "Water",
                 "Grass",
                 "Ice",
-                "Fighting",
+                "Fight",
                 "Ground",
                 "Steel"
             ],
@@ -3011,6 +3122,7 @@
             "id": 112,
             "num": "112",
             "name": "Rhydon",
+            "slug": "rhydon",
             "img": "112.png",
             "type": [
                 "Ground",
@@ -3025,7 +3137,7 @@
                 "Water",
                 "Grass",
                 "Ice",
-                "Fighting",
+                "Fight",
                 "Ground",
                 "Steel"
             ],
@@ -3040,6 +3152,7 @@
             "id": 113,
             "num": "113",
             "name": "Chansey",
+            "slug": "chansey",
             "img": "113.png",
             "type": [
                 "Normal"
@@ -3050,13 +3163,14 @@
             "catch_chance": 24.5,
             "is_unique": false,
             "weaknesses": [
-                "Fighting"
+                "Fight"
             ]
         },
         {
             "id": 114,
             "num": "114",
             "name": "Tangela",
+            "slug": "tangela",
             "img": "114.png",
             "type": [
                 "Grass"
@@ -3078,6 +3192,7 @@
             "id": 115,
             "num": "115",
             "name": "Kangaskhan",
+            "slug": "kangaskhan",
             "img": "115.png",
             "type": [
                 "Normal"
@@ -3088,13 +3203,14 @@
             "catch_chance": 24.5,
             "is_unique": false,
             "weaknesses": [
-                "Fighting"
+                "Fight"
             ]
         },
         {
             "id": 116,
             "num": "116",
             "name": "Horsea",
+            "slug": "horsea",
             "img": "116.png",
             "type": [
                 "Water"
@@ -3119,6 +3235,7 @@
             "id": 117,
             "num": "117",
             "name": "Seadra",
+            "slug": "seadra",
             "img": "117.png",
             "type": [
                 "Water"
@@ -3143,6 +3260,7 @@
             "id": 118,
             "num": "118",
             "name": "Goldeen",
+            "slug": "goldeen",
             "img": "118.png",
             "type": [
                 "Water"
@@ -3167,6 +3285,7 @@
             "id": 119,
             "num": "119",
             "name": "Seaking",
+            "slug": "seaking",
             "img": "119.png",
             "type": [
                 "Water"
@@ -3191,6 +3310,7 @@
             "id": 120,
             "num": "120",
             "name": "Staryu",
+            "slug": "staryu",
             "img": "120.png",
             "type": [
                 "Water"
@@ -3215,6 +3335,7 @@
             "id": 121,
             "num": "121",
             "name": "Starmie",
+            "slug": "starmie",
             "img": "121.png",
             "type": [
                 "Water",
@@ -3243,6 +3364,7 @@
             "id": 122,
             "num": "122",
             "name": "Mr. Mime",
+            "slug": "mr_mime",
             "img": "122.png",
             "type": [
                 "Psychic"
@@ -3262,6 +3384,7 @@
             "id": 123,
             "num": "123",
             "name": "Scyther",
+            "slug": "scyther",
             "img": "123.png",
             "type": [
                 "Bug",
@@ -3284,6 +3407,7 @@
             "id": 124,
             "num": "124",
             "name": "Jynx",
+            "slug": "jynx",
             "img": "124.png",
             "type": [
                 "Ice",
@@ -3307,6 +3431,7 @@
             "id": 125,
             "num": "125",
             "name": "Electabuzz",
+            "slug": "electabuzz",
             "img": "125.png",
             "type": [
                 "Electric"
@@ -3324,6 +3449,7 @@
             "id": 126,
             "num": "126",
             "name": "Magmar",
+            "slug": "magmar",
             "img": "126.png",
             "type": [
                 "Fire"
@@ -3343,6 +3469,7 @@
             "id": 127,
             "num": "127",
             "name": "Pinsir",
+            "slug": "pinsir",
             "img": "127.png",
             "type": [
                 "Bug"
@@ -3362,6 +3489,7 @@
             "id": 128,
             "num": "128",
             "name": "Tauros",
+            "slug": "tauros",
             "img": "128.png",
             "type": [
                 "Normal"
@@ -3372,13 +3500,14 @@
             "catch_chance": 35.5,
             "is_unique": false,
             "weaknesses": [
-                "Fighting"
+                "Fight"
             ]
         },
         {
             "id": 129,
             "num": "129",
             "name": "Magikarp",
+            "slug": "magikarp",
             "img": "129.png",
             "type": [
                 "Water"
@@ -3403,6 +3532,7 @@
             "id": 130,
             "num": "130",
             "name": "Gyarados",
+            "slug": "gyarados",
             "img": "130.png",
             "type": [
                 "Water",
@@ -3428,6 +3558,7 @@
             "id": 131,
             "num": "131",
             "name": "Lapras",
+            "slug": "lapras",
             "img": "131.png",
             "type": [
                 "Water",
@@ -3441,7 +3572,7 @@
             "weaknesses": [
                 "Electric",
                 "Grass",
-                "Fighting",
+                "Fight",
                 "Rock"
             ]
         },
@@ -3449,6 +3580,7 @@
             "id": 132,
             "num": "132",
             "name": "Ditto",
+            "slug": "ditto",
             "img": "132.png",
             "type": [
                 "Normal"
@@ -3459,13 +3591,14 @@
             "catch_chance": 24.5,
             "is_unique": true,
             "weaknesses": [
-                "Fighting"
+                "Fight"
             ]
         },
         {
             "id": 133,
             "num": "133",
             "name": "Eevee",
+            "slug": "eevee",
             "img": "133.png",
             "type": [
                 "Normal"
@@ -3476,7 +3609,7 @@
             "catch_chance": 45.6,
             "is_unique": false,
             "weaknesses": [
-                "Fighting"
+                "Fight"
             ],
             "next_evolution": [
                 {
@@ -3497,6 +3630,7 @@
             "id": 134,
             "num": "134",
             "name": "Vaporeon",
+            "slug": "vaporeon",
             "img": "134.png",
             "type": [
                 "Water"
@@ -3521,6 +3655,7 @@
             "id": 135,
             "num": "135",
             "name": "Jolteon",
+            "slug": "jolteon",
             "img": "135.png",
             "type": [
                 "Electric"
@@ -3544,6 +3679,7 @@
             "id": 136,
             "num": "136",
             "name": "Flareon",
+            "slug": "flareon",
             "img": "136.png",
             "type": [
                 "Fire"
@@ -3569,6 +3705,7 @@
             "id": 137,
             "num": "137",
             "name": "Porygon",
+            "slug": "porygon",
             "img": "137.png",
             "type": [
                 "Normal"
@@ -3579,13 +3716,14 @@
             "catch_chance": 45.6,
             "is_unique": false,
             "weaknesses": [
-                "Fighting"
+                "Fight"
             ]
         },
         {
             "id": 138,
             "num": "138",
             "name": "Omanyte",
+            "slug": "omanyte",
             "img": "138.png",
             "type": [
                 "Rock",
@@ -3599,7 +3737,7 @@
             "weaknesses": [
                 "Electric",
                 "Grass",
-                "Fighting",
+                "Fight",
                 "Ground"
             ],
             "next_evolution": [
@@ -3613,6 +3751,7 @@
             "id": 139,
             "num": "139",
             "name": "Omastar",
+            "slug": "omastar",
             "img": "139.png",
             "type": [
                 "Rock",
@@ -3626,7 +3765,7 @@
             "weaknesses": [
                 "Electric",
                 "Grass",
-                "Fighting",
+                "Fight",
                 "Ground"
             ],
             "prev_evolution": [
@@ -3640,6 +3779,7 @@
             "id": 140,
             "num": "140",
             "name": "Kabuto",
+            "slug": "kabuto",
             "img": "140.png",
             "type": [
                 "Rock",
@@ -3653,7 +3793,7 @@
             "weaknesses": [
                 "Electric",
                 "Grass",
-                "Fighting",
+                "Fight",
                 "Ground"
             ],
             "next_evolution": [
@@ -3667,6 +3807,7 @@
             "id": 141,
             "num": "141",
             "name": "Kabutops",
+            "slug": "kabutops",
             "img": "141.png",
             "type": [
                 "Rock",
@@ -3680,7 +3821,7 @@
             "weaknesses": [
                 "Electric",
                 "Grass",
-                "Fighting",
+                "Fight",
                 "Ground"
             ],
             "prev_evolution": [
@@ -3694,6 +3835,7 @@
             "id": 142,
             "num": "142",
             "name": "Aerodactyl",
+            "slug": "aerodactyl",
             "img": "142.png",
             "type": [
                 "Rock",
@@ -3716,6 +3858,7 @@
             "id": 143,
             "num": "143",
             "name": "Snorlax",
+            "slug": "snorlax",
             "img": "143.png",
             "type": [
                 "Normal"
@@ -3726,13 +3869,14 @@
             "catch_chance": 6.5,
             "is_unique": false,
             "weaknesses": [
-                "Fighting"
+                "Fight"
             ]
         },
         {
             "id": 144,
             "num": "144",
             "name": "Articuno",
+            "slug": "articuno",
             "img": "144.png",
             "type": [
                 "Ice",
@@ -3754,6 +3898,7 @@
             "id": 145,
             "num": "145",
             "name": "Zapdos",
+            "slug": "zapdos",
             "img": "145.png",
             "type": [
                 "Electric",
@@ -3773,6 +3918,7 @@
             "id": 146,
             "num": "146",
             "name": "Moltres",
+            "slug": "moltres",
             "img": "146.png",
             "type": [
                 "Fire",
@@ -3793,6 +3939,7 @@
             "id": 147,
             "num": "147",
             "name": "Dratini",
+            "slug": "dratini",
             "img": "147.png",
             "type": [
                 "Dragon"
@@ -3822,6 +3969,7 @@
             "id": 148,
             "num": "148",
             "name": "Dragonair",
+            "slug": "dragonair",
             "img": "148.png",
             "type": [
                 "Dragon"
@@ -3853,6 +4001,7 @@
             "id": 149,
             "num": "149",
             "name": "Dragonite",
+            "slug": "dragonite",
             "img": "149.png",
             "type": [
                 "Dragon",
@@ -3884,6 +4033,7 @@
             "id": 150,
             "num": "150",
             "name": "Mewtwo",
+            "slug": "mewtwo",
             "img": "150.png",
             "type": [
                 "Psychic"
@@ -3903,6 +4053,7 @@
             "id": 151,
             "num": "151",
             "name": "Mew",
+            "slug": "mew",
             "img": "151.png",
             "type": [
                 "Psychic"
@@ -3918,5 +4069,25 @@
                 "Dark"
             ]
         }
+    ],
+    "types": [
+        "Bug",
+        "Dark",
+        "Dragon",
+        "Electric",
+        "Fairy",
+        "Fight",
+        "Fire",
+        "Flying",
+        "Ghost",
+        "Grass",
+        "Ground",
+        "Ice",
+        "Normal",
+        "Poison",
+        "Psychic",
+        "Rock",
+        "Steel",
+        "Water"
     ]
 }

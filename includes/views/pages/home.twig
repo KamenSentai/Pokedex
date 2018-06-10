@@ -1,3 +1,4 @@
+{# Map game #}
 <div class="container container-map">
     <img class="top"    src="{{ base_url() }}/assets/images/map/top.png"    alt="Top"    draggable="false">
     <img class="right"  src="{{ base_url() }}/assets/images/map/right.png"  alt="Right"  draggable="false">
@@ -8,7 +9,7 @@
     <div class="character" data-positionx="{{ data.user.position_x }}" data-positiony="{{ data.user.position_y }}">
         <img class="sprite" src="{{ base_url() }}/assets/images/player/sprite.png" alt="Sprite" draggable="false">
     </div>
-    <a class="button button-pokedex" href="{{ path_for('pokedex') }}" title="Pokedex">
+    <a class="button button-pokedex" href="{{ path_for('pokemons') }}" title="Pokedex">
         <img class="pokedex" src="{{ base_url() }}/assets/images/player/pokedex.png" alt="Pokedex" draggable="false">
     </a>
     {{ include('./layouts/rectangles.twig') }}
