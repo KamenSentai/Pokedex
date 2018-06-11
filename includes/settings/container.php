@@ -194,7 +194,7 @@ $container['getRandom'] = function($container)
     $dataView = $container->getPokemons;
     $dataBase = $dataView['base'];
     $dataData = $dataView['data'];
-    $pokemon  = $dataData['pokemons'][rand(0, 150)];
+    $pokemon  = $dataData['pokemons'][rand(0, sizeof($dataData['pokemons']))];
 
     // Set new data
     $dataBase['page']    = 'pokemon';
