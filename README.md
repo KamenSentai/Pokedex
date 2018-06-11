@@ -19,14 +19,22 @@
 - Slim
 
 ## Features
+- Connect with IP address
 - Discover pokedex
 - Play minigame
 - Manage if any pokemon has multiple evolutions (example : Eevee)
 - Display random pokemon page
+- Count how many each pokemon the user own
+- Listen to pokemon cry
+- Click on top buttons to navigate
 
 ## Usage
 - Run `composer install` to load the site
 - Run `gulp install` then `gulp` to edit
+
+## Credits
+- [Pokedex](https://codepen.io/Bidji/pen/MYdPwo)
+- [Pokemon cries](https://play.pokemonshowdown.com/audio/cries/)
 
 ## Author
 - [Alain Cao Van Truong](https://www.alain-caovantruong.fr)
