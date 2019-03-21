@@ -8,17 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KamenSentai/pokedex.git"
+    "url": "git+https://github.com/KamenSentai/Pokedex.git"
   },
   "keywords": [
-    "pokedex"
+    "Pokedex"
   ],
   "author": "Alain Cao Van Truong",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/KamenSentai/pokedex/issues"
+    "url": "https://github.com/KamenSentai/Pokedex/issues"
   },
-  "homepage": "https://github.com/KamenSentai/pokedex#readme",
+  "homepage": "https://github.com/KamenSentai/Pokedex#readme",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",

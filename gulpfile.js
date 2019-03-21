@@ -24,12 +24,12 @@ const path =
 
     includes :
     {
-        root        :  './includes/',
-        settings    :  './includes/settings',
+        root        : './includes/',
+        settings    : './includes/settings',
         routes      : './includes/routes',
-        models      :  './includes/models',
-        views       :  './includes/views',
-        controllers :  './includes/controllers'
+        models      : './includes/models',
+        views       : './includes/views',
+        controllers : './includes/controllers'
     },
 	build :
 	{
