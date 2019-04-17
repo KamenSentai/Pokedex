@@ -1,27 +1,27 @@
 {# Pokedex background #}
 <div class="container container-pokedex">
-    <div class="top-bar"></div>
-    <div class="top-corner">
-        <a href="{{ path_for('home') }}" title="Home">
-            <div class="top-button-glass">
-                <div class="reflect"></div>
-            </div>
-        </a>
-        <a href="{{ path_for('pokemons') }}" title="Pokemons">
-            <div class="top-button top-button-red"></div>
-        </a>
-        <a href="{{ path_for('types') }}" title="Types">
-            <div class="top-button top-button-yellow"></div>
-        </a>
-        <a href="{{ path_for('random') }}" title="Random">
-        <div class="top-button top-button-green"></div>
-        </a>
+  <div class="top-bar"></div>
+  <div class="top-corner">
+    <a href="{{ path_for('home') }}" title="Home">
+      <div class="top-button-glass">
+        <div class="reflect"></div>
+      </div>
+    </a>
+    <a href="{{ path_for('pokemons') }}" title="Pokemons">
+      <div class="top-button top-button-red"></div>
+    </a>
+    <a href="{{ path_for('types') }}" title="Types">
+      <div class="top-button top-button-yellow"></div>
+    </a>
+    <a href="{{ path_for('random') }}" title="Random">
+    <div class="top-button top-button-green"></div>
+    </a>
+  </div>
+  <div class="content">
+    <div class="junctions">
+      <div class="junction junction-top"></div>
+      <div class="junction junction-bottom"></div>
     </div>
-    <div class="content">
-        <div class="junctions">
-            <div class="junction junction-top"></div>
-            <div class="junction junction-bottom"></div>
-        </div>
-        {% block contents %}{% endblock %}
-    </div>
+    {% block contents %}{% endblock %}
+  </div>
 </div>

@@ -1,19 +1,19 @@
 {% extends './layouts/base.twig' %}
 
 {% block contents %}
-    <div class="cards">
-        {# Card #}
-        {% if data.pokemons | length > 0 %}
-            {% for _pokemon in data.pokemons %}
-                {{ include('./layouts/card.twig', { _pokemon: _pokemon, isSheet: false }) }}
-            {% endfor %}
-        {% else %}
-            <div class="card-error">
-                <h1>No pokemon found</h1>
-                <p>The pokedex database only provides pokemons of the first season with 151 pokemons.</p>
-                <p>Pokemons with type {{ data.type }} appear later.</p>
-                <p>Please checkout later the website when the database is updated.</p>
-            </div>
-        {% endif %}
-    </div>
+  <div class="cards">
+    {# Card #}
+    {% if data.pokemons | length > 0 %}
+      {% for _pokemon in data.pokemons %}
+        {{ include('./layouts/card.twig', { _pokemon: _pokemon, isSheet: false }) }}
+      {% endfor %}
+    {% else %}
+      <div class="card-error">
+        <h1>No pokemon found</h1>
+        <p>The pokedex database only provides pokemons of the first season with 151 pokemons.</p>
+        <p>Pokemons with type {{ data.type }} appear later.</p>
+        <p>Please checkout later the website when the database is updated.</p>
+      </div>
+    {% endif %}
+  </div>
 {% endblock %}

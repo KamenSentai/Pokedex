@@ -1,17 +1,17 @@
 {% extends './layouts/base.twig' %}
 
 {% block contents %}
-    <div class="cards">
-        {# Card #}
-        {% for _type in data.types %}
-            <a href="{{ path_for('type', { slug: _type | lower }) }}" title="{{ _type }}">
-                <div class="card">
-                    <img class="card-img card-img-symbol" src="{{ base_url() }}/assets/images/logo/{{ _type | lower }}_symbol.png" alt="{{ _type }}" draggable="false">
-                    <div class="card-body">
-                        <img class="card-icon" src="{{ base_url() }}/assets/images/logo/{{ _type | lower }}_icon.png" alt="{{ _type }}" draggable="false">
-                    </div>
-                </div>
-            </a>
-        {% endfor %}
-    </div>
+  <div class="cards">
+    {# Card #}
+    {% for _type in data.types %}
+      <a href="{{ path_for('type', { slug: _type | lower }) }}" title="{{ _type }}">
+        <div class="card">
+          <img class="card-img card-img-symbol" src="{{ base_url() }}/assets/images/logo/{{ _type | lower }}_symbol.png" alt="{{ _type }}" draggable="false">
+          <div class="card-body">
+            <img class="card-icon" src="{{ base_url() }}/assets/images/logo/{{ _type | lower }}_icon.png" alt="{{ _type }}" draggable="false">
+          </div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
 {% endblock %}

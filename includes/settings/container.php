@@ -11,214 +11,214 @@ $container = $app->getContainer();
 // View
 $container['view'] = function($container)
 {
-    // Initialize views
-    $view   = new \Slim\Views\Twig('../includes/views');
-    $router = $container->get('router');
-    $uri    = \Slim\Http\Uri::createFromEnvironment(new \Slim\Http\Environment($_SERVER));
-    $view->addExtension(new \Slim\Views\TwigExtension($router, $uri));
+  // Initialize views
+  $view   = new \Slim\Views\Twig('../includes/views');
+  $router = $container->get('router');
+  $uri    = \Slim\Http\Uri::createFromEnvironment(new \Slim\Http\Environment($_SERVER));
+  $view->addExtension(new \Slim\Views\TwigExtension($router, $uri));
 
-    return $view;
+  return $view;
 };
 
 // Database
 $container['database'] = function($container)
 {
-    // Connect to database
-    $db  = $container['settings']['database'];
-    $pdo = new PDO('mysql:host='.$db['host'].';dbname='.$db['name'].';port='.$db['port'], $db['user'], $db['pass']);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  // Connect to database
+  $db  = $container['settings']['database'];
+  $pdo = new PDO('mysql:host='.$db['host'].';dbname='.$db['name'].';port='.$db['port'], $db['user'], $db['pass']);
+  $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Connect user address
-    $userIp   = hash('sha256', PM\Address::getIp());
-    $database = new PM\Database($pdo, $userIp);
+  // Connect user address
+  $userIp   = hash('sha256', PM\Address::getIp());
+  $database = new PM\Database($pdo, $userIp);
 
-    return $database;
+  return $database;
 };
 
 // Home
 $container['getHome'] = function($container)
 {
-    // Import database
-    $database = $container->database;
+  // Import database
+  $database = $container->database;
 
-    // Check registration
-    $userIp = $database->getIp();
-    $database->setQuery('SELECT * FROM users WHERE ip = "' . $userIp . '"');
-    $user   = $database->getPrepareFetch();
-    $database->checkRegistration($user, $userIp);
+  // Check registration
+  $userIp = $database->getIp();
+  $database->setQuery('SELECT * FROM users WHERE ip = "' . $userIp . '"');
+  $user   = $database->getPrepareFetch();
+  $database->checkRegistration($user, $userIp);
 
-    $dataView =
+  $dataView =
+  [
+    'base' =>
     [
-        'base' =>
-        [
-            'page'  => 'home',
-            'title' => TITLE,
-        ],
-        'data' =>
-        [
-            'user' => $user,
-        ],
-    ];
-    return $dataView;
+      'page'  => 'home',
+      'title' => TITLE,
+    ],
+    'data' =>
+    [
+      'user' => $user,
+    ],
+  ];
+  return $dataView;
 };
 $container['postHome'] = function($container)
 {
-    if (isset($_POST['action']))
+  if (isset($_POST['action']))
+  {
+    $database     = $container->database;
+    $pokemonIndex = $_POST['pokemon_index'];
+    if ($_POST['action'] === 'catch')
     {
-        $database     = $container->database;
-        $pokemonIndex = $_POST['pokemon_index'];
-        if ($_POST['action'] === 'catch')
-        {
-            // Set pokemon that the user meets and update position
-            $userIp    = $database->getIp();
-            $positionX = $_POST['position_x'];
-            $positionY = $_POST['position_y'];
-            $database->setQuery('UPDATE users SET catching   = "' . $pokemonIndex . '" WHERE ip = "' . $userIp . '"');
-            $database->setQuery('UPDATE users SET position_x = "' . $positionX    . '" WHERE ip = "' . $userIp . '"');
-            $database->setQuery('UPDATE users SET position_y = "' . $positionY    . '" WHERE ip = "' . $userIp . '"');
-        }
-        elseif ($_POST['action'] === 'caught')
-        {
-            // Add pokemon to user pokedex
-            $userId = $database->getId();
-            $database->setQuery('SELECT * FROM capture WHERE pokemon_id = "' . $pokemonIndex .'" AND user_id = "' . $userId . '"');
-            $owned = $database->getPrepareFetch();
-            if (!$owned)
-                $database->setQuery('INSERT INTO capture (pokemon_id, user_id) VALUES ("' . $pokemonIndex . '", "' . $userId .'")');
-            else
-                $database->setQuery('UPDATE capture SET number = ' . ($owned->number + 1) . ' WHERE id = ' . $owned->id);
-        }
+      // Set pokemon that the user meets and update position
+      $userIp    = $database->getIp();
+      $positionX = $_POST['position_x'];
+      $positionY = $_POST['position_y'];
+      $database->setQuery('UPDATE users SET catching   = "' . $pokemonIndex . '" WHERE ip = "' . $userIp . '"');
+      $database->setQuery('UPDATE users SET position_x = "' . $positionX    . '" WHERE ip = "' . $userIp . '"');
+      $database->setQuery('UPDATE users SET position_y = "' . $positionY    . '" WHERE ip = "' . $userIp . '"');
     }
-    exit;
+    elseif ($_POST['action'] === 'caught')
+    {
+      // Add pokemon to user pokedex
+      $userId = $database->getId();
+      $database->setQuery('SELECT * FROM capture WHERE pokemon_id = "' . $pokemonIndex .'" AND user_id = "' . $userId . '"');
+      $owned = $database->getPrepareFetch();
+      if (!$owned)
+        $database->setQuery('INSERT INTO capture (pokemon_id, user_id) VALUES ("' . $pokemonIndex . '", "' . $userId .'")');
+      else
+        $database->setQuery('UPDATE capture SET number = ' . ($owned->number + 1) . ' WHERE id = ' . $owned->id);
+    }
+  }
+  exit;
 };
 
 // Catch
 $container['getCatch'] = function($container)
 {
-    // Select user
-    $database = $container->database;
-    $userIp   = $database->getIp();
-    $database->setQuery('SELECT * FROM users WHERE ip = "' . $userIp . '"');
-    $user     = $database->getPrepareFetch();
+  // Select user
+  $database = $container->database;
+  $userIp   = $database->getIp();
+  $database->setQuery('SELECT * FROM users WHERE ip = "' . $userIp . '"');
+  $user     = $database->getPrepareFetch();
 
-    // Prevent user to access the page by writing the URL
-    if (isset($user->catching))
-    {
-        // Select pokemon
-        $data    = new PM\Data('pokedex');
-        $pokemon = $data->data->pokemon[$user->catching];
+  // Prevent user to access the page by writing the URL
+  if (isset($user->catching))
+  {
+    // Select pokemon
+    $data    = new PM\Data('pokedex');
+    $pokemon = $data->data->pokemon[$user->catching];
 
-        $dataView =
-        [
-            'base' =>
-            [
-                'page'  => 'catch',
-                'title' => TITLE . ' | Catch ' . $pokemon->name . ' !',
-            ],
-            'data' =>
-            [
-                'pokemon' => $pokemon
-            ],
-        ];
-        return $dataView;
-    }
-    else
-    {
-        header('location: ./');
-        exit;
-    }
+    $dataView =
+    [
+      'base' =>
+      [
+        'page'  => 'catch',
+        'title' => TITLE . ' | Catch ' . $pokemon->name . ' !',
+      ],
+      'data' =>
+      [
+        'pokemon' => $pokemon
+      ],
+    ];
+    return $dataView;
+  }
+  else
+  {
+    header('location: ./');
+    exit;
+  }
 };
 
 // Pokemons
 $container['getPokemons'] = function($container)
 {
-    // Get all pokemons
-    $data     = new PM\Data('pokedex');
-    $pokemons = $data->data->pokemon;
+  // Get all pokemons
+  $data     = new PM\Data('pokedex');
+  $pokemons = $data->data->pokemon;
 
-    // Get pokemons owned
-    $database = $container->database;
-    $userId   = $database->getId();
-    $database->setQuery('SELECT * FROM capture WHERE user_id = "' . $userId . '"');
-    $owned    = $database->getPrepareFetchAll();
+  // Get pokemons owned
+  $database = $container->database;
+  $userId   = $database->getId();
+  $database->setQuery('SELECT * FROM capture WHERE user_id = "' . $userId . '"');
+  $owned    = $database->getPrepareFetchAll();
 
-    // Check which pokemons are owned
-    foreach ($owned as $_owned)
-    {
-        $pokemons[$_owned->pokemon_id]->is_owned     = true;
-        $pokemons[$_owned->pokemon_id]->number_owned = $_owned->number;
-    }
+  // Check which pokemons are owned
+  foreach ($owned as $_owned)
+  {
+    $pokemons[$_owned->pokemon_id]->is_owned     = true;
+    $pokemons[$_owned->pokemon_id]->number_owned = $_owned->number;
+  }
 
-    $dataView =
+  $dataView =
+  [
+    'base' =>
     [
-        'base' =>
-        [
-            'page'  => 'pokemons',
-            'title' => TITLE . ' | Pokemons',
-        ],
-        'data' =>
-        [
-            'pokemons' => $pokemons,
-        ],
-    ];
-    return $dataView;
+      'page'  => 'pokemons',
+      'title' => TITLE . ' | Pokemons',
+    ],
+    'data' =>
+    [
+      'pokemons' => $pokemons,
+    ],
+  ];
+  return $dataView;
 };
 
 // Types
 $container['getTypes'] = function($container)
 {
-    // Get all pokemons and types
-    $data  = new PM\Data('pokedex');
-    $types = $data->data->types;
+  // Get all pokemons and types
+  $data  = new PM\Data('pokedex');
+  $types = $data->data->types;
 
-    $dataView =
+  $dataView =
+  [
+    'base' =>
     [
-        'base' =>
-        [
-            'page'  => 'types',
-            'title' => TITLE . ' | Types',
-        ],
-        'data' =>
-        [
-            'types' => $types,
-        ],
-    ];
-    return $dataView;
+      'page'  => 'types',
+      'title' => TITLE . ' | Types',
+    ],
+    'data' =>
+    [
+      'types' => $types,
+    ],
+  ];
+  return $dataView;
 };
 
 // Random
 $container['getRandom'] = function($container)
 {
-    // Get pokemons data
-    $dataView = $container->getPokemons;
-    $dataBase = $dataView['base'];
-    $dataData = $dataView['data'];
-    $pokemon  = $dataData['pokemons'][rand(0, sizeof($dataData['pokemons']))];
+  // Get pokemons data
+  $dataView = $container->getPokemons;
+  $dataBase = $dataView['base'];
+  $dataData = $dataView['data'];
+  $pokemon  = $dataData['pokemons'][rand(0, sizeof($dataData['pokemons']))];
 
-    // Set new data
-    $dataBase['page']    = 'pokemon';
-    $dataBase['title']   = TITLE . ' | ' . (isset($pokemon->is_owned) ? $pokemon->name : '???');
-    $dataData['pokemon'] = $pokemon;
-    $dataView['base']    = $dataBase;
-    $dataView['data']    = $dataData;
+  // Set new data
+  $dataBase['page']    = 'pokemon';
+  $dataBase['title']   = TITLE . ' | ' . (isset($pokemon->is_owned) ? $pokemon->name : '???');
+  $dataData['pokemon'] = $pokemon;
+  $dataView['base']    = $dataBase;
+  $dataView['data']    = $dataData;
 
-    return $dataView;
+  return $dataView;
 };
 
 // 404
 $container['notFoundHandler'] = function($container)
 {
-    return function($request, $response) use ($container)
-    {
-        $dataView =
-        [
-            'base' =>
-            [
-                'page'  => '404',
-                'title' => TITLE . ' | 404',
-            ],
-        ];
-        return $container['view']->render($response->withStatus(404), 'index.twig', $dataView);
-    };
+  return function($request, $response) use ($container)
+  {
+    $dataView =
+    [
+      'base' =>
+      [
+        'page'  => '404',
+        'title' => TITLE . ' | 404',
+      ],
+    ];
+    return $container['view']->render($response->withStatus(404), 'index.twig', $dataView);
+  };
 };

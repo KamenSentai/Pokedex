@@ -8,12 +8,12 @@ namespace Pokedex\Models;
  */
 class Data
 {
-    private $json;
-    public  $data;
+  private $json;
+  public  $data;
 
-    public function __construct($file)
-    {
-        $this->json = file_get_contents('../database/' . $file . '.json');
-        $this->data = json_decode($this->json);
-    }
+  public function __construct($file)
+  {
+    $this->json = file_get_contents('../database/' . $file . '.json');
+    $this->data = json_decode($this->json);
+  }
 }

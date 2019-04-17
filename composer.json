@@ -1,21 +1,21 @@
 {
-    "name": "pokedex/slim",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "AlainCVT",
-            "email": "cvt.alain@gmail.com"
-        }
-    ],
-    "require": {
-        "slim/slim": "^3.0",
-        "slim/twig-view": "^2.4"
-    },
-    "autoload": {
-        "psr-4": {
-            "Pokedex\\Models\\": "./includes/models/",
-            "Pokedex\\Views\\": "./includes/views/",
-            "Pokedex\\Controllers\\": "./includes/controllers/"
-        }
+  "name": "pokedex/slim",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "AlainCVT",
+      "email": "cvt.alain@gmail.com"
     }
+  ],
+  "require": {
+    "slim/slim": "^3.0",
+    "slim/twig-view": "^2.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Pokedex\\Models\\": "./includes/models/",
+      "Pokedex\\Views\\": "./includes/views/",
+      "Pokedex\\Controllers\\": "./includes/controllers/"
+    }
+  }
 }

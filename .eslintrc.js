@@ -6,7 +6,7 @@ module.exports =
 		'node': true,
     'es6': true
   },
-	'plugins': 
+	'plugins':
 	[
 		'node'
 	],
@@ -27,7 +27,7 @@ module.exports =
 		'block-spacing': [1, 'always'],
 		'brace-style': [1, 'allman'],
 		'camelcase': [1, { properties: 'always' }],
-		'indent': [1, 'tab'],
+		'indent': [1, 'space'],
 		'one-var-declaration-per-line': [1, 'initializations'],
 		'quotes': [1, 'single'],
 		'semi': [1, 'never'],

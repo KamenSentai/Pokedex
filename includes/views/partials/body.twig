@@ -1,5 +1,5 @@
 <body class="{{ base.page == 'home' ? 'fade' }} {{ base.page == 'home' or base.page == 'catch' ? 'overflow' }}">
-    {{ include('./pages/' ~ base.page ~ '.twig') }}
-    {# Scripts #}
-    <script src="{{ base_url() }}/scripts/app.js"></script>
+  {{ include('./pages/' ~ base.page ~ '.twig') }}
+  {# Scripts #}
+  <script src="{{ base_url() }}/scripts/app.js"></script>
 </body>
