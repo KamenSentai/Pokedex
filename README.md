@@ -29,8 +29,9 @@
 - Click on top buttons to navigate
 
 ## Usage
-- Run `composer install` to load the site
-- Run `gulp install` then `gulp` to edit
+```
+composer install
+```
 
 ## Credits
 - [Pokedex](https://codepen.io/Bidji/pen/MYdPwo)
