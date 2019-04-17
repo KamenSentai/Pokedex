@@ -1,519 +1,519 @@
 .container
+  position absolute
+  full-size()
+
+  // Images
+  img
     position absolute
+
+    // Map
+    &.left,
+    &.right
+      size(auto, 100%)
+    &.left
+      top 0
+    &.right
+      top 0
+    &.top,
+    &.bottom
+      size(100%, auto)
+    &.top
+      left 0
+    &.bottom
+      left 0
+    &.map
+      left 50%
+      top 0
+      size(auto, 100%)
+      transform translateX(-50%)
+      z-index 2
+    &.crush
+      left 0
+      top 0
+      opacity 0
+      will-change transform, opacity
+      z-index 3
+
+    // Pokedex
+    &.pokedex
+      left 0
+      width 25%
+      height auto
+      transform translateY(100%)
+      composite(transform, 0.5s, ease-out)
+      z-index 4
+      &:hover
+        transform translateY(50%)
+
+    // Action
+    &.appearance
+      right 0
+      bottom 50%
+      size(25%, auto)
+      transform translateX(100%)
+      transition transform 1s ease-out
+      will-change opacity, transform
+      &.active
+        transition transform 1s ease-out, opacity 1s ease-out, filter 1s ease-out 1s
+        filter none
+        &.caught
+          filter brightness(0) invert(1) blur(0.5em)
+          opacity 0
+          transform-origin 50% 50%
+          transform scale(0)
+          transition transform 1s ease-out 1s, opacity 1s ease-out 1s, filter 1s ease-out
+    &.illustration
+      left 0
+      bottom 0
+      size(50%, auto)
+      transform translateX(-100%)
+      composite(transform, 1s, ease-out)
+    &.appearance,
+    &.illustration
+      &.active
+        transform none
+    &.tool
+      right 12.5%
+      bottom 25%
+      size(6.25%, auto)
+      transform translate(50%, calc(50% + 50vh))
+      composite(transform, 1s, ease-out)
+      &.active
+        transform translate(50%, 50%)
+        &:hover
+          transform translate(50%, calc(50% + 1em))
+      &.thrown
+        animation throw 5s ease-in-out forwards
+
+  // Character
+  .character
+    position absolute
+    overflow hidden
+  .character,
+  .sprite
+    will-change transform
+    z-index 4
+
+  // Rectangles
+  .rectangles
+    position absolute
+    left 0
+    top 0
     full-size()
+    z-index 0
+    .rectangle
+      position absolute
+      background-color #000
+      transition transform linear 0.25s
+      &.left.out,
+      &.right.out
+        size(25%, 100%)
+      &.top.out
+        size(50%, 25%)
+      &.bottom.out
+        size(100%, 25%)
+      &.left.in,
+      &.right.in
+        size(25%, 50%)
+      &.bottom.in
+        size(50%, 25%)
+      &.left.out
+        left 0
+        top 0
+      &.top.out
+        left 25%
+        top 0
+      &.bottom.out,
+      &.right.out
+        right 0
+        bottom 0
+      &.left.in
+        left 25%
+        top 25%
+      &.bottom.in,
+      &.right.in
+        right 25%
+        bottom 25%
+      &.left.out,
+      &.left.in
+        transform-origin 0 0
+        transform scaleY(0)
+      &.bottom.out,
+      &.bottom.in
+        transform-origin 0 0
+        transform scaleX(0)
+      &.right.out,
+      &.right.in
+        transform-origin 0 100%
+        transform scaleY(0)
+      &.top.out
+        transform-origin 100% 0
+        transform scaleX(0)
+      &.left.out
+        transition-delay 1.5s
+      &.bottom.out
+        transition-delay 1.25s
+      &.right.out
+        transition-delay 1s
+      &.top.out
+        transition-delay 0.75s
+      &.left.in
+        transition-delay 0.5s
+      &.bottom.in
+        transition-delay 0.25s
+      &.right.in
+        transition-delay 0s
+    &.active
+      z-index 5
+      .rectangle
+        transform none !important
+        &.left.out
+          transition-delay 0s
+        &.bottom.out
+          transition-delay 0.25s
+        &.right.out
+          transition-delay 0.5s
+        &.top.out
+          transition-delay 0.75s
+        &.left.in
+          transition-delay 1s
+        &.bottom.in
+          transition-delay 1.25s
+        &.right.in
+          transition-delay 1.5s
 
-    // Images
-    img
+  // Catch page
+  &.container-catch
+    background url(../assets/images/map/background.png) no-repeat center center fixed
+    background-size cover
+    h1
+      display inline-block
+      position absolute
+      left 1em
+      top 1em
+      padding 2.5em
+      background-color #fff
+      color #000
+      font-family $F-PGB
+      border 0.25em solid #000
+      box-shadow 0.5em 0.5em 1em rgba(#000, 0.25)
+      user-select none
+      transform translateX(-100%)
+      composite(transform, 1s, ease-out)
+      &.active
+        transition-delay 0.5s
+        transform none
+      span
+        &.caught,
+        &.escaped
+          display none
+
+  // Pokedex page
+  &.container-pokedex
+    width 100%
+    position absolute
+    left 0
+    top 0
+    *::selection
+      background $C-redshadow
+      color $C-redbody
+
+    // Pokedex design
+    .top-bar
+      width 100%
+      height 5rem
+      background-color $C-reddark
+      border-top-left-radius 2rem
+    .top-corner
+      width 12.5rem
+      height 6rem
+      background-color $C-reddark
+      float left
+      padding 1rem 0 0 1rem
+      position absolute
+      top 0
+      left 0
+      box-shadow -0.625rem 0.5rem $C-redshadow
+      border-bottom-right-radius 6rem 4rem
+      border-top-left-radius 2rem
+      z-index 1
+      .top-button-glass
+        position relative
+        width 4rem
+        height 4rem
+        margin-right 1rem
+        border 0.25rem solid #fff
+        float left
+        box-shadow 0 0 0.625rem $C-redblur
+        background radial-gradient(#05fbfb, #29abe3)
+        border-radius 50%
+        &::after
+          pseudo-element()
+          background-color #05fbfb
+          border-radius 50%
+          filter blur(1.25em)
+          opacity 0
+          composite(opacity, 0.125s, ease-out)
+        &:hover::after
+          opacity 1
+        .reflect
+          width 1.75rem
+          height 1rem
+          margin 0.25rem 0 0 1rem
+          background #fff
+          opacity 0.6
+          border-radius 1rem 0.5rem
+      .top-button
+        position relative
+        width 1.25rem
+        height 1.25rem
+        margin-right 0.625rem
+        float left
+        box-shadow 0 0 0.625rem $C-redblur
+        border-radius 50%
+        &::after
+          pseudo-element()
+          border-radius 50%
+          filter blur(0.25em)
+          opacity 0
+          composite(opacity, 0.125s, ease-out)
+        &:hover::after
+          opacity 1
+        &.top-button-red
+          background radial-gradient(#fb7b7b, #fb0505)
+          &::after
+            background-color lighten(#fb0505, 37.5)
+        &.top-button-yellow
+          background radial-gradient(#fbfb9b, #fbfb05)
+          &::after
+            background-color lighten(#fbfb05, 37.5)
+        &.top-button-green
+          background radial-gradient(#b0fb7b, #50fb05)
+          &::after
+            background-color lighten(#50fb05, 37.5)
+    .content
+      position absolute
+      left 0
+      top 5rem
+      width calc(100% - 3.75rem)
+      padding 2.5rem
+      background-color $C-redbody
+      color $C-redblur
+      font-family $F-PGB
+      &::before
+        pseudo-element(calc(100% + 0.375rem))
+        border-bottom-left-radius 2rem
+        box-shadow -0.375rem 1rem $C-redshadow
+        z-index -1
+      .junctions
         position absolute
+        left 100%
+        top 0
+        width 3.75rem
+        height calc(100% + 1rem)
+        background linear-gradient(to right, $C-reddark 0%, $C-redbody 50%, $C-reddark 100%)
+        .junction
+          position absolute
+          right 0
+          width 100%
+          height 2.5rem
+          background-color $C-redshadow
+          opacity 0.3
+          border-top 0.125rem solid $C-redborder
+          border-bottom 0.125rem solid $C-redborder
+          &.junction-top
+            top 5rem
+          &.junction-bottom
+            bottom 5rem
 
-        // Map
-        &.left,
-        &.right
-            size(auto, 100%)
-        &.left
-            top 0
-        &.right
-            top 0
-        &.top,
-        &.bottom
-            size(100%, auto)
-        &.top
-            left 0
-        &.bottom
-            left 0
-        &.map
+      // Cards
+      .cards
+        display flex
+        width 100%
+        flex-direction row
+        justify-content space-between
+        flex-wrap wrap
+        .card
+          display inline-block
+          position relative
+          width 12.5rem
+          margin 1rem 0
+          box-shadow 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.25)
+      .cards .card,
+      .sheet .sheet-card
+        .card-shadow
+          position absolute
+          left 0
+          top 0
+          width 100%
+          height 100%
+          box-shadow 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.25)
+          opacity 0
+          composite(opacity, 0.25s, ease-out)
+        &:hover .card-shadow
+          opacity 1
+        .card-img
+          position static
+          width 100%
+          height auto
+          background-color rgba(#000, 0.125)
+          &.unknown
+            filter brightness(0)
+            opacity 0.75
+        .card-labels
+          position absolute
+          right 0
+          top 0
+          width 25%
+          font-size 0
+          .card-label
+            position static
+            width 100%
+            height auto
+        .card-body
+          position relative
+          padding 1rem
+          .card-icon
+            position absolute
             left 50%
             top 0
-            size(auto, 100%)
+            height 2rem
+            width auto
             transform translateX(-50%)
-            z-index 2
-        &.crush
+      .card-error
+        h1
+          font-size 2rem
+          margin-bottom 1.5rem
+        p
+          margin 1rem 0
+
+      // Sheet
+      .sheet
+        width 100%
+        > h1
+          font-size 2.5rem
+          margin-bottom 1.25rem
+        > p
+          margin-bottom 1.25rem
+        > .sheet-error
+          position relative
+          width 100%
+          height 25rem
+          img
+            position absolute
             left 0
             top 0
-            opacity 0
-            will-change transform, opacity
-            z-index 3
+            width auto
+            height 100%
 
-        // Pokedex
-        &.pokedex
-            left 0
-            width 25%
-            height auto
-            transform translateY(100%)
-            composite(transform, 0.5s, ease-out)
-            z-index 4
-            &:hover
-                transform translateY(50%)
-
-        // Action
-        &.appearance
-            right 0
-            bottom 50%
-            size(25%, auto)
-            transform translateX(100%)
-            transition transform 1s ease-out
-            will-change opacity, transform
-            &.active
-                transition transform 1s ease-out, opacity 1s ease-out, filter 1s ease-out 1s
-                filter none
-                &.caught
-                    filter brightness(0) invert(1) blur(0.5em)
-                    opacity 0
-                    transform-origin 50% 50%
-                    transform scale(0)
-                    transition transform 1s ease-out 1s, opacity 1s ease-out 1s, filter 1s ease-out
-        &.illustration
+        // Screen
+        .sheet-screen
+          position relative
+          width 100%
+          height 25rem
+          background-color #b0b0b0
+          border-radius 1rem
+          box-shadow 0.125rem 0.25rem 0 #909090
+          &:before
+            content ''
+            position absolute
+            left 0rem
+            bottom -2.5rem
+            height 0
+            border-top 5rem solid transparent
+            border-left 5rem solid $C-redbody
+          &:after
+            content ''
+            position absolute
             left 0
             bottom 0
-            size(50%, auto)
-            transform translateX(-100%)
-            composite(transform, 1s, ease-out)
-        &.appearance,
-        &.illustration
-            &.active
-                transform none
-        &.tool
-            right 12.5%
-            bottom 25%
-            size(6.25%, auto)
-            transform translate(50%, calc(50% + 50vh))
-            composite(transform, 1s, ease-out)
-            &.active
-                transform translate(50%, 50%)
-                &:hover
-                    transform translate(50%, calc(50% + 1em))
-            &.thrown
-                animation throw 5s ease-in-out forwards
-
-    // Character
-    .character
-        position absolute
-        overflow hidden
-    .character,
-    .sprite
-        will-change transform
-        z-index 4
-
-    // Rectangles
-    .rectangles
-        position absolute
-        left 0
-        top 0
-        full-size()
-        z-index 0
-        .rectangle
+            height 0
+            border-top 2.5rem solid #b0b0b0
+            border-left 2.5rem solid $C-redbody
+          .sheet-picture
             position absolute
-            background-color #000
-            transition transform linear 0.25s
-            &.left.out,
-            &.right.out
-                size(25%, 100%)
-            &.top.out
-                size(50%, 25%)
-            &.bottom.out
-                size(100%, 25%)
-            &.left.in,
-            &.right.in
-                size(25%, 50%)
-            &.bottom.in
-                size(50%, 25%)
-            &.left.out
-                left 0
-                top 0
-            &.top.out
-                left 25%
-                top 0
-            &.bottom.out,
-            &.right.out
-                right 0
-                bottom 0
-            &.left.in
-                left 25%
-                top 25%
-            &.bottom.in,
-            &.right.in
-                right 25%
-                bottom 25%
-            &.left.out,
-            &.left.in
-                transform-origin 0 0
-                transform scaleY(0)
-            &.bottom.out,
-            &.bottom.in
-                transform-origin 0 0
-                transform scaleX(0)
-            &.right.out,
-            &.right.in
-                transform-origin 0 100%
-                transform scaleY(0)
-            &.top.out
-                transform-origin 100% 0
-                transform scaleX(0)
-            &.left.out
-                transition-delay 1.5s
-            &.bottom.out
-                transition-delay 1.25s
-            &.right.out
-                transition-delay 1s
-            &.top.out
-                transition-delay 0.75s
-            &.left.in
-                transition-delay 0.5s
-            &.bottom.in
-                transition-delay 0.25s
-            &.right.in
-                transition-delay 0s
-        &.active
-            z-index 5
-            .rectangle
-                transform none !important
-                &.left.out
-                    transition-delay 0s
-                &.bottom.out
-                    transition-delay 0.25s
-                &.right.out
-                    transition-delay 0.5s
-                &.top.out
-                    transition-delay 0.75s
-                &.left.in
-                    transition-delay 1s
-                &.bottom.in
-                    transition-delay 1.25s
-                &.right.in
-                    transition-delay 1.5s
-
-    // Catch page
-    &.container-catch
-        background url(../assets/images/map/background.png) no-repeat center center fixed
-        background-size cover
-        h1
-            display inline-block
+            left 50%
+            top 1rem
+            height 20rem
+            width calc(100% - 2.5rem)
+            background-color #eee
+            border 0.25rem solid #494949
+            border-radius 1rem
+            box-shadow 0.125rem 0.25rem 0 #303030
+            transform translateX(-50%)
+            .sheet-img
+              display block
+              margin 0 auto
+              position static
+              width auto
+              height 100%
+              &.unknown
+                filter brightness(0)
+                opacity 0.75
+          .sheet-button
             position absolute
-            left 1em
-            top 1em
-            padding 2.5em
-            background-color #fff
-            color #000
-            font-family $F-PGB
-            border 0.25em solid #000
-            box-shadow 0.5em 0.5em 1em rgba(#000, 0.25)
-            user-select none
-            transform translateX(-100%)
-            composite(transform, 1s, ease-out)
-            &.active
-                transition-delay 0.5s
-                transform none
-            span
-                &.caught,
-                &.escaped
-                    display none
-
-    // Pokedex page
-    &.container-pokedex
-        width 100%
-        position absolute
-        left 0
-        top 0
-        *::selection
-            background $C-redshadow
-            color $C-redbody
-
-        // Pokedex design
-        .top-bar
-            width 100%
-            height 5rem
-            background-color $C-reddark
-            border-top-left-radius 2rem
-        .top-corner
-            width 12.5rem
-            height 6rem
-            background-color $C-reddark
-            float left
-            padding 1rem 0 0 1rem
-            position absolute
-            top 0
-            left 0
-            box-shadow -0.625rem 0.5rem $C-redshadow
-            border-bottom-right-radius 6rem 4rem
-            border-top-left-radius 2rem
-            z-index 1
-            .top-button-glass
-                position relative
-                width 4rem
-                height 4rem
-                margin-right 1rem
-                border 0.25rem solid #fff
-                float left
-                box-shadow 0 0 0.625rem $C-redblur
-                background radial-gradient(#05fbfb, #29abe3)
-                border-radius 50%
-                &::after
-                    pseudo-element()
-                    background-color #05fbfb
-                    border-radius 50%
-                    filter blur(1.25em)
-                    opacity 0
-                    composite(opacity, 0.125s, ease-out)
-                &:hover::after
-                    opacity 1
-                .reflect
-                    width 1.75rem
-                    height 1rem
-                    margin 0.25rem 0 0 1rem
-                    background #fff
-                    opacity 0.6
-                    border-radius 1rem 0.5rem
-            .top-button
-                position relative
-                width 1.25rem
-                height 1.25rem
-                margin-right 0.625rem
-                float left
-                box-shadow 0 0 0.625rem $C-redblur
-                border-radius 50%
-                &::after
-                    pseudo-element()
-                    border-radius 50%
-                    filter blur(0.25em)
-                    opacity 0
-                    composite(opacity, 0.125s, ease-out)
-                &:hover::after
-                    opacity 1
-                &.top-button-red
-                    background radial-gradient(#fb7b7b, #fb0505)
-                    &::after
-                        background-color lighten(#fb0505, 37.5)
-                &.top-button-yellow
-                    background radial-gradient(#fbfb9b, #fbfb05)
-                    &::after
-                        background-color lighten(#fbfb05, 37.5)
-                &.top-button-green
-                    background radial-gradient(#b0fb7b, #50fb05)
-                    &::after
-                        background-color lighten(#50fb05, 37.5)
-        .content
-            position absolute
-            left 0
-            top 5rem
-            width calc(100% - 3.75rem)
-            padding 2.5rem
+            left 3.75rem
+            bottom 1.25rem
+            height 1.5rem
+            width 1.5rem
+            background linear-gradient(to bottom, $C-redbody 0%, #8b0000 80%)
             background-color $C-redbody
-            color $C-redblur
-            font-family $F-PGB
-            &::before
-                pseudo-element(calc(100% + 0.375rem))
-                border-bottom-left-radius 2rem
-                box-shadow -0.375rem 1rem $C-redshadow
-                z-index -1
-            .junctions
-                position absolute
-                left 100%
-                top 0
-                width 3.75rem
-                height calc(100% + 1rem)
-                background linear-gradient(to right, $C-reddark 0%, $C-redbody 50%, $C-reddark 100%)
-                .junction
-                    position absolute
-                    right 0
-                    width 100%
-                    height 2.5rem
-                    background-color $C-redshadow
-                    opacity 0.3
-                    border-top 0.125rem solid $C-redborder
-                    border-bottom 0.125rem solid $C-redborder
-                    &.junction-top
-                        top 5rem
-                    &.junction-bottom
-                        bottom 5rem
+            border-radius 3rem
+            box-shadow 0.0625rem 0.125rem $C-redshadow
+            cursor pointer
+          .sheet-speakers
+            position absolute
+            right 1.25rem
+            bottom 1.25rem
+            width 5rem
+            height 1.5rem
+            .sheet-speaker
+              height 0.25rem
+              margin-bottom 0.25rem
+              background-color #494949
+              border-radius 2rem
 
-            // Cards
-            .cards
-                display flex
-                width 100%
-                flex-direction row
-                justify-content space-between
-                flex-wrap wrap
-                .card
-                    display inline-block
-                    position relative
-                    width 12.5rem
-                    margin 1rem 0
-                    box-shadow 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.25)
-            .cards .card,
-            .sheet .sheet-card
-                .card-shadow
-                    position absolute
-                    left 0
-                    top 0
-                    width 100%
-                    height 100%
-                    box-shadow 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.25)
-                    opacity 0
-                    composite(opacity, 0.25s, ease-out)
-                &:hover .card-shadow
-                    opacity 1
-                .card-img
-                    position static
-                    width 100%
-                    height auto
-                    background-color rgba(#000, 0.125)
-                    &.unknown
-                        filter brightness(0)
-                        opacity 0.75
-                .card-labels
-                    position absolute
-                    right 0
-                    top 0
-                    width 25%
-                    font-size 0
-                    .card-label
-                        position static
-                        width 100%
-                        height auto
-                .card-body
-                    position relative
-                    padding 1rem
-                    .card-icon
-                        position absolute
-                        left 50%
-                        top 0
-                        height 2rem
-                        width auto
-                        transform translateX(-50%)
-            .card-error
-                h1
-                    font-size 2rem
-                    margin-bottom 1.5rem
-                p
-                    margin 1rem 0
+        // Data
+        .sheet-data
+          margin 2.5rem 0
+          padding 1.25rem
+          background-color rgba(#000, 0.125)
+          box-shadow 0.125rem 0.25rem 0 $C-reddark
+          h1
+            font-size 2rem
+          h2
+            font-size 1.5rem
+            margin 0.5rem 0
+          h4
+            font-size 1.25rem
+          h5
+            margin 1rem 0
+            border-bottom 0.125rem solid $C-reddark
+          .sheet-icon-link
+            display inline-block
+            &:not(:first-child) .sheet-icon
+              transform translate(100%, -75%)
+          .sheet-icon
+            display inline-block
+            width auto
+            height 1.5em
+            transform translateY(-75%)
 
-            // Sheet
-            .sheet
-                width 100%
-                > h1
-                    font-size 2.5rem
-                    margin-bottom 1.25rem
-                > p
-                    margin-bottom 1.25rem
-                > .sheet-error
-                    position relative
-                    width 100%
-                    height 25rem
-                    img
-                        position absolute
-                        left 0
-                        top 0
-                        width auto
-                        height 100%
-
-                // Screen
-                .sheet-screen
-                    position relative
-                    width 100%
-                    height 25rem
-                    background-color #b0b0b0
-                    border-radius 1rem
-                    box-shadow 0.125rem 0.25rem 0 #909090
-                    &:before
-                        content ''
-                        position absolute
-                        left 0rem
-                        bottom -2.5rem
-                        height 0
-                        border-top 5rem solid transparent
-                        border-left 5rem solid $C-redbody
-                    &:after
-                        content ''
-                        position absolute
-                        left 0
-                        bottom 0
-                        height 0
-                        border-top 2.5rem solid #b0b0b0
-                        border-left 2.5rem solid $C-redbody
-                    .sheet-picture
-                        position absolute
-                        left 50%
-                        top 1rem
-                        height 20rem
-                        width calc(100% - 2.5rem)
-                        background-color #eee
-                        border 0.25rem solid #494949
-                        border-radius 1rem
-                        box-shadow 0.125rem 0.25rem 0 #303030
-                        transform translateX(-50%)
-                        .sheet-img
-                            display block
-                            margin 0 auto
-                            position static
-                            width auto
-                            height 100%
-                            &.unknown
-                                filter brightness(0)
-                                opacity 0.75
-                    .sheet-button
-                        position absolute
-                        left 3.75rem
-                        bottom 1.25rem
-                        height 1.5rem
-                        width 1.5rem
-                        background linear-gradient(to bottom, $C-redbody 0%, #8b0000 80%)
-                        background-color $C-redbody
-                        border-radius 3rem
-                        box-shadow 0.0625rem 0.125rem $C-redshadow
-                        cursor pointer
-                    .sheet-speakers
-                        position absolute
-                        right 1.25rem
-                        bottom 1.25rem
-                        width 5rem
-                        height 1.5rem
-                        .sheet-speaker
-                            height 0.25rem
-                            margin-bottom 0.25rem
-                            background-color #494949
-                            border-radius 2rem
-
-                // Data
-                .sheet-data
-                    margin 2.5rem 0
-                    padding 1.25rem
-                    background-color rgba(#000, 0.125)
-                    box-shadow 0.125rem 0.25rem 0 $C-reddark
-                    h1
-                        font-size 2rem
-                    h2
-                        font-size 1.5rem
-                        margin 0.5rem 0
-                    h4
-                        font-size 1.25rem
-                    h5
-                        margin 1rem 0
-                        border-bottom 0.125rem solid $C-reddark
-                    .sheet-icon-link
-                        display inline-block
-                        &:not(:first-child) .sheet-icon
-                            transform translate(100%, -75%)
-                    .sheet-icon
-                        display inline-block
-                        width auto
-                        height 1.5em
-                        transform translateY(-75%)
-                
-                // Evolution
-                .sheet-cards
-                    display flex
-                    width 100%
-                    flex-direction row
-                    justify-content space-between
-                    flex-wrap wrap
-                    .sheet-col
-                        display flex
-                        width 12.5rem
-                        flex-direction column
-                        align-content space-between
-                        flex-wrap wrap
-                        .sheet-card
-                            display inline-block
-                            position relative
-                            width 100%
-                            box-shadow 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.25)
+        // Evolution
+        .sheet-cards
+          display flex
+          width 100%
+          flex-direction row
+          justify-content space-between
+          flex-wrap wrap
+          .sheet-col
+            display flex
+            width 12.5rem
+            flex-direction column
+            align-content space-between
+            flex-wrap wrap
+            .sheet-card
+              display inline-block
+              position relative
+              width 100%
+              box-shadow 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.25)
