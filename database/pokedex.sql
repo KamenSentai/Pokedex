@@ -33,43 +33,6 @@ CREATE TABLE `capture` (
   `number` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Contenu de la table `capture`
---
-
-INSERT INTO `capture` (`id`, `pokemon_id`, `user_id`, `number`) VALUES
-(1, 18, 1, 7),
-(2, 95, 1, 5),
-(3, 20, 1, 3),
-(4, 128, 1, 4),
-(5, 132, 1, 1),
-(6, 15, 1, 6),
-(7, 71, 1, 1),
-(8, 65, 1, 1),
-(9, 119, 1, 2),
-(10, 9, 1, 1),
-(11, 18, 2, 1),
-(12, 110, 1, 1),
-(13, 126, 1, 1),
-(14, 12, 1, 6),
-(15, 53, 1, 1),
-(16, 45, 1, 1),
-(17, 47, 1, 1),
-(18, 12, 2, 1),
-(19, 128, 2, 2),
-(20, 59, 2, 1),
-(21, 57, 2, 1),
-(22, 15, 2, 5),
-(23, 113, 2, 1),
-(24, 47, 2, 1),
-(25, 6, 2, 1),
-(26, 80, 2, 1),
-(27, 40, 1, 1),
-(28, 31, 1, 1),
-(29, 51, 1, 1),
-(30, 115, 1, 1),
-(31, 59, 1, 2);
-
 -- --------------------------------------------------------
 
 --
@@ -83,14 +46,6 @@ CREATE TABLE `users` (
   `position_x` tinyint(255) NOT NULL DEFAULT '0',
   `position_y` tinyint(255) NOT NULL DEFAULT '30'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Contenu de la table `users`
---
-
-INSERT INTO `users` (`id`, `ip`, `catching`, `position_x`, `position_y`) VALUES
-(1, '12ca17b49af2289436f303e0166030a21e525d266e209267433801a8fd4071a0', NULL, 35, 15),
-(2, 'eff8e7ca506627fe15dda5e0e512fcaad70b6d520f37cc76597fdb4f2d83a1a3', NULL, 40, 25);
 
 --
 -- Index pour les tables exportées
