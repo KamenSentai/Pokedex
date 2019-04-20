@@ -2,7 +2,7 @@
 const loadJSON = (file, callback) => {
   const xobj = new XMLHttpRequest()
   xobj.overrideMimeType('application/json')
-  xobj.open('GET', `../database/${file}.json`, true)
+  xobj.open('GET', `./assets/data/${file}.json`, true)
   xobj.onreadystatechange = () => {
     if (xobj.readyState == 4 && xobj.status == '200')
       callback(xobj.responseText)

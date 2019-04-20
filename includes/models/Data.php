@@ -11,7 +11,7 @@ class Data {
   public  $data;
 
   public function __construct($file) {
-    $this->json = file_get_contents('../database/' . $file . '.json');
+    $this->json = file_get_contents('./assets/data/' . $file . '.json');
     $this->data = json_decode($this->json);
   }
 }
