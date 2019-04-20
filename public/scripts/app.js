@@ -17,7 +17,6 @@ var $containerMap = document.querySelector('.container.container-map');
 var $containerCatch = document.querySelector('.container.container-catch');
 var $audio = document.querySelector('audio');
 
-// Check if map page
 if ($containerMap) {
   //Get elements
   var $top = $containerMap.querySelector('.top');
@@ -194,7 +193,7 @@ if ($containerMap) {
   loadJSON('pokedex', function (response) {
     // Parse data
     var JSON_file = JSON.parse(response);
-    var pokemons = JSON_file.pokemon;
+    var pokemons = JSON_file.pokemons;
 
     // Listen to keydown
     window.addEventListener('keydown', function (event) {
@@ -249,112 +248,110 @@ if ($containerMap) {
     windowHeight = window.innerHeight;
     resizeImage(windowWidth, windowHeight, setStyles);
   });
-}
-// Check if catching page
-else if ($containerCatch) {
-    // Get elements
-    var _$rectangles = $containerCatch.querySelector('.rectangles');
-    var $title = $containerCatch.querySelector('h1');
-    var $appears = $title.querySelector('.appears');
-    var $caught = $title.querySelector('.caught');
-    var $escaped = $title.querySelector('.escaped');
-    var $appearance = $containerCatch.querySelector('.appearance');
-    var $illustration = $containerCatch.querySelector('.illustration');
-    var $button = $containerCatch.querySelector('.button');
-    var $tool = $button.querySelector('.tool');
-    var CATCH_RATE = 75;
+} else if ($containerCatch) {
+  // Get elements
+  var _$rectangles = $containerCatch.querySelector('.rectangles');
+  var $title = $containerCatch.querySelector('h1');
+  var $appears = $title.querySelector('.appears');
+  var $caught = $title.querySelector('.caught');
+  var $escaped = $title.querySelector('.escaped');
+  var $appearance = $containerCatch.querySelector('.appearance');
+  var $illustration = $containerCatch.querySelector('.illustration');
+  var $button = $containerCatch.querySelector('.button');
+  var $tool = $button.querySelector('.tool');
+  var CATCH_RATE = 75;
 
-    // Load pokedex data
-    loadJSON('pokedex', function (response) {
-      // Parse data
-      var JSON_file = JSON.parse(response);
-      var pokemons = JSON_file.pokemon;
-      var pokemonName = $appearance.getAttribute('alt');
-      var pokemon = pokemons.find(function (pokemon) {
-        return pokemon.name == pokemonName;
-      });
-      var pokemonIndex = pokemons.indexOf(pokemon);
-      var pokemonCatch = pokemon.catch_chance;
+  // Load pokedex data
+  loadJSON('pokedex', function (response) {
+    // Parse data
+    var JSON_file = JSON.parse(response);
+    var pokemons = JSON_file.pokemons;
+    var pokemonName = $appearance.getAttribute('alt');
+    var pokemon = pokemons.find(function (pokemon) {
+      return pokemon.name == pokemonName;
+    });
+    var pokemonIndex = pokemons.indexOf(pokemon);
+    var pokemonCatch = pokemon.catch_chance;
 
-      // Remove rectangles
+    // Remove rectangles
+    setTimeout(function () {
+      _$rectangles.classList.remove('active');
+
+      // Display elements
       setTimeout(function () {
-        _$rectangles.classList.remove('active');
+        $title.classList.add('active');
+        $appearance.classList.add('active');
+        $illustration.classList.add('active');
 
-        // Display elements
+        // Display button
         setTimeout(function () {
-          $title.classList.add('active');
-          $appearance.classList.add('active');
-          $illustration.classList.add('active');
+          $tool.classList.add('active');
+          $containerCatch.removeChild(_$rectangles);
+          $button.addEventListener('click', function (event) {
+            event.preventDefault();
+            $tool.classList.add('thrown');
 
-          // Display button
-          setTimeout(function () {
-            $tool.classList.add('active');
-            $containerCatch.removeChild(_$rectangles);
-            $button.addEventListener('click', function (event) {
-              event.preventDefault();
-              $tool.classList.add('thrown');
+            // Throw pokeball
+            setTimeout(function () {
+              $appearance.classList.add('caught');
 
-              // Throw pokeball
+              // Catch pokemon
               setTimeout(function () {
-                $appearance.classList.add('caught');
+                $appears.style.display = 'none';
+                var pokemonChance = Math.random() * CATCH_RATE - pokemonCatch;
+                var isCaught = pokemonChance < 0 ? true : false;
 
-                // Catch pokemon
-                setTimeout(function () {
-                  $appears.style.display = 'none';
-                  var pokemonChance = Math.random() * CATCH_RATE - pokemonCatch;
-                  var isCaught = pokemonChance < 0 ? true : false;
+                // Check if pokemon is caught
+                if (isCaught) {
+                  // Update
+                  $caught.style.display = 'block';
 
-                  // Check if pokemon is caught
-                  if (isCaught) {
-                    // Update
-                    $caught.style.display = 'block';
-
-                    // Send data
-                    var xhr = new XMLHttpRequest();
-                    xhr.open('POST', './');
-                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-                    xhr.send(encodeURI('action=caught&pokemon_index=' + pokemonIndex));
-                    xhr.onload = function () {
-                      setTimeout(function () {
-                        document.body.classList.add('fade');
-                        setTimeout(function () {
-                          window.location.href = './';
-                        }, 1250);
-                      }, 1250);
-                    };
-                  } else {
-                    // Update
-                    $escaped.style.display = 'block';
-                    $appearance.classList.remove('caught');
-
-                    // Set pokemon escaping
+                  // Send data
+                  var xhr = new XMLHttpRequest();
+                  xhr.open('POST', './');
+                  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                  xhr.send(encodeURI('action=caught&pokemon_index=' + pokemonIndex));
+                  xhr.onload = function () {
                     setTimeout(function () {
-                      $appearance.classList.remove('active');
-
-                      // Fadeout window
+                      document.body.classList.add('fade');
                       setTimeout(function () {
-                        document.body.classList.add('fade');
-
-                        // Redirect to map page
-                        setTimeout(function () {
-                          window.location.href = './';
-                        }, 1250);
+                        window.location.href = './';
                       }, 1250);
-                    }, 2000);
-                  }
-                }, 5000);
-              }, 1250);
-            });
-          }, 1000);
+                    }, 1250);
+                  };
+                } else {
+                  // Update
+                  $escaped.style.display = 'block';
+                  $appearance.classList.remove('caught');
+
+                  // Set pokemon escaping
+                  setTimeout(function () {
+                    $appearance.classList.remove('active');
+
+                    // Fadeout window
+                    setTimeout(function () {
+                      document.body.classList.add('fade');
+
+                      // Redirect to map page
+                      setTimeout(function () {
+                        window.location.href = './';
+                      }, 1250);
+                    }, 1250);
+                  }, 2000);
+                }
+              }, 5000);
+            }, 1250);
+          });
         }, 1000);
-      }, 250);
-    });
-  } else if ($audio) {
-    var _$button = document.querySelector('.sheet-button');
-    _$button.addEventListener('click', function () {
-      $audio.play();
-    });
-  }
+      }, 1000);
+    }, 250);
+  });
+} else if ($audio) {
+  var _$button = document.querySelector('.sheet-button');
+  _$button.addEventListener('click', function () {
+    $audio.play();
+  });
+}
 
 // Remove empty columns
 var $sheetCols = document.querySelectorAll('.sheet-col');

@@ -1,11 +1,9 @@
 // Load JSON file
-const loadJSON = (file, callback) =>
-{
+const loadJSON = (file, callback) => {
   const xobj = new XMLHttpRequest()
   xobj.overrideMimeType('application/json')
   xobj.open('GET', `../database/${file}.json`, true)
-  xobj.onreadystatechange = () =>
-  {
+  xobj.onreadystatechange = () => {
     if (xobj.readyState == 4 && xobj.status == '200')
       callback(xobj.responseText)
   }
@@ -17,9 +15,7 @@ const $containerMap   = document.querySelector('.container.container-map')
 const $containerCatch = document.querySelector('.container.container-catch')
 const $audio          = document.querySelector('audio')
 
-// Check if map page
-if ($containerMap)
-{
+if ($containerMap) {
   //Get elements
   const $top        = $containerMap.querySelector('.top')
   const $right      = $containerMap.querySelector('.right')
@@ -39,8 +35,7 @@ if ($containerMap)
   const MAP_ROW     = 12
   const MAP_COL     = 15
   const MAP_RATIO   = MAP_COL / MAP_ROW
-  const forbidden   =
-  [
+  const forbidden   = [
     {x: 0, y: 0},
     {x: 0, y: 50},
     {x: 0, y: 100},
@@ -62,8 +57,7 @@ if ($containerMap)
     {x: 700, y: 400},
     {x: 700, y: 450},
   ]
-  const bushes =
-  [
+  const bushes = [
     {x: 150, y: 0},
     {x: 200, y: 0},
     {x: 300, y: 0},
@@ -135,8 +129,7 @@ if ($containerMap)
   let canWalk      = true
 
   // Set size to map
-  const setImageSize= (left, top, width, height, transform) =>
-  {
+  const setImageSize= (left, top, width, height, transform) => {
     $map.style.left      = left
     $map.style.top       = top
     $map.style.width     = width
@@ -145,19 +138,15 @@ if ($containerMap)
   }
 
   // Resize images
-  const resizeImage = (windowWidth, windowHeight, callback) =>
-  {
+  const resizeImage = (windowWidth, windowHeight, callback) => {
     // Check if landscape or portrait
-    if (windowWidth / windowHeight <= MAP_RATIO)
-    {
+    if (windowWidth / windowHeight <= MAP_RATIO) {
       setImageSize('0', '50%', '100%', 'auto', 'translateY(-50%)')
       $top.style.zIndex    = '1'
       $right.style.zIndex  = '0'
       $bottom.style.zIndex = '1'
       $left.style.zIndex   = '0'
-    }
-    else
-    {
+    } else {
       setImageSize('50%', '0', 'auto', '100%', 'translateX(-50%)')
       $top.style.zIndex    = '0'
       $right.style.zIndex  = '1'
@@ -168,18 +157,17 @@ if ($containerMap)
   }
 
   // Set style to elements
-  const setStyles = () =>
-  {
-    const topOffset    = $map.getBoundingClientRect().top
-    const leftOffset   = $map.getBoundingClientRect().left
-    const widthOffset  = $map.getBoundingClientRect().width
-    const heightOffset = $map.getBoundingClientRect().height
-    $top.style.bottom  = `${topOffset}px`
-    $right.style.left  = `${leftOffset}px`
-    $bottom.style.top  = `${topOffset}px`
-    $left.style.right  = `${leftOffset}px`
-    tileSize.x         = widthOffset  / MAP_COL
-    tileSize.y         = heightOffset / MAP_ROW
+  const setStyles = () => {
+    const topOffset            = $map.getBoundingClientRect().top
+    const leftOffset           = $map.getBoundingClientRect().left
+    const widthOffset          = $map.getBoundingClientRect().width
+    const heightOffset         = $map.getBoundingClientRect().height
+    $top.style.bottom          = `${topOffset}px`
+    $right.style.left          = `${leftOffset}px`
+    $bottom.style.top          = `${topOffset}px`
+    $left.style.right          = `${leftOffset}px`
+    tileSize.x                 = widthOffset  / MAP_COL
+    tileSize.y                 = heightOffset / MAP_ROW
     $character.style.left      = `${leftOffset - tileSize.x / 2}px`
     $character.style.top       = `${topOffset}px`
     $character.style.width     = `${tileSize.x * 2}px`
@@ -195,8 +183,7 @@ if ($containerMap)
   }
 
   // Check if nex position of character is allowed
-  const allowPosition = (positionX, positionY) =>
-  {
+  const allowPosition = (positionX, positionY) => {
     for (const forbiddenPosition of forbidden)
       if (forbiddenPosition.x == positionX && forbiddenPosition.y == positionY)
         return false
@@ -204,8 +191,7 @@ if ($containerMap)
   }
 
   // Check if walking on bush
-  const stepBush = (positionX, positionY) =>
-  {
+  const stepBush = (positionX, positionY) => {
     for (const bush of bushes)
       if (bush.x == positionX && bush.y == positionY)
         return true
@@ -213,8 +199,7 @@ if ($containerMap)
   }
 
   // Load pokemon
-  const loadPokemon = (array) =>
-  {
+  const loadPokemon = (array) => {
     $crush.style.opacity = '1'
     const pokemonIndex  = Math.floor(Math.random() * 151)
     const pokemonSpawn  = array[pokemonIndex].spawn_chance
@@ -222,8 +207,7 @@ if ($containerMap)
     const isSpawned     = pokemonChance < 0 ? true : false
 
     // Check if pokemon is spawned
-    if (isSpawned)
-    {
+    if (isSpawned) {
       // Forbid to walk
       canWalk = false
 
@@ -234,14 +218,12 @@ if ($containerMap)
       xhr.send(encodeURI(`action=catch&pokemon_index=${pokemonIndex}&position_x=${position.x / 10}&position_y=${position.y / 10}`))
 
       // Listen to request done
-      xhr.onload = () =>
-      {
+      xhr.onload = () => {
         // Add rectangles
         $rectangles.classList.add('active')
 
         // Load new page
-        setTimeout(() =>
-        {
+        setTimeout(() => {
           window.location.href = './catch'
         }, 2000)
       }
@@ -249,23 +231,18 @@ if ($containerMap)
   }
 
   // Load pokedx data
-  loadJSON('pokedex', (response) =>
-  {
+  loadJSON('pokedex', (response) => {
     // Parse data
     const JSON_file = JSON.parse(response)
-    const pokemons  = JSON_file.pokemon
+    const pokemons  = JSON_file.pokemons
 
     // Listen to keydown
-    window.addEventListener('keydown', (event) =>
-    {
+    window.addEventListener('keydown', (event) => {
       // Check if character can walk
-      if (canWalk)
-      {
-        switch (event.keyCode)
-        {
+      if (canWalk) {
+        switch (event.keyCode) {
           case 37:
-            if (allowPosition(Math.max(0, position.x - 50), position.y))
-            {
+            if (allowPosition(Math.max(0, position.x - 50), position.y)) {
               position.x = Math.max(0, position.x - 50)
               if (stepBush(position.x, position.y))
                 loadPokemon(pokemons)
@@ -275,8 +252,7 @@ if ($containerMap)
             $sprite.style.transform = `translate(0%, -25%)`
             break
           case 39:
-            if (allowPosition(Math.min((MAP_COL - 1) * 50, position.x + 50), position.y))
-            {
+            if (allowPosition(Math.min((MAP_COL - 1) * 50, position.x + 50), position.y)) {
               position.x = Math.min((MAP_COL - 1) * 50, position.x + 50)
               if (stepBush(position.x, position.y))
                 loadPokemon(pokemons)
@@ -286,8 +262,7 @@ if ($containerMap)
             $sprite.style.transform = `translate(0%, -75%)`
             break
           case 38:
-            if (allowPosition(position.x, Math.max(0, position.y - 50)))
-            {
+            if (allowPosition(position.x, Math.max(0, position.y - 50))) {
               position.y = Math.max(0, position.y - 50)
               if (stepBush(position.x, position.y))
                 loadPokemon(pokemons)
@@ -297,8 +272,7 @@ if ($containerMap)
             $sprite.style.transform = `translate(0%, -50%)`
             break
           case 40:
-            if (allowPosition(position.x, Math.min((MAP_ROW - 3) * 50, position.y + 50)))
-            {
+            if (allowPosition(position.x, Math.min((MAP_ROW - 3) * 50, position.y + 50))) {
               position.y = Math.min((MAP_ROW - 3) * 50, position.y + 50)
               if (stepBush(position.x, position.y))
                 loadPokemon(pokemons)
@@ -316,83 +290,70 @@ if ($containerMap)
   })
 
   // Initialize map size
-  setTimeout(() =>
-  {
+  setTimeout(() => {
     resizeImage(windowWidth, windowHeight, setStyles)
     document.body.classList.remove('fade')
   }, 250)
 
   // Listen to resize
-  window.addEventListener('resize', () =>
-  {
+  window.addEventListener('resize', () => {
     windowWidth  = window.innerWidth
     windowHeight = window.innerHeight
     resizeImage(windowWidth, windowHeight, setStyles)
   })
-}
-// Check if catching page
-else if ($containerCatch)
-{
+} else if ($containerCatch) {
   // Get elements
   const $rectangles   = $containerCatch.querySelector('.rectangles')
-const $title        = $containerCatch.querySelector('h1')
-const $appears      = $title.querySelector('.appears')
-const $caught       = $title.querySelector('.caught')
-const $escaped      = $title.querySelector('.escaped')
+  const $title        = $containerCatch.querySelector('h1')
+  const $appears      = $title.querySelector('.appears')
+  const $caught       = $title.querySelector('.caught')
+  const $escaped      = $title.querySelector('.escaped')
   const $appearance   = $containerCatch.querySelector('.appearance')
   const $illustration = $containerCatch.querySelector('.illustration')
-const $button       = $containerCatch.querySelector('.button')
-const $tool         = $button.querySelector('.tool')
+  const $button       = $containerCatch.querySelector('.button')
+  const $tool         = $button.querySelector('.tool')
   const CATCH_RATE    = 75
 
   // Load pokedex data
-  loadJSON('pokedex', (response) =>
-  {
+  loadJSON('pokedex', (response) => {
     // Parse data
     const JSON_file    = JSON.parse(response)
-    const pokemons     = JSON_file.pokemon
+    const pokemons     = JSON_file.pokemons
     const pokemonName  = $appearance.getAttribute('alt')
     const pokemon      = pokemons.find(pokemon => pokemon.name == pokemonName)
     const pokemonIndex = pokemons.indexOf(pokemon)
     const pokemonCatch = pokemon.catch_chance
 
     // Remove rectangles
-    setTimeout(() =>
-    {
+    setTimeout(() => {
       $rectangles.classList.remove('active')
 
       // Display elements
-      setTimeout(() =>
-      {
+      setTimeout(() => {
         $title.classList.add('active')
         $appearance.classList.add('active')
         $illustration.classList.add('active')
 
         // Display button
-        setTimeout(() =>
-        {
+        setTimeout(() => {
           $tool.classList.add('active')
           $containerCatch.removeChild($rectangles)
-          $button.addEventListener('click', (event) =>
-          {
+          $button.addEventListener('click', (event) => {
             event.preventDefault()
             $tool.classList.add('thrown')
 
             // Throw pokeball
-            setTimeout(() =>
-            {
+            setTimeout(() => {
               $appearance.classList.add('caught')
 
               // Catch pokemon
-              setTimeout(() =>
-              {
+              setTimeout(() => {
                 $appears.style.display = 'none'
                 const pokemonChance = Math.random() * CATCH_RATE - pokemonCatch
                 const isCaught      = pokemonChance < 0 ? true : false
 
                 // Check if pokemon is caught
-                if (isCaught)
-                {
+                if (isCaught) {
                   // Update
                   $caught.style.display = 'block'
 
@@ -401,37 +362,29 @@ const $tool         = $button.querySelector('.tool')
                   xhr.open('POST', './')
                   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
                   xhr.send(encodeURI(`action=caught&pokemon_index=${pokemonIndex}`))
-                  xhr.onload = () =>
-                  {
-                    setTimeout(() =>
-                    {
+                  xhr.onload = () => {
+                    setTimeout(() => {
                       document.body.classList.add('fade')
-                      setTimeout(() =>
-                      {
+                      setTimeout(() => {
                         window.location.href = './'
                       }, 1250)
                     }, 1250)
                   }
-                }
-                else
-                {
+                } else {
                   // Update
                   $escaped.style.display = 'block'
                   $appearance.classList.remove('caught')
 
                   // Set pokemon escaping
-                  setTimeout(() =>
-                  {
+                  setTimeout(() => {
                     $appearance.classList.remove('active')
 
                     // Fadeout window
-                    setTimeout(() =>
-                    {
+                    setTimeout(() => {
                       document.body.classList.add('fade')
 
                       // Redirect to map page
-                      setTimeout(() =>
-                      {
+                      setTimeout(() => {
                         window.location.href = './'
                       }, 1250)
                     }, 1250)
@@ -444,12 +397,9 @@ const $tool         = $button.querySelector('.tool')
       }, 1000)
     }, 250)
   })
-}
-else if ($audio)
-{
+} else if ($audio) {
   const $button = document.querySelector('.sheet-button')
-  $button.addEventListener('click', () =>
-  {
+  $button.addEventListener('click', () => {
     $audio.play()
   })
 }

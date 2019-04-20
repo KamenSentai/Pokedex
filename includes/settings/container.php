@@ -97,7 +97,7 @@ $container['getCatch'] = function($container) {
   if (isset($user->catching)) {
     // Select pokemon
     $data    = new PM\Data('pokedex');
-    $pokemon = $data->data->pokemon[$user->catching];
+    $pokemon = $data->data->pokemons[$user->catching];
 
     $dataView =
     [
@@ -122,7 +122,7 @@ $container['getCatch'] = function($container) {
 $container['getPokemons'] = function($container) {
   // Get all pokemons
   $data     = new PM\Data('pokedex');
-  $pokemons = $data->data->pokemon;
+  $pokemons = $data->data->pokemons;
 
   // Get pokemons owned
   $database = $container->database;
