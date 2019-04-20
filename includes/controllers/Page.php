@@ -10,12 +10,10 @@ use \Psr\Http\Message\ResponseInterface      as Response;
  * Class Pokemon
  * @author Alain Cao Van Truong <cvt.alain@gmail.com>
  */
-class Page
-{
+class Page {
   private $container;
 
-  public function __construct($container)
-  {
+  public function __construct($container) {
     $this->container = $container;
   }
 
@@ -24,8 +22,7 @@ class Page
    * @param object $response
    * @return object $this->container->view->render()
    */
-  public function getHome(Request $request, Response $response)
-  {
+  public function getHome(Request $request, Response $response) {
     return $this->container->view->render($response, 'index.twig', $this->container->getHome);
   }
 
@@ -34,8 +31,7 @@ class Page
    * @param object $response
    * @return object $this->container->view->render()
    */
-  public function postHome(Request $request, Response $response)
-  {
+  public function postHome(Request $request, Response $response) {
     return $this->container->view->render($response, 'index.twig', $this->container->postHome);
   }
 
@@ -44,8 +40,7 @@ class Page
    * @param object $response
    * @return object $this->container->view->render()
    */
-  public function getCatch(Request $request, Response $response)
-  {
+  public function getCatch(Request $request, Response $response) {
     return $this->container->view->render($response, 'index.twig', $this->container->getCatch);
   }
 
@@ -54,8 +49,7 @@ class Page
    * @param object $response
    * @return object $this->container->view->render()
    */
-  public function getPokemons(Request $request, Response $response)
-  {
+  public function getPokemons(Request $request, Response $response) {
     return $this->container->view->render($response, 'index.twig', $this->container->getPokemons);
   }
 
@@ -64,8 +58,7 @@ class Page
    * @param object $response
    * @return object $this->container->view->render()
    */
-  public function getPokemon(Request $request, Response $response, $arguments)
-  {
+  public function getPokemon(Request $request, Response $response, $arguments) {
     // Get pokemons data
     $dataView     = $this->container->getPokemons;
     $dataBase     = $dataView['base'];
@@ -94,8 +87,7 @@ class Page
    * @param object $response
    * @return object $this->container->view->render()
    */
-  public function getTypes(Request $request, Response $response)
-  {
+  public function getTypes(Request $request, Response $response) {
     return $this->container->view->render($response, 'index.twig', $this->container->getTypes);
   }
 
@@ -104,8 +96,7 @@ class Page
    * @param object $response
    * @return object $this->container->view->render()
    */
-  public function getType(Request $request, Response $response, $arguments)
-  {
+  public function getType(Request $request, Response $response, $arguments) {
     // Get pokemons data
     $dataView = $this->container->getPokemons;
     $dataBase = $dataView['base'];
@@ -138,8 +129,7 @@ class Page
    * @param object $response
    * @return object $this->container->view->render()
    */
-  public function getRandom(Request $request, Response $response)
-  {
+  public function getRandom(Request $request, Response $response) {
     return $this->container->view->render($response, 'index.twig', $this->container->getRandom);
   }
 }

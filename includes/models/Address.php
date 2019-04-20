@@ -6,13 +6,11 @@ namespace Pokedex\Models;
  * Class Pokemon
  * @author Alain Cao Van Truong <cvt.alain@gmail.com>
  */
-class Address
-{
+class Address {
   /**
    * @return string $ip
    */
-  private static function detectIp()
-  {
+  private static function detectIp() {
     $ip = '';
     if (isset($_SERVER['HTTP_CLIENT_IP']))
       $ip = $_SERVER['HTTP_CLIENT_IP'];
@@ -34,8 +32,7 @@ class Address
   /**
    * @return string $ip
    */
-  public static function getIp()
-  {
+  public static function getIp() {
     return self::detectIp();
   }
 }
