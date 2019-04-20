@@ -1,3 +1,6 @@
+import { forbidden, bushes } from './store/positions'
+import { SPAW_RATE, MAP_ROW, MAP_COL, MAP_RATIO } from './store/map'
+
 // Load JSON file
 const loadJSON = (file, callback) => {
   const xobj = new XMLHttpRequest()
@@ -28,99 +31,7 @@ if ($containerMap) {
   // Define valuesw
   const position    = {x: parseInt($character.dataset.positionx * 10), y: parseInt($character.dataset.positiony * 10)}
   const tileSize    = {x: 0, y: 0}
-  const SPAW_RATE   = 25
-  const MAP_ROW     = 12
-  const MAP_COL     = 15
-  const MAP_RATIO   = MAP_COL / MAP_ROW
-  const forbidden   = [
-    {x: 0, y: 0},
-    {x: 0, y: 50},
-    {x: 0, y: 100},
-    {x: 0, y: 150},
-    {x: 0, y: 200},
-    {x: 0, y: 250},
-    {x: 0, y: 350},
-    {x: 0, y: 400},
-    {x: 0, y: 450},
-    {x: 50, y: 0},
-    {x: 650, y: 0},
-    {x: 700, y: 0},
-    {x: 700, y: 50},
-    {x: 700, y: 100},
-    {x: 700, y: 200},
-    {x: 700, y: 250},
-    {x: 700, y: 300},
-    {x: 700, y: 350},
-    {x: 700, y: 400},
-    {x: 700, y: 450},
-  ]
-  const bushes = [
-    {x: 150, y: 0},
-    {x: 200, y: 0},
-    {x: 300, y: 0},
-    {x: 350, y: 0},
-    {x: 450, y: 0},
-    {x: 500, y: 0},
-    {x: 200, y: 50},
-    {x: 250, y: 50},
-    {x: 300, y: 50},
-    {x: 350, y: 50},
-    {x: 400, y: 50},
-    {x: 500, y: 50},
-    {x: 550, y: 50},
-    {x: 150, y: 100},
-    {x: 200, y: 100},
-    {x: 300, y: 100},
-    {x: 400, y: 100},
-    {x: 450, y: 100},
-    {x: 550, y: 100},
-    {x: 150, y: 150},
-    {x: 200, y: 150},
-    {x: 250, y: 150},
-    {x: 300, y: 150},
-    {x: 350, y: 150},
-    {x: 400, y: 150},
-    {x: 450, y: 150},
-    {x: 500, y: 150},
-    {x: 550, y: 150},
-    {x: 600, y: 150},
-    {x: 100, y: 200},
-    {x: 200, y: 200},
-    {x: 300, y: 200},
-    {x: 400, y: 200},
-    {x: 500, y: 200},
-    {x: 550, y: 200},
-    {x: 600, y: 200},
-    {x: 100, y: 250},
-    {x: 150, y: 250},
-    {x: 200, y: 250},
-    {x: 250, y: 250},
-    {x: 300, y: 250},
-    {x: 350, y: 250},
-    {x: 400, y: 250},
-    {x: 450, y: 250},
-    {x: 550, y: 250},
-    {x: 150, y: 300},
-    {x: 250, y: 300},
-    {x: 350, y: 300},
-    {x: 400, y: 300},
-    {x: 500, y: 300},
-    {x: 600, y: 300},
-    {x: 100, y: 350},
-    {x: 200, y: 350},
-    {x: 250, y: 350},
-    {x: 300, y: 350},
-    {x: 400, y: 350},
-    {x: 450, y: 350},
-    {x: 500, y: 350},
-    {x: 550, y: 350},
-    {x: 600, y: 350},
-    {x: 250, y: 400},
-    {x: 350, y: 400},
-    {x: 400, y: 400},
-    {x: 550, y: 400},
-    {x: 300, y: 450}
-  ]
+
   let windowWidth  = window.innerWidth
   let windowHeight = window.innerHeight
   let canWalk      = true
@@ -178,10 +89,9 @@ if ($containerMap) {
   // Load pokemon
   const loadPokemon = (array) => {
     $crush.style.opacity = '1'
-    const pokemonIndex  = Math.floor(Math.random() * 151)
-    const pokemonSpawn  = array[pokemonIndex].spawn_chance
-    const pokemonChance = Math.random() * SPAW_RATE - pokemonSpawn
-    const isSpawned     = pokemonChance < 0 ? true : false
+    const pokemonIndex = Math.floor(Math.random() * 151)
+    const pokemonSpawn = array[pokemonIndex].spawn_chance
+    const isSpawned    = Math.random() * SPAW_RATE < pokemonSpawn ? true : false
 
     // Check if pokemon is spawned
     if (isSpawned) {
@@ -289,7 +199,6 @@ if ($containerMap) {
   const $illustration = $containerCatch.querySelector('.illustration')
   const $button       = $containerCatch.querySelector('.button')
   const $tool         = $button.querySelector('.tool')
-  const CATCH_RATE    = 75
 
   // Load pokedex data
   loadJSON('pokedex', (response) => {
@@ -326,8 +235,7 @@ if ($containerMap) {
               // Catch pokemon
               setTimeout(() => {
                 $appears.style.display = 'none'
-                const pokemonChance = Math.random() * CATCH_RATE - pokemonCatch
-                const isCaught      = pokemonChance < 0 ? true : false
+                const isCaught = Math.random() * 100 < pokemonCatch ? true : false
 
                 // Check if pokemon is caught
                 if (isCaught) {
