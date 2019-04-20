@@ -17,11 +17,8 @@ const $audio          = document.querySelector('audio')
 
 if ($containerMap) {
   //Get elements
-  const $top        = $containerMap.querySelector('.top')
-  const $right      = $containerMap.querySelector('.right')
-  const $bottom     = $containerMap.querySelector('.bottom')
-  const $left       = $containerMap.querySelector('.left')
-  const $map        = $containerMap.querySelector('.map')
+  const $horizontal = $containerMap.querySelector('.horizontal')
+  const $vertical   = $containerMap.querySelector('.vertical')
   const $character  = $containerMap.querySelector('.character')
   const $crush      = $containerMap.querySelector('.crush')
   const $sprite     = $character.querySelector('.sprite')
@@ -128,46 +125,26 @@ if ($containerMap) {
   let windowHeight = window.innerHeight
   let canWalk      = true
 
-  // Set size to map
-  const setImageSize= (left, top, width, height, transform) => {
-    $map.style.left      = left
-    $map.style.top       = top
-    $map.style.width     = width
-    $map.style.height    = height
-    $map.style.transform = transform
-  }
-
   // Resize images
   const resizeImage = (windowWidth, windowHeight, callback) => {
     // Check if landscape or portrait
     if (windowWidth / windowHeight <= MAP_RATIO) {
-      setImageSize('0', '50%', '100%', 'auto', 'translateY(-50%)')
-      $top.style.zIndex    = '1'
-      $right.style.zIndex  = '0'
-      $bottom.style.zIndex = '1'
-      $left.style.zIndex   = '0'
+      $horizontal.style.display = 'none'
+      $vertical.style.display   = 'block'
     } else {
-      setImageSize('50%', '0', 'auto', '100%', 'translateX(-50%)')
-      $top.style.zIndex    = '0'
-      $right.style.zIndex  = '1'
-      $bottom.style.zIndex = '0'
-      $left.style.zIndex   = '1'
+      $horizontal.style.display = 'block'
+      $vertical.style.display   = 'none'
     }
     callback()
   }
 
   // Set style to elements
   const setStyles = () => {
-    const topOffset            = $map.getBoundingClientRect().top
-    const leftOffset           = $map.getBoundingClientRect().left
-    const widthOffset          = $map.getBoundingClientRect().width
-    const heightOffset         = $map.getBoundingClientRect().height
-    $top.style.bottom          = `${topOffset}px`
-    $right.style.left          = `${leftOffset}px`
-    $bottom.style.top          = `${topOffset}px`
-    $left.style.right          = `${leftOffset}px`
-    tileSize.x                 = widthOffset  / MAP_COL
-    tileSize.y                 = heightOffset / MAP_ROW
+    const realSize             = windowWidth / windowHeight <= MAP_RATIO ? windowWidth : windowHeight
+    tileSize.x                 = realSize == windowWidth ? realSize / MAP_COL : realSize / MAP_ROW
+    tileSize.y                 = realSize == windowHeight ? realSize / MAP_ROW : realSize / MAP_COL
+    const leftOffset           = (windowWidth - tileSize.x * MAP_COL) / 2
+    const topOffset            = (windowHeight - tileSize.y * MAP_ROW) / 2
     $character.style.left      = `${leftOffset - tileSize.x / 2}px`
     $character.style.top       = `${topOffset}px`
     $character.style.width     = `${tileSize.x * 2}px`
@@ -291,7 +268,7 @@ if ($containerMap) {
 
   // Initialize map size
   setTimeout(() => {
-    resizeImage(windowWidth, windowHeight, setStyles)
+    resizeImage(windowWidth, windowHeight, setStyles) -
     document.body.classList.remove('fade')
   }, 250)
 
